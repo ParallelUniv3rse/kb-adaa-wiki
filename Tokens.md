@@ -14,7 +14,7 @@ https://login.kb.cz/autfe/ssologin?response_type=code&client_id=Nejlepsiprodukt-
 
 ```
 302 Found
-https://app.kifli.cz/callback?code=-_N2RrJRCMgd__JGqUlB_KaFNpo&iss=https%3A%2F%2Fcaas.kb.cz%2Fopenam%2Foauth2&client_id=Nejlepsiprodukt-4176
+https://client.example.org/callback?code=-_N2RrJRCMgd__JGqUlB_KaFNpo&iss=https%3A%2F%2Fcaas.kb.cz%2Fopenam%2Foauth2&client_id=Nejlepsiprodukt-4176
 ```
 
 # Refresh token
