@@ -62,3 +62,10 @@ curl --location --request DELETE 'https://api.kb.cz/open/api/adaa/v1/accounts/eX
 ## Response
 
 HTTP 204
+
+# Your API to receive notification
+
+- [specification](https://github.com/komercka/adaa-eventapi-spring-boot-example/blob/master/rest/src/main/resources/openapi/adaa-event-api.yaml)
+- if you want to limit network traffic, incoming requests from the bank come from IP addresses:
+  - 194.50.202.179
+  - 194.50.226.179
