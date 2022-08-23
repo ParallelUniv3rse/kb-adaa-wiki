@@ -15,6 +15,7 @@
 > - PostSignum
 
 > **Certificates in Postman** - [How to add certificate in Postman](https://learning.postman.com/docs/sending-requests/certificates/#adding-client-certificates)
+>
 > **TLS configuration of JAX-RS Client** - [adaa-example-spring-boot](https://github.com/komercka/adaa-example-spring-boot/blob/e4c07ac5f4166a4199a0d2fc8dc01392d888e4e2/web/src/main/java/cz/kb/openbanking/adaa/example/springboot/web/configuration/WebConfiguration.java#L37)
 
 ```js
