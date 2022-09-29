@@ -442,7 +442,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/",
+              "raw": "https://gw.kbcloud.cz/sandbox/adaa/v1/accounts",
               "protocol": "https",
               "host": ["gw", "kbcloud", "cz"],
               "path": ["sandbox", "adaa", "v1", "accounts", ""]
