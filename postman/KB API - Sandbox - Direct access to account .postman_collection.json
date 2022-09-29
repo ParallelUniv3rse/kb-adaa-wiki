@@ -420,7 +420,7 @@
                 }
               ]
             },
-            "method": "POST",
+            "method": "GET",
             "header": [
               {
                 "key": "x-correlation-id",
