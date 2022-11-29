@@ -8,47 +8,35 @@ The Account Direct Access API (ADAA) service provides secure access to informati
 
 more details is on website [Direct Account Access API](https://www.kb.cz/en/kb-api/kb-api-services/account-direct-access)
 
+## Enviroments
+
+- For testing requests we recommend the application [Postman](https://www.postman.com)
+
+### Sandbox
+
+- Postman [Sandbox](./postman/KB%20API%20-%20Sandbox%20-%20Direct%20access%20to%20account%20.postman_collection.json) collection
+- Register on [Sandbox API Portal](https://openbanking.kbcloud.cz/)
+
+### Production
+
+-  Postman [Production](./postman/KB%20API%20-%20Production%20-%20Direct%20access%20to%20account.postman_collection.json) collection
+- Register on [production API portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
+
 ## How to start
 
-- [Swagger](https://github.com/komercka/adaa-client/blob/master/api/src/main/resources/openapi/adaa-api-v1.json)
-- Security based on OAuth2
-
-## Sandbox
--  [Postman](https://www.postman.com) collection [Sandbox](./postman/KB%20API%20-%20Sandbox%20-%20Direct%20access%20to%20account%20.postman_collection.json)
--  Sandbox API Portal
-
-### Steps
+### Register your application
 
 1. [Software Statement](./Software-Statements)
+
+### Client registration your application in bank
+
 2. [Application Registration OAuth2](./Application-Registration-OAuth2)
 3. [Tokens](./Tokens)
+
+### Account and transaction history - [Swagger](https://github.com/komercka/adaa-client/blob/master/api/src/main/resources/openapi/adaa-api-v1.json)
+
 4. [Accounts](./Accounts)
 5. [Account Balances](./Balances)
 6. [Transactions](./Transactions)
 7. [Notification of changes to your account (webhook)](./Notification)
 8. [Account Statements - PDF](./Statements-PDF)
-
-## Production
-- [Postman](https://www.postman.com) collection [Production](./postman/KB%20API%20-%20Production%20-%20Direct%20access%20to%20account.postman_collection.json)
-- Production API portal
-
-
-
-### Steps
-
-1. [Software Statement](./Software-Statements)
-2. [Application Registration OAuth2](./Application-Registration-OAuth2)
-3. [Tokens](./Tokens)
-4. [Accounts](./Accounts)
-5. [Account Balances](./Balances)
-6. [Transactions](./Transactions)
-7. [Notification of changes to your account (webhook)](./Notification)
-8. [Account Statements - PDF](./Statements-PDF)
-
----
-
-
-- [Manual for registration (step 1-3)](https://www.kb.cz/getmedia/92407d73-73e3-47be-9fb9-76b5b0e7cfc4/API_Technical-Manual-for-Registration-and-Security-API-Business-Suite_EN.pdf.aspx)
-- [Manual for service (step 4-8)](https://www.kb.cz/getmedia/ffc70c65-cc28-4809-ad47-22b7b4361ce5/ADAA_Technical_manual_EN.pdf.aspx)
-
-

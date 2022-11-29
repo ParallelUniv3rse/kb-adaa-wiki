@@ -21,7 +21,7 @@
 
 - adaa - account direct access api
 - bpisp - batch payments
-- card_data - informationb about card
+- card_data - information about card
 
 ### Statements
 

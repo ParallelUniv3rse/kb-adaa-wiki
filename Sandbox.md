@@ -14,7 +14,6 @@
 > - I.CA
 > - PostSignum
 
-
 ```js
 curl --location --request POST 'https://gw.kbcloud.cz/sandbox/oauth2-software-statements/v1/software-statements' \
 --header 'x-correlation-id: 1ca9d990-14c0-4a98-b294-80fe8df0c8a5' \
@@ -48,15 +47,16 @@ curl --location --request POST 'https://gw.kbcloud.cz/sandbox/oauth2-software-st
 }'
 ```
 
-
 ## Response
 
 > **Check information in JWT token**
 > You can check content JWT token on [jwt.io](https://jwt.io)
 
 HTTP 201
-> 
-``` 
+
+>
+
+```
 eyJhbGciOiJIUzI1NiJ9.eyJ2ZW5kb3JOYW1lIjoiQ29tcGFueSBhLnMuIiwic29mdHdhcmVOYW1lIjoiTmVqbGVwxaHDrSBwcm9kdWt0Iiwic29mdHdhcmVOYW1lRW4iOiJCZXN0IHByb2R1Y3QiLCJzb2Z0d2FyZUlkIjoiZjY0YmYyZTQ0N2U1NDUyMjhjNzhlMDdiMDgxYTgyZWUiLCJzb2Z0d2FyZVZlcnNpb24iOiIxLjAiLCJzb2Z0d2FyZVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnIiwicmVkaXJlY3RVcmlzIjpbImh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL2NhbGxiYWNrIiwiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2stYmFja3VwIl0sInRva2VuRW5kcG9pbnRBdXRoTWV0aG9kIjoiY2xpZW50X3NlY3JldF9wb3N0IiwiZ3JhbnRUeXBlcyI6WyJhdXRob3JpemF0aW9uX2NvZGUiXSwicmVzcG9uc2VUeXBlcyI6WyJjb2RlIl0sInJlZ2lzdHJhdGlvbkJhY2tVcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9iYWNrdXJpIiwiY29udGFjdHMiOlsiZW1haWw6IGV4YW1wbGVAZ29vZHNvZnQuY29tIl0sImxvZ29VcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9sb2dvLnBuZyIsInRvc1VyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3RvcyIsInBvbGljeVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3BvbGljeSJ9.Fw11ePNty7aimkm3yBYMoK5L-8Blpec4CafNJ-giC4g
 ```
 
@@ -297,31 +297,31 @@ curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/' 
 
 ```json
 [
-    {
-        "accountId": "Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw",
-        "iban": "CZ1301000901147771800227",
-        "currency": "CZK"
-    },
-    {
-        "accountId": "Q1o2MTAxMDAwOTAwOTMwNzkwMTgwMjg3OkNaSw",
-        "iban": "CZ6101000900930790180287",
-        "currency": "CZK"
-    },
-    {
-        "accountId": "Q1o0NDAxMDAwOTAxMTQ4MDk2MTMwMjI3OkNaSw",
-        "iban": "CZ4401000901148096130227",
-        "currency": "CZK"
-    },
-    {
-        "accountId": "Q1o5NjAxMDAwOTAxMTQ4MDY2NTQwMjE3OkNaSw",
-        "iban": "CZ9601000901148066540217",
-        "currency": "CZK"
-    },
-    {
-        "accountId": "Q1o2ODAxMDAwOTAxMTQ3ODI2NzAwMjY3OkNaSw",
-        "iban": "CZ6801000901147826700267",
-        "currency": "CZK"
-    }
+  {
+    "accountId": "Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw",
+    "iban": "CZ1301000901147771800227",
+    "currency": "CZK"
+  },
+  {
+    "accountId": "Q1o2MTAxMDAwOTAwOTMwNzkwMTgwMjg3OkNaSw",
+    "iban": "CZ6101000900930790180287",
+    "currency": "CZK"
+  },
+  {
+    "accountId": "Q1o0NDAxMDAwOTAxMTQ4MDk2MTMwMjI3OkNaSw",
+    "iban": "CZ4401000901148096130227",
+    "currency": "CZK"
+  },
+  {
+    "accountId": "Q1o5NjAxMDAwOTAxMTQ4MDY2NTQwMjE3OkNaSw",
+    "iban": "CZ9601000901148066540217",
+    "currency": "CZK"
+  },
+  {
+    "accountId": "Q1o2ODAxMDAwOTAxMTQ3ODI2NzAwMjY3OkNaSw",
+    "iban": "CZ6801000901147826700267",
+    "currency": "CZK"
+  }
 ]
 ```
 
@@ -335,193 +335,195 @@ curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1
 --header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLQklEPXRlc3QiLCJhdWRpdFRyYWNraW5nSWQiOiJkNzQxMmZlNS1mZTczLTQ5NDUtYjc5Yy0wYmFmMDEyNzEyNWQiLCJpc3MiOiJodHRwczovL2xvZ2luLmtiLmN6L29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiI2YWNjNzYxZS1hODZlLTRkYjUtODU4YS1kZTBmZmIzNDIzNDEiLCJhdWQiOiIxMjM1NDYiLCJuYmYiOjE2Njg0Mjg0OTksInNjb3BlIjpbImFkYWEiXSwicmVhbG0iOiIvIiwiZXhwIjoxNjY4NDMyMDk5LCJpYXQiOjE2Njg0Mjg0OTksImV4cGlyZXNfaW4iOjM2MDAwMDAsImp0aSI6IjE2NGNmZWE4LTQ2MGYtNDBjYS1hMTRjLWJlNTZjNmY1YjBjNiJ9.-MYDD540bx4rCgFPVVd9FruDHuCrwkDmv5OqbDW7vjQ'
 ```
+
 HTTP 200
+
 ## Response
 
 ```json
 {
-    "content": [
-        {
-            "lastUpdated": "2019-06-05T11:34:00Z",
-            "accountType": "KB",
-            "entryReference": "298-05062019 16020106916F1",
-            "iban": "CZ1301000901147771800227",
-            "creditDebitIndicator": "DEBIT",
-            "transactionType": "FEE",
-            "bankTransactionCode": {
-                "code": "400006",
-                "issuer": "OTHER"
-            },
-            "amount": {
-                "value": 18.0,
-                "currency": "CZK"
-            },
-            "bookingDate": "2019-06-05",
-            "valueDate": "2019-06-05",
-            "instructed": {
-                "value": 18.0,
-                "currency": "CZK"
-            },
-            "status": "PNG",
-            "references": {
-                "accountServicer": "298-05062019 16020106916F1",
-                "constant": "0898"
-            },
-            "additionalTransactionInformation": "TP zalozeni :  1 x  18, F00106916F1TP_MBB"
-        },
-        {
-            "lastUpdated": "2019-06-05T11:34:00Z",
-            "accountType": "KB",
-            "entryReference": "001-04062019 1602 602003 110031",
-            "iban": "CZ1301000901147771800227",
-            "creditDebitIndicator": "DEBIT",
-            "transactionType": "DOMESTIC",
-            "bankTransactionCode": {
-                "code": "100001",
-                "issuer": "OTHER"
-            },
-            "amount": {
-                "value": 268.0,
-                "currency": "CZK"
-            },
-            "bookingDate": "2019-06-04",
-            "valueDate": "2019-06-04",
-            "instructed": {
-                "value": 268.0,
-                "currency": "CZK"
-            },
-            "status": "BOOK",
-            "counterParty": {
-                "iban": "CZ0203000000000000000246",
-                "accountNo": "0000000000000246",
-                "bankBic": "CEKOCZPPXXX",
-                "bankCode": "0300"
-            },
-            "references": {
-                "accountServicer": "IU01RFIQT2F",
-                "variable": "6112047021",
-                "constant": "8422",
-                "specific": "3258999654"
-            },
-            "additionalTransactionInformation": "Force pay debit, IU01RFIQT2F 01"
-        },
-        {
-            "lastUpdated": "2019-06-05T11:34:00Z",
-            "accountType": "KB",
-            "entryReference": "001-22052019 1602 602030 390281",
-            "iban": "CZ1301000901147771800227",
-            "creditDebitIndicator": "CREDIT",
-            "transactionType": "DOMESTIC",
-            "bankTransactionCode": {
-                "code": "100001",
-                "issuer": "OTHER"
-            },
-            "amount": {
-                "value": 2550.0,
-                "currency": "CZK"
-            },
-            "bookingDate": "2019-05-22",
-            "valueDate": "2019-05-22",
-            "instructed": {
-                "value": 2550.0,
-                "currency": "CZK"
-            },
-            "status": "BOOK",
-            "counterParty": {
-                "iban": "CZ8101000901147770990217",
-                "name": "TATOR JAN",
-                "accountNo": "0901147770990217",
-                "bankBic": "KOMBCZPPXXX",
-                "bankCode": "0100"
-            },
-            "references": {
-                "accountServicer": "IU01RFH4XQH"
-            },
-            "additionalTransactionInformation": "Transfer credit, IU01RFH4XQH 01"
-        },
-        {
-            "lastUpdated": "2019-06-05T11:34:00Z",
-            "accountType": "KB",
-            "entryReference": "000-10052019-005-005-001-025660",
-            "iban": "CZ1301000901147771800227",
-            "creditDebitIndicator": "DEBIT",
-            "transactionType": "DOMESTIC",
-            "bankTransactionCode": {
-                "code": "100001",
-                "issuer": "OTHER"
-            },
-            "amount": {
-                "value": 6669.0,
-                "currency": "CZK"
-            },
-            "bookingDate": "2019-05-10",
-            "valueDate": "2019-05-10",
-            "instructed": {
-                "value": 6669.0,
-                "currency": "CZK"
-            },
-            "status": "BOOK",
-            "counterParty": {
-                "iban": "CZ5501000000000000000246",
-                "name": "IB-TĚST-1-ALĚNA-ŠČŘP ALĚNKA",
-                "accountNo": "0000000000000246",
-                "bankBic": "CEKOCZPPXXX",
-                "bankCode": "0100"
-            },
-            "references": {
-                "accountServicer": "000-10052019-005-005-001-025660",
-                "variable": "5545005500",
-                "constant": "4564",
-                "specific": "0000847552"
-            },
-            "additionalTransactionInformation": "Debit transfer, NA   CK-0000000000000246"
-        },
-        {
-            "lastUpdated": "2019-06-05T11:34:00Z",
-            "accountType": "KB",
-            "entryReference": "001-01112021 1602 602005 011151",
-            "iban": "CZ1301000901147771800227",
-            "creditDebitIndicator": "CREDIT",
-            "transactionType": "SEPA",
-            "bankTransactionCode": {
-                "code": "100004",
-                "issuer": "OTHER"
-            },
-            "amount": {
-                "value": 681.81,
-                "currency": "CZK"
-            },
-            "bookingDate": "2019-05-25",
-            "valueDate": "2019-05-25",
-            "instructed": {
-                "value": 27.28,
-                "currency": "EUR"
-            },
-            "status": "BOOK",
-            "counterParty": {
-                "iban": "FR7630003033000002054269605",
-                "name": "Francouzska Alizeé",
-                "accountNo": "00020542696",
-                "bankBic": "SOGEFRPPXXX",
-                "bankCode": "30003"
-            },
-            "references": {
-                "accountServicer": "IU01RFYZ35C",
-                "endToEndIdentification": "a6s51f6s51a69",
-                "constant": "6020000000",
-                "specific": "2206139812",
-                "receiver": "remittance info"
-            },
-            "additionalTransactionInformation": "Transfer credit, ucetFR7630003033000002054269605    rfKB   2206139812602               rfJUs65f1a6s5f1as561f651s9, bankSOGEFRPPXXX                    poplSLV, IU01RFYZ35C 13"
-        }
-    ],
-    "totalPages": 1,
-    "pageNumber": 0,
-    "pageSize": 20,
-    "numberOfElements": 5,
-    "first": true,
-    "last": true,
-    "empty": false
+  "content": [
+    {
+      "lastUpdated": "2019-06-05T11:34:00Z",
+      "accountType": "KB",
+      "entryReference": "298-05062019 16020106916F1",
+      "iban": "CZ1301000901147771800227",
+      "creditDebitIndicator": "DEBIT",
+      "transactionType": "FEE",
+      "bankTransactionCode": {
+        "code": "400006",
+        "issuer": "OTHER"
+      },
+      "amount": {
+        "value": 18.0,
+        "currency": "CZK"
+      },
+      "bookingDate": "2019-06-05",
+      "valueDate": "2019-06-05",
+      "instructed": {
+        "value": 18.0,
+        "currency": "CZK"
+      },
+      "status": "PNG",
+      "references": {
+        "accountServicer": "298-05062019 16020106916F1",
+        "constant": "0898"
+      },
+      "additionalTransactionInformation": "TP zalozeni :  1 x  18, F00106916F1TP_MBB"
+    },
+    {
+      "lastUpdated": "2019-06-05T11:34:00Z",
+      "accountType": "KB",
+      "entryReference": "001-04062019 1602 602003 110031",
+      "iban": "CZ1301000901147771800227",
+      "creditDebitIndicator": "DEBIT",
+      "transactionType": "DOMESTIC",
+      "bankTransactionCode": {
+        "code": "100001",
+        "issuer": "OTHER"
+      },
+      "amount": {
+        "value": 268.0,
+        "currency": "CZK"
+      },
+      "bookingDate": "2019-06-04",
+      "valueDate": "2019-06-04",
+      "instructed": {
+        "value": 268.0,
+        "currency": "CZK"
+      },
+      "status": "BOOK",
+      "counterParty": {
+        "iban": "CZ0203000000000000000246",
+        "accountNo": "0000000000000246",
+        "bankBic": "CEKOCZPPXXX",
+        "bankCode": "0300"
+      },
+      "references": {
+        "accountServicer": "IU01RFIQT2F",
+        "variable": "6112047021",
+        "constant": "8422",
+        "specific": "3258999654"
+      },
+      "additionalTransactionInformation": "Force pay debit, IU01RFIQT2F 01"
+    },
+    {
+      "lastUpdated": "2019-06-05T11:34:00Z",
+      "accountType": "KB",
+      "entryReference": "001-22052019 1602 602030 390281",
+      "iban": "CZ1301000901147771800227",
+      "creditDebitIndicator": "CREDIT",
+      "transactionType": "DOMESTIC",
+      "bankTransactionCode": {
+        "code": "100001",
+        "issuer": "OTHER"
+      },
+      "amount": {
+        "value": 2550.0,
+        "currency": "CZK"
+      },
+      "bookingDate": "2019-05-22",
+      "valueDate": "2019-05-22",
+      "instructed": {
+        "value": 2550.0,
+        "currency": "CZK"
+      },
+      "status": "BOOK",
+      "counterParty": {
+        "iban": "CZ8101000901147770990217",
+        "name": "TATOR JAN",
+        "accountNo": "0901147770990217",
+        "bankBic": "KOMBCZPPXXX",
+        "bankCode": "0100"
+      },
+      "references": {
+        "accountServicer": "IU01RFH4XQH"
+      },
+      "additionalTransactionInformation": "Transfer credit, IU01RFH4XQH 01"
+    },
+    {
+      "lastUpdated": "2019-06-05T11:34:00Z",
+      "accountType": "KB",
+      "entryReference": "000-10052019-005-005-001-025660",
+      "iban": "CZ1301000901147771800227",
+      "creditDebitIndicator": "DEBIT",
+      "transactionType": "DOMESTIC",
+      "bankTransactionCode": {
+        "code": "100001",
+        "issuer": "OTHER"
+      },
+      "amount": {
+        "value": 6669.0,
+        "currency": "CZK"
+      },
+      "bookingDate": "2019-05-10",
+      "valueDate": "2019-05-10",
+      "instructed": {
+        "value": 6669.0,
+        "currency": "CZK"
+      },
+      "status": "BOOK",
+      "counterParty": {
+        "iban": "CZ5501000000000000000246",
+        "name": "IB-TĚST-1-ALĚNA-ŠČŘP ALĚNKA",
+        "accountNo": "0000000000000246",
+        "bankBic": "CEKOCZPPXXX",
+        "bankCode": "0100"
+      },
+      "references": {
+        "accountServicer": "000-10052019-005-005-001-025660",
+        "variable": "5545005500",
+        "constant": "4564",
+        "specific": "0000847552"
+      },
+      "additionalTransactionInformation": "Debit transfer, NA   CK-0000000000000246"
+    },
+    {
+      "lastUpdated": "2019-06-05T11:34:00Z",
+      "accountType": "KB",
+      "entryReference": "001-01112021 1602 602005 011151",
+      "iban": "CZ1301000901147771800227",
+      "creditDebitIndicator": "CREDIT",
+      "transactionType": "SEPA",
+      "bankTransactionCode": {
+        "code": "100004",
+        "issuer": "OTHER"
+      },
+      "amount": {
+        "value": 681.81,
+        "currency": "CZK"
+      },
+      "bookingDate": "2019-05-25",
+      "valueDate": "2019-05-25",
+      "instructed": {
+        "value": 27.28,
+        "currency": "EUR"
+      },
+      "status": "BOOK",
+      "counterParty": {
+        "iban": "FR7630003033000002054269605",
+        "name": "Francouzska Alizeé",
+        "accountNo": "00020542696",
+        "bankBic": "SOGEFRPPXXX",
+        "bankCode": "30003"
+      },
+      "references": {
+        "accountServicer": "IU01RFYZ35C",
+        "endToEndIdentification": "a6s51f6s51a69",
+        "constant": "6020000000",
+        "specific": "2206139812",
+        "receiver": "remittance info"
+      },
+      "additionalTransactionInformation": "Transfer credit, ucetFR7630003033000002054269605    rfKB   2206139812602               rfJUs65f1a6s5f1as561f651s9, bankSOGEFRPPXXX                    poplSLV, IU01RFYZ35C 13"
+    }
+  ],
+  "totalPages": 1,
+  "pageNumber": 0,
+  "pageSize": 20,
+  "numberOfElements": 5,
+  "first": true,
+  "last": true,
+  "empty": false
 }
 ```
 

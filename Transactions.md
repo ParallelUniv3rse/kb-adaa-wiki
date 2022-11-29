@@ -1,5 +1,10 @@
 # Transaction history
 
+> **Limits**
+>
+> - time limit to start download next page is 10 sec
+> - limit for download is one per hour, if you want download more try [Continue to Notification...](./Notification)
+
 ## Request
 
 ```
