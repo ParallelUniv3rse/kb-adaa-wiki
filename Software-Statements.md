@@ -19,7 +19,7 @@
 > **TLS configuration of JAX-RS Client** - [adaa-example-spring-boot](https://github.com/komercka/adaa-example-spring-boot/blob/e4c07ac5f4166a4199a0d2fc8dc01392d888e4e2/web/src/main/java/cz/kb/openbanking/adaa/example/springboot/web/configuration/WebConfiguration.java#L37)
 
 
-<details><summary>Client TLS Authentication Example - Curl</summary>
+<details id="curl-example"><summary>Client TLS Authentication Example - Curl</summary>
 
 ```js
 curl --cert-type P12 cert.p12:password --location --request POST 'https://api.kb.cz/open/api/client-registration/v1/software-statements' \
@@ -62,7 +62,7 @@ curl --cert  client.crt --key client.key --cacert ca.crt https://api.kb.cz/open/
 
 </details>
 
-<details><summary>Client TLS Authentication Example - C# 10 .NET6</summary>
+<details id="c-sharp-example"><summary>Client TLS Authentication Example - C# 10 .NET6</summary>
 
 ```cs
 using System.Net.Mime;
