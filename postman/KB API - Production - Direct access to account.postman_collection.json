@@ -62,11 +62,6 @@
                     "value": "<string>"
                   },
                   {
-                    "description": "Qualified certificate for digital signature. This header is automatically filled from TLS handshake.",
-                    "key": "x-client-cert",
-                    "value": "<string>"
-                  },
-                  {
                     "key": "Content-Type",
                     "value": "application/json"
                   }
@@ -104,11 +99,6 @@
                     "value": "<string>"
                   },
                   {
-                    "description": "Qualified certificate for digital signature. This header is automatically filled from TLS handshake.",
-                    "key": "x-client-cert",
-                    "value": "<string>"
-                  },
-                  {
                     "key": "Content-Type",
                     "value": "application/json"
                   }
@@ -143,11 +133,6 @@
                   {
                     "description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
                     "key": "x-correlation-id",
-                    "value": "<string>"
-                  },
-                  {
-                    "description": "Qualified certificate for digital signature. This header is automatically filled from TLS handshake.",
-                    "key": "x-client-cert",
                     "value": "<string>"
                   },
                   {
