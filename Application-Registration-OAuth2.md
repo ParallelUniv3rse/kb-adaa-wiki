@@ -105,6 +105,7 @@ function decrypt_aes_256_gcm($ciphertext_bytes, $initialization_vector_bytes, $k
 
 $plaintext = decrypt_aes_256_gcm(base64url_decode($ciphertext), base64url_decode($initialization_vector), base64_decode($key));
 echo "plaintext:\n$plaintext";
+?>
 
 ```
 
