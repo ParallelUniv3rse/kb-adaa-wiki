@@ -24,7 +24,6 @@ curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/Zm9PT
       "accountType": "KB",
       "entryReference": "120-20210222 T02AR0H7AB803",
       "iban": "CZ0301000001158830140287",
-      //
       "creditDebitIndicator": "CREDIT",
       "transactionType": "DOMESTIC",
       "bankTransactionCode": {
