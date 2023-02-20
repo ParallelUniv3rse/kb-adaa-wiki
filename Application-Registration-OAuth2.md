@@ -55,9 +55,9 @@ https://client.example.org/backuri?salt=1gwqD9tGLtaWRRwU&encryptedData=m5XPrBzLd
 
 ## Decrypt response
 
-<details><summary>live example java</summary>
+<details><summary>example java online</summary>
 
-[Live preview](https://www.online-java.com/hp3aP8K9bv)
+[online-java.com](https://www.online-java.com/hp3aP8K9bv)
 
 </details>
 
