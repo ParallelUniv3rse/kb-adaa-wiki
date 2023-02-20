@@ -55,6 +55,13 @@ https://client.example.org/backuri?salt=1gwqD9tGLtaWRRwU&encryptedData=m5XPrBzLd
 
 ## Decrypt response
 
+<details><summary>live example java</summary>
+
+[Live preview](https://www.online-java.com/hp3aP8K9bv)
+
+</details>
+
+
 <details><summary>example Java</summary>
 
 [Source code on Github](https://github.com/komercka/adaa-example-spring-boot/blob/b24d79543d987d71183620e48806fcb48722d52c/core/src/main/java/cz/kb/openbanking/adaa/example/springboot/core/decryption/impl/Aes256DecryptionServiceImpl.java#L29)
