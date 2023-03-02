@@ -60,6 +60,7 @@ eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJLb21lcsSNbsOtIEJhbmthIHMuci5vLiIsImlhdCI6MTU4MDg
 ```
 
 # Application Registration - OAuth2
+ 
 
 ```json
 {
@@ -94,11 +95,10 @@ ewoKICAiY2xpZW50TmFtZSI6ICJOZWpsZXDFocOtIHByb2R1a3QiLAogICJjbGllbnROYW1lRW4iOiAi
 
 ## Request
 
-ℹ️ This request put in your browser
+ℹ️ This request put in your browser 
 
 ```
-GET
-https://kb-openbanking-client-api- management.azurewebsites.net/saml/register?registrationRequest=ewogICAgImNsaWVudE5hbWUiOiAiRXh
+https://kb-openbanking-client-api-management.azurewebsites.net/saml/register?registrationRequest=ewogICAgImNsaWVudE5hbWUiOiAiRXh
 hbXBsZUNsaWVudCIsCiAgICAiY2xpZW50TmFtZUVuIjogIkV4YW1wbGVDbGllbnQiLAogICAgImFwcGxpY2F0aW9uVHlwZ
 SI6ICJ3ZWIiLAogICAgInJlZGlyZWN0VXJpcyI6IFsiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2siXSw
 KICAgICJzY29wZSI6IFsiYWRhYSJdLAogICAgImVuY3J5cHRpb25BbGciOiAiQUVTLTI1NiIsCiAgICAiZW5jcnlwdGlvb
