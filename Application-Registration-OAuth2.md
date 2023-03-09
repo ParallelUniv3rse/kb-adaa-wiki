@@ -1,5 +1,7 @@
 # Application Registration - OAuth2
 
+- encryptionKey - An AES 256-bit key can be expressed as a hexadecimal string with 64 characters. It will require 44 characters in base64.
+
 ```json
 {
   "clientName": "Nejlepší produkt",
@@ -60,7 +62,6 @@ https://client.example.org/backuri?salt=1gwqD9tGLtaWRRwU&encryptedData=m5XPrBzLd
 [online-java.com](https://www.online-java.com/hp3aP8K9bv)
 
 </details>
-
 
 <details><summary>example Java</summary>
 
