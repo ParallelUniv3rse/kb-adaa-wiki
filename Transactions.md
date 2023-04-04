@@ -7,7 +7,7 @@
 
 ## Request
 
-```
+```json
 curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/Zm9PTlRTeFppV3N3eERxOUVueEE2Y2xYUU5NbGg3NSthUktwUzhzcGE5MW42USs1cmlUbWZGNkM2aXp1MDROaE1sV2p5UDVlbEdxYWxFejRtdkNqQ1E9PQ/transactions?fromDate=2022-01-15&toDate=2022-03-05&size=20&page=0' \
 --header 'x-correlation-id: 6d745f4e-eb52-441a-a1e3-86f82619ab83' \
 --header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
