@@ -49,7 +49,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/Zm9PT
         "bankCode": "6210"
       },
       "references": {
-        "accountServicer": "120-20210222 T02AR0H7AB803",
+        "accountServicer": "311892adb7f2b601",
         "receiver": "PLATBA"
       },
       "additionalTransactionInformation": "Ach deposit"
@@ -80,7 +80,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/Zm9PT
         "name": "HM.COM"
       },
       "references": {
-        "accountServicer": "205-26022021 1086000939773",
+        "accountServicer": "81ea35a30bb7d013",
         "variable": "10128905",
         "constant": "1178",
         "specific": "102123001",
@@ -116,7 +116,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/Zm9PT
         "bankCode": "0800"
       },
       "references": {
-        "accountServicer": "OI00014M3AZ"
+        "accountServicer": "2a298af7ee51cdff"
       },
       "additionalTransactionInformation": "Force pay debit, OI00014M3AZ"
     }
