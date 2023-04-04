@@ -15,11 +15,11 @@ more details is on website [Direct Account Access API](https://www.kb.cz/en/kb-a
 ### Sandbox
 
 - Postman [Sandbox](./postman/KB%20API%20-%20Sandbox%20-%20Direct%20access%20to%20account%20.postman_collection.json) collection
-- Register on [Sandbox API Portal](https://openbanking.kbcloud.cz/)
+- Register on [Sandbox API Portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
 
 ### Production
 
--  Postman [Production](./postman/KB%20API%20-%20Production%20-%20Direct%20access%20to%20account.postman_collection.json) collection
+- Postman [Production](./postman/KB%20API%20-%20Production%20-%20Direct%20access%20to%20account.postman_collection.json) collection
 - Register on [production API portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
 
 ## How to start

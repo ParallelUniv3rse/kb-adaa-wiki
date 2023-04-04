@@ -15,7 +15,7 @@
 > - PostSignum
 
 ```js
-curl --location --request POST 'https://gw.kbcloud.cz/sandbox/oauth2-software-statements/v1/software-statements' \
+curl --location --request POST 'https://api.kb.cz/open/api/sandbox/client-registration/v2/software-statements' \
 --header 'x-correlation-id: 1ca9d990-14c0-4a98-b294-80fe8df0c8a5' \
 --header 'x-client-cert: valid-certificate' \
 --header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
@@ -60,7 +60,6 @@ eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJLb21lcsSNbsOtIEJhbmthIHMuci5vLiIsImlhdCI6MTU4MDg
 ```
 
 # Application Registration - OAuth2
- 
 
 ```json
 {
@@ -95,7 +94,7 @@ ewoKICAiY2xpZW50TmFtZSI6ICJOZWpsZXDFocOtIHByb2R1a3QiLAogICJjbGllbnROYW1lRW4iOiAi
 
 ## Request
 
-ℹ️ This request put in your browser 
+ℹ️ This request put in your browser
 
 ```
 https://kb-openbanking-client-api-management.azurewebsites.net/saml/register?registrationRequest=ewogICAgImNsaWVudE5hbWUiOiAiRXh
@@ -252,8 +251,8 @@ http://localhost:8888/?code=eyJ1c2VySWQiOiJLbGllbnQgMSIsInNjb3BlcyI6WyJhZGFhIl19
 
 ## Request
 
-```
-curl --location --request POST 'https://gw.kbcloud.cz/sandbox/oauth2/v1/access_token' \
+```json
+curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v1/access_token' \
 --header 'x-correlation-id: 75f2af05-17ce-467a-96b1-fdb86c07533c' \
 --header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -289,8 +288,8 @@ HTTP 200
 
 ## Request
 
-```
-curl --location --request POST 'https://gw.kbcloud.cz/sandbox/oauth2/v1/access_token' \
+```json
+curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v1' \
 --header 'x-correlation-id: 75f2af05-17ce-467a-96b1-fdb86c07533c' \
 --header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -317,7 +316,7 @@ curl --location --request POST 'https://gw.kbcloud.cz/sandbox/oauth2/v1/access_t
 ## Request
 
 ```
-curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/' \
+curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/' \
 --header 'x-correlation-id: 3d9d62ff-17cb-4107-bf5a-f9ce8d0dff9a' \
 --header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
 --header 'Content-Type: application/json' \
@@ -364,7 +363,7 @@ HTTP 200
 ## Request
 
 ```
-curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw/transactions?fromDate=2019-01-10&toDate=2019-10-10&page=0&size=20' \
+curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw/transactions?fromDate=2019-01-10&toDate=2019-10-10&page=0&size=20' \
 --header 'x-correlation-id: 1201cf3f-2fef-4515-b54c-bd2776253535' \
 --header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLQklEPXRlc3QiLCJhdWRpdFRyYWNraW5nSWQiOiJkNzQxMmZlNS1mZTczLTQ5NDUtYjc5Yy0wYmFmMDEyNzEyNWQiLCJpc3MiOiJodHRwczovL2xvZ2luLmtiLmN6L29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiI2YWNjNzYxZS1hODZlLTRkYjUtODU4YS1kZTBmZmIzNDIzNDEiLCJhdWQiOiIxMjM1NDYiLCJuYmYiOjE2Njg0Mjg0OTksInNjb3BlIjpbImFkYWEiXSwicmVhbG0iOiIvIiwiZXhwIjoxNjY4NDMyMDk5LCJpYXQiOjE2Njg0Mjg0OTksImV4cGlyZXNfaW4iOjM2MDAwMDAsImp0aSI6IjE2NGNmZWE4LTQ2MGYtNDBjYS1hMTRjLWJlNTZjNmY1YjBjNiJ9.-MYDD540bx4rCgFPVVd9FruDHuCrwkDmv5OqbDW7vjQ'
@@ -566,7 +565,7 @@ HTTP 200
 ## Request
 
 ```js
-curl --location --request POST 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw/transactions/event-subscriptions' \
+curl --location --request POST 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw/transactions/event-subscriptions' \
 --header 'x-correlation-id: 96249086-5899-4bb5-95ee-7a83f7aae4d1' \
 --header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
 --header 'Content-Type: application/json' \
@@ -593,7 +592,7 @@ curl --location --request POST 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q
 ## Request
 
 ```js
-curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw/transactions/event-subscriptions/6edba5aa-f3aa-431b-90e0-ed3e0ff1d3c6' \
+curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw/transactions/event-subscriptions/6edba5aa-f3aa-431b-90e0-ed3e0ff1d3c6' \
 --header 'x-correlation-id: 15218ba0-20c2-4574-b1a7-f5d63d7a31b3' \
 --header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNTcxODkwMTkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzMwMzIsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MzIxMiwiaWF0IjoxNjU1OTczMDMyLCJleHBpcmVzX2luIjoxODAsImp0aSI6Imd1bG43WDc2LW9qYkQwUXUwLUZCOGtsSk11QSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.YzGEJfML17F2zA9TWh1pHelLmTRYDAHxLdMcF5MD-IXSNM-zHuR_S32LVTu6o68Tubo5-Erk3OkzWvr_z70MAJ8taPdNW4aj9qGluF1tgqoD9nCBaVNJDToKEkVDsv2BZmkNFDe_qwqP2cXedYhFdgoRRuydQ3mzlUytwysQJwT8j83uCf_EVLJJA7wteSEUViloOM5fbEwEvsB4LZLPG2VTpqC3dXzfhOVFw2Y4f6o7G3RiGSBmYtt9_3WBb47vh0EM6jV3TjG5XUFfOXPGcV1_F6LqytsnGKa2QzmCcrnKkMhCH-grhZcy3XJ7AncaC2bKuLPJnP83ZfyazRVeQg'
@@ -616,7 +615,7 @@ curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1
 ## Request
 
 ```js
-curl --location --request DELETE 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/transactions/event-subscriptions/622f2380-abd7-43aa-9a20-1a32a80b726d' \
+curl --location --request DELETE 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/transactions/event-subscriptions/622f2380-abd7-43aa-9a20-1a32a80b726d' \
 --header 'x-correlation-id: 7640f544-7121-4805-96c6-a4879593cdc7' \
 --header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiIxYTAwMDU3ZS02YzJjLTRmZmYtODRlZS04ZDU1MzE5OTgzYTAtNTgxNDczNTYiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzMzNzAsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MzU1MCwiaWF0IjoxNjU1OTczMzcwLCJleHBpcmVzX2luIjoxODAsImp0aSI6IjR6dmhxQzRheWVkakw0WWxCc05aUm90MF9hRSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.nG4gliOMVWbadIAWChglg2yQcqNocgF5-z0ehNIE4Y--C63Wr4sonLpCPJPwvlm1Tb3z10HxN1TUwmvDUHvZwKiomAaa9MRzmr4-oJwc8cr_K1b3dB6FeN6r01WH6RHTLK0I-WAEONZR7kmaZP4jNPB_jVNR4Lx_6vVqNsoo2PApXzMx1DAFZQsNy5JIryGuN2GA6B9LF3XqpN6o-BpKnNn9Dsj8T0QiVK716ChSU1BM3l7MpCulfzRhEzhJB3as5GKE0z8RguBibKMw88oU8WT3jBeaHEQnRaGaKc0MrMnSoT2BlG42vekXqDEhu-42Of_Y7VKgsFbk8HolOztwHQ'
@@ -638,7 +637,7 @@ HTTP 204
 ## Request
 
 ```js
-curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/statements?dateFrom=2021-03-30T15:42:30.000Z' \
+curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/statements?dateFrom=2021-03-30T15:42:30.000Z' \
 --header 'x-correlation-id: 6491e392-e4ef-46a3-bd68-6b0696ab6cf3' \
 --header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNTcwMjgyNDkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzE2NjksImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MTg0OSwiaWF0IjoxNjU1OTcxNjY5LCJleHBpcmVzX2luIjoxODAsImp0aSI6IlhDOWdKcVJBVVBOdDVSbFZqUjVZME1UdlQyWSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.cLirxtAxy7bOao5sdXUBR118cHvasHoe_YMlWs51iR7Y-T4bwX6XbKWVlqeIqe62J4r17ZCsDvagScLjabGDji8zwkJvX8are9d3RouepVaza54whBtg6QS7ItE7IGiqlQCfod4Pz39Fa_0dmdI_nfrU_VST4l99jL4chFD5v0JOZ5tFBYiRcXl6Rc_msYX5DvGb40_PNPQVQgUlMm1j97qiSXfs_NTsk7o8uGw_bE6V1OlnpDDu3JjTgi2wbaOp6KPPYWIc9o2rdmUr4nMzaaU5JVEZkn4gD8Dojbcr9PhLyUaH7ACWWKguolK3WjFQj6ROI2nJ0tEF-hphnS8reA'
@@ -670,7 +669,7 @@ curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1
 ## Request
 
 ```js
-curl --location --request GET 'https://gw.kbcloud.cz/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/statements/325723851' \
+curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/statements/325723851' \
 --header 'x-correlation-id: becb6607-dcf1-4209-b125-0f12e9a68bd6' \
 --header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNDI1MzExODkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU3MjIzNjAsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTcyMjU0MCwiaWF0IjoxNjU1NzIyMzYwLCJleHBpcmVzX2luIjoxODAsImp0aSI6Ijl3emVDSUgwRXJ0TmF4UHJJdDVXSjdUTW51WSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.oeRegYbg656c_95OVNm9oUBjx9xIQV5Xuo9QJ4nQUaDNy4Zczr9rHjfsPx0Hevn1rITOcsCaPyQHBzkV3WGLzqJ_Pna3eqxF5Wga36BNQlYDGzgVF5X0tg5-7swUcH2WsOSuPR-qDtyGNODe3ZDk2WBrmZBmXJwaivvxlM14yNzP2KFi4Jp5zi2CrgfYUGUc-p2qvegNJFLEvqPP9RR0W_5lGdRJ9LoVpYDEHfOB7oZ4GPwBPoQuXxplmvVNoWP6khitGAKLCj8Rx-ikeiaJHZjhXV42rjE6UCMxkh1qRHBeRv9x6zPKo5WYrKlr542a0Itr0OYPc2LeOnr7F274Rg'
