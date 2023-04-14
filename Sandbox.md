@@ -15,10 +15,10 @@
 > - PostSignum
 
 ```js
-curl --location --request POST 'https://api.kb.cz/open/api/sandbox/client-registration/v2/software-statements' \
---header 'x-correlation-id: 1ca9d990-14c0-4a98-b294-80fe8df0c8a5' \
+curl --location 'https://api.kb.cz/open/api/sandbox/client-registration/v2/software-statements' \
+--header 'x-correlation-id: 779cadc3-e4d7-45b1-bdeb-dc77b902d0de' \
 --header 'x-client-cert: valid-certificate' \
---header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
+--header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "softwareName": "Nejlepší produkt",
@@ -27,7 +27,8 @@ curl --location --request POST 'https://api.kb.cz/open/api/sandbox/client-regist
   "softwareVersion": "1.0",
   "softwareUri": "https://client.example.org",
   "redirectUris": [
-    "http://localhost:8888/transactions"
+    "https://client.example.org/callback",
+    "https://client.example.org/callback-backup"
   ],
   "tokenEndpointAuthMethod": "client_secret_post",
   "grantTypes": [
@@ -56,7 +57,7 @@ HTTP 201
 >
 
 ```
-eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJLb21lcsSNbsOtIEJhbmthIHMuci5vLiIsImlhdCI6MTU4MDgyNDgxMCwiZXhwIjoxNTk2NTQ5NjEwLCJ2ZW5kb3JOYW1lIjoiQmxvazM3IHMuci5vLiIsInNvZnR3YXJlTmFtZSI6Ik5lamxlcMWhw60gcHJvZHVrdCIsInNvZnR3YXJlTmFtZUVuIjoiQmVzdCBwcm9kdWN0Iiwic29mdHdhcmVJZCI6IjI1YmY0MTFlLWZlZGEtNGE0OS1hYTlmLWRmNjgzNDgwMjY2NCIsInNvZnR3YXJlVmVyc2lvbiI6IjEuMCIsInNvZnR3YXJlVXJpIjoiaHR0cDovL3d3dy5zb2Z0LXdhcmUuY3oiLCJyZWRpcmVjdFVyaXMiOlsiaHR0cDovL2xvY2FsaG9zdDo4ODg4L3RyYW5zYWN0aW9ucyJdLCJ0b2tlbkVuZHBvaW50QXV0aE1ldGhvZCI6ImNsaWVudF9zZWNyZXRfcG9zdCIsImdyYW50VHlwZXMiOlsiYXV0aG9yaXphdGlvbl9jb2RlIl0sInJlc3BvbnNlVHlwZXMiOlsiY29kZSJdLCJyZWdpc3RyYXRpb25CYWNrVXJpIjoiaHR0cDovL3d3dy5zb3RmLXdhcmUuY3ovcmVnaXN0ZXIiLCJjb250YWN0cyI6WyJlbWFpbDogdGVzdEB0ZXN0Lm9yZyJdLCJsb2dvVXJpIjoiaHR0cDovL3d3dy5zb3RmLXdhcmUuY3ovbG9nby5wbmciLCJ0b3NVcmkiOiJodHRwOi8vd3d3LnNvdGYtd2FyZS5jei90b3MiLCJwb2xpY3lVcmkiOiJodHRwOi8vd3d3LnNvdGYtd2FyZS5jei9wb2xpY3kifQ.EMz31yCDaiTNJTI6xQY9d4sHi8aNviuLDXtMdQsl1-dPj3i59UR5d58W8YuWUVPflI79OrXBqFNElqCe6MqPB9I0V89hUrVnOEtsq3XEvPzIaedpVTQ8JOnedmrQi2DEYIXsdo-wuUi9YWRKr-1yfeIOv0NTa_CKjHusS5DH9rb9GoMQro8zEKfaeMBRKh2x1j6kIALhn8_9XpqkAoTnBt9EJ2ek0rKuf4mBXHaLylBUDctqdCuGOg_QPI-oPllR6CKtGkfoAhgBrXQ3zwaXdWwBc24lQ63RARRcvPibtSlaFqfSnQ8bSJ_0_fW3gitlLIyyRj8MPrbZeadsAcnKzA
+eyJhbGciOiJIUzI1NiJ9.eyJ2ZW5kb3JOYW1lIjoiQ29tcGFueSBhLnMuIiwic29mdHdhcmVOYW1lIjoiTmVqbGVwxaHDrSBwcm9kdWt0Iiwic29mdHdhcmVOYW1lRW4iOiJCZXN0IHByb2R1Y3QiLCJzb2Z0d2FyZUlkIjoiZjY0YmYyZTQ0N2U1NDUyMjhjNzhlMDdiMDgxYTgyZWUiLCJzb2Z0d2FyZVZlcnNpb24iOiIxLjAiLCJzb2Z0d2FyZVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnIiwicmVkaXJlY3RVcmlzIjpbImh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL2NhbGxiYWNrIiwiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2stYmFja3VwIl0sInRva2VuRW5kcG9pbnRBdXRoTWV0aG9kIjoiY2xpZW50X3NlY3JldF9wb3N0IiwiZ3JhbnRUeXBlcyI6WyJhdXRob3JpemF0aW9uX2NvZGUiXSwicmVzcG9uc2VUeXBlcyI6WyJjb2RlIl0sInJlZ2lzdHJhdGlvbkJhY2tVcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9iYWNrdXJpIiwiY29udGFjdHMiOlsiZW1haWw6IGV4YW1wbGVAZ29vZHNvZnQuY29tIl0sImxvZ29VcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9sb2dvLnBuZyIsInRvc1VyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3RvcyIsInBvbGljeVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3BvbGljeSJ9.Fw11ePNty7aimkm3yBYMoK5L-8Blpec4CafNJ-giC4g
 ```
 
 # Application Registration - OAuth2
@@ -68,7 +69,7 @@ eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJLb21lcsSNbsOtIEJhbmthIHMuci5vLiIsImlhdCI6MTU4MDg
   "applicationType": "web",
   "redirectUris": ["http://localhost:8888/transactions"],
   "scope": ["adaa"],
-  "softwareStatement": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJLb21lcsSNbsOtIEJhbmthIHMuci5vLiIsImlhdCI6MTU4MDgyNDgxMCwiZXhwIjoxNTk2NTQ5NjEwLCJ2ZW5kb3JOYW1lIjoiQmxvazM3IHMuci5vLiIsInNvZnR3YXJlTmFtZSI6Ik5lamxlcMWhw60gcHJvZHVrdCIsInNvZnR3YXJlTmFtZUVuIjoiQmVzdCBwcm9kdWN0Iiwic29mdHdhcmVJZCI6IjI1YmY0MTFlLWZlZGEtNGE0OS1hYTlmLWRmNjgzNDgwMjY2NCIsInNvZnR3YXJlVmVyc2lvbiI6IjEuMCIsInNvZnR3YXJlVXJpIjoiaHR0cDovL3d3dy5zb2Z0LXdhcmUuY3oiLCJyZWRpcmVjdFVyaXMiOlsiaHR0cDovL2xvY2FsaG9zdDo4ODg4L3RyYW5zYWN0aW9ucyJdLCJ0b2tlbkVuZHBvaW50QXV0aE1ldGhvZCI6ImNsaWVudF9zZWNyZXRfcG9zdCIsImdyYW50VHlwZXMiOlsiYXV0aG9yaXphdGlvbl9jb2RlIl0sInJlc3BvbnNlVHlwZXMiOlsiY29kZSJdLCJyZWdpc3RyYXRpb25CYWNrVXJpIjoiaHR0cDovL3d3dy5zb3RmLXdhcmUuY3ovcmVnaXN0ZXIiLCJjb250YWN0cyI6WyJlbWFpbDogdGVzdEB0ZXN0Lm9yZyJdLCJsb2dvVXJpIjoiaHR0cDovL3d3dy5zb3RmLXdhcmUuY3ovbG9nby5wbmciLCJ0b3NVcmkiOiJodHRwOi8vd3d3LnNvdGYtd2FyZS5jei90b3MiLCJwb2xpY3lVcmkiOiJodHRwOi8vd3d3LnNvdGYtd2FyZS5jei9wb2xpY3kifQ.EMz31yCDaiTNJTI6xQY9d4sHi8aNviuLDXtMdQsl1-dPj3i59UR5d58W8YuWUVPflI79OrXBqFNElqCe6MqPB9I0V89hUrVnOEtsq3XEvPzIaedpVTQ8JOnedmrQi2DEYIXsdo-wuUi9YWRKr-1yfeIOv0NTa_CKjHusS5DH9rb9GoMQro8zEKfaeMBRKh2x1j6kIALhn8_9XpqkAoTnBt9EJ2ek0rKuf4mBXHaLylBUDctqdCuGOg_QPI-oPllR6CKtGkfoAhgBrXQ3zwaXdWwBc24lQ63RARRcvPibtSlaFqfSnQ8bSJ_0_fW3gitlLIyyRj8MPrbZeadsAcnKzA",
+  "softwareStatement": "eyJhbGciOiJIUzI1NiJ9.eyJ2ZW5kb3JOYW1lIjoiQ29tcGFueSBhLnMuIiwic29mdHdhcmVOYW1lIjoiTmVqbGVwxaHDrSBwcm9kdWt0Iiwic29mdHdhcmVOYW1lRW4iOiJCZXN0IHByb2R1Y3QiLCJzb2Z0d2FyZUlkIjoiZjY0YmYyZTQ0N2U1NDUyMjhjNzhlMDdiMDgxYTgyZWUiLCJzb2Z0d2FyZVZlcnNpb24iOiIxLjAiLCJzb2Z0d2FyZVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnIiwicmVkaXJlY3RVcmlzIjpbImh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL2NhbGxiYWNrIiwiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2stYmFja3VwIl0sInRva2VuRW5kcG9pbnRBdXRoTWV0aG9kIjoiY2xpZW50X3NlY3JldF9wb3N0IiwiZ3JhbnRUeXBlcyI6WyJhdXRob3JpemF0aW9uX2NvZGUiXSwicmVzcG9uc2VUeXBlcyI6WyJjb2RlIl0sInJlZ2lzdHJhdGlvbkJhY2tVcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9iYWNrdXJpIiwiY29udGFjdHMiOlsiZW1haWw6IGV4YW1wbGVAZ29vZHNvZnQuY29tIl0sImxvZ29VcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9sb2dvLnBuZyIsInRvc1VyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3RvcyIsInBvbGljeVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3BvbGljeSJ9.Fw11ePNty7aimkm3yBYMoK5L-8Blpec4CafNJ-giC4g",
   "encryptionAlg": "AES-256",
   "encryptionKey": "MnM1djh5L0I/RShIK01iUWVUaFdtWnEzdDZ3OXokQyY="
 }
@@ -94,10 +95,10 @@ ewoKICAiY2xpZW50TmFtZSI6ICJOZWpsZXDFocOtIHByb2R1a3QiLAogICJjbGllbnROYW1lRW4iOiAi
 
 ## Request
 
-ℹ️ This request put in your browser
+ℹ️ This request put in your browser and fill value "client1"
 
-```
-https://kb-openbanking-client-api-management.azurewebsites.net/saml/register?registrationRequest=ewogICAgImNsaWVudE5hbWUiOiAiRXh
+```js
+https://api.kb.cz/open/api/sandbox/client-registration-ui/v1/saml/register?registrationRequest=ewogICAgImNsaWVudE5hbWUiOiAiRXh
 hbXBsZUNsaWVudCIsCiAgICAiY2xpZW50TmFtZUVuIjogIkV4YW1wbGVDbGllbnQiLAogICAgImFwcGxpY2F0aW9uVHlwZ
 SI6ICJ3ZWIiLAogICAgInJlZGlyZWN0VXJpcyI6IFsiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2siXSw
 KICAgICJzY29wZSI6IFsiYWRhYSJdLAogICAgImVuY3J5cHRpb25BbGciOiAiQUVTLTI1NiIsCiAgICAiZW5jcnlwdGlvb
@@ -133,16 +134,16 @@ tT3ciCn0=&state=client123
 
 ```
 HTTP 302 Found
-https://client.example.org/callback?salt=rrU94Nc3Z6gPBQV3&encryptedData=WR- euAw6XHge5iEPKjE66YTOOSuHir57kkI3Fb6FCE3OVIPBz9Kdcck5li6xaAUJQdy7Ih90v_LuHn7nHiGhHvgsh3Dj8wYKs
-mFS2PG4x73UD7843SIc5apwUhHEE_uR9iS9EB3CvwPty4y4YyniTTlJ5WSlyYg2DqXVbo3fi3lXArQG- pptuaMdbFj3uftXTdvdpWJZ5JJBNXizGg48YQYgUerajl9gx717Aki1ZsvNGw_IYC8oEMEFEfk- Rn2UToJ5pmuPgpdwGcCaF5z7_kxyknDVsr2p6ue4ypTqJheGdMIcXKQ- Vs2iq55AWR61k8TttvruPq4LfTbPk60xZX0xuveJG9kHvLu7k5WKDXcS- VX_SwFXYHrxFaa0DDOONT8rSmozQso_gB5rtR4Jlb2dbhvUg7pUG2nZMs8BSmOX_ry2dug7t8XYxxE9pdfTZb4KWzLzOh-
-MeDB-NcWRSg8fG4AXZV41sDLXlGVbGms5nwxOky5phvr8i2Ks-vx75OCBC6MCpL0d1sHI-8CSX- PEd7NzMiIbLuAWU0hAf461HlIqGJNdr9oFovpq7EZxy1bJyLXFhYTVP8rWjQZYixckEHhY7ElSiziJjLd3to8EqiAvWuzv
-2qEdzn_cmKYXWIWVT4L2AAswhmtHw_2G0tGvW-YXv5K_- ZMl8WGSECaw4v6CbyA8VerEiL0GOAaZSfdxzNez3mvsljs0rmH0KBU-pQWbY6MnNdxfXOuK_PeLQ01taU- 1UVyr3t41aRNmBPk6pAlqFXGu3Z_rlvJjwGs6OT1OHQTi6OAeMVUQN5oPhCPHNZdkQ3LsxnMzaQ7WXqxNY2riC150ad0Wy
-1od1gKZuVToMLPAY6hu0fDxseZvKn64bGbRZ2ZUrd-
-cZ_ihDKm6pADwfg0Nv69O5SctWMYBeakihAIvIWb8083aySxhRlJ8tdPsgy3RB3PvpULA-- JWmBiXtIBtHmg80TdMYYwxPOa319xblONIqAOSGnMW7QMlwfbmROsCNP9mSfgINkZKzRUWVyaJnPOJmAMMHya3AxGsK9ZD
-5zjZFaFcMThyWlTGCnOY5c5FtgBiuYbbiIBp0O9JDBIlI3NS4Q71e3uv3Wc6ipUZSzkaeGBXMt- yOS_56Gd3yrz7_Vgf5yHyVgGAKAyWnD7cIFvShts_bbT3oZzoS_ZxWSSucreTfjpQ0TXM7kXn&state=client123
+https://client.example.org/callback?salt=rrU94Nc3Z6gPBQV3&encryptedData=WR-euAw6XHge5iEPKjE66YTOOSuHir57kkI3Fb6FCE3OVIPBz9Kdcck5li6xaAUJQdy7Ih90v_LuHn7nHiGhHvgsh3Dj8wYKsmFS2PG4x73UD7843SIc5apwUhHEE_uR9iS9EB3CvwPty4y4YyniTTlJ5WSlyYg2DqXVbo3fi3lXArQG-pptuaMdbFj3uftXTdvdpWJZ5JJBNXizGg48YQYgUerajl9gx717Aki1ZsvNGw_IYC8oEMEFEfk-Rn2UToJ5pmuPgpdwGcCaF5z7_kxyknDVsr2p6ue4ypTqJheGdMIcXKQ-Vs2iq55AWR61k8TttvruPq4LfTbPk60xZX0xuveJG9kHvLu7k5WKDXcS-VX_SwFXYHrxFaa0DDOONT8rSmozQso_gB5rtR4Jlb2dbhvUg7pUG2nZMs8BSmOX_ry2dug7t8XYxxE9pdfTZb4KWzLzOh-MeDB-NcWRSg8fG4AXZV41sDLXlGVbGms5nwxOky5phvr8i2Ks-vx75OCBC6MCpL0d1sHI-8CSX-PEd7NzMiIbLuAWU0hAf461HlIqGJNdr9oFovpq7EZxy1bJyLXFhYTVP8rWjQZYixckEHhY7ElSiziJjLd3to8EqiAvWuzv2qEdzn_cmKYXWIWVT4L2AAswhmtHw_2G0tGvW-YXv5K_-ZMl8WGSECaw4v6CbyA8VerEiL0GOAaZSfdxzNez3mvsljs0rmH0KBU-pQWbY6MnNdxfXOuK_PeLQ01taU-1UVyr3t41aRNmBPk6pAlqFXGu3Z_rlvJjwGs6OT1OHQTi6OAeMVUQN5oPhCPHNZdkQ3LsxnMzaQ7WXqxNY2riC150ad0Wy1od1gKZuVToMLPAY6hu0fDxseZvKn64bGbRZ2ZUrd-cZ_ihDKm6pADwfg0Nv69O5SctWMYBeakihAIvIWb8083aySxhRlJ8tdPsgy3RB3PvpULA--JWmBiXtIBtHmg80TdMYYwxPOa319xblONIqAOSGnMW7QMlwfbmROsCNP9mSfgINkZKzRUWVyaJnPOJmAMMHya3AxGsK9ZD5zjZFaFcMThyWlTGCnOY5c5FtgBiuYbbiIBp0O9JDBIlI3NS4Q71e3uv3Wc6ipUZSzkaeGBXMt-yOS_56Gd3yrz7_Vgf5yHyVgGAKAyWnD7cIFvShts_bbT3oZzoS_ZxWSSucreTfjpQ0TXM7kXn
 ```
 
 ## Decrypt response
+
+<details><summary>example java online</summary>
+
+[online-java.com](https://www.online-java.com/hp3aP8K9bv)
+
+</details>
 
 <details><summary>example Java</summary>
 
@@ -204,16 +205,23 @@ echo "plaintext:\n$plaintext";
 
 ```json
 {
-{
-  "application_type": "web", "redirect_uris": [
-  "https://client.example.org/callback-backup",
-  "https://client.example.org/callback" ], "client_name": "ExampleClient", "client_name#en-US": "ExampleClient", "logo_uri": "https://client.example.org/logo.png", "policy_uri": "https://client.example.org/policy", "tos_uri": "https://client.example.org/tos", "contact": "example@example.com",
-  "contacts": [ "example@example.com" ],
-  "scopes": [ "adaa" ],
-  "scope": "adaa", "response_types": [
-  "code" ], "response_type": "code", "grant_types": [
-  "refresh_token",
-  "authorization_code" ],
+  "application_type": "web",
+  "redirect_uris": [
+    "https://client.example.org/callback-backup",
+    "https://client.example.org/callback"
+  ],
+  "client_name": "ExampleClient",
+  "client_name#en-US": "ExampleClient",
+  "logo_uri": "https://client.example.org/logo.png",
+  "policy_uri": "https://client.example.org/policy",
+  "tos_uri": "https://client.example.org/tos",
+  "contact": "example@example.com",
+  "contacts": ["example@example.com"],
+  "scopes": ["adaa"],
+  "scope": "adaa",
+  "response_types": ["code"],
+  "response_type": "code",
+  "grant_types": ["refresh_token", "authorization_code"],
   "subject_type": "public",
   "token_endpoint_auth_method": "client_secret_basic",
   "require_auth_time": false,
@@ -221,7 +229,8 @@ echo "plaintext:\n$plaintext";
   "client_id": "ExampleClient-6303",
   "client_secret": "bUfDQ1fMmfaSlZBZXlxBOQ",
   "api_key": "NOT_PROVIDED",
-  "registration_client_uri": "https://caas.kb.cz/openam/json/caas/api/oauth2/register/ExampleClient-6303", "client_id_issued_at": 1649407196}
+  "registration_client_uri": "https://caas.kb.cz/openam/json/caas/api/oauth2/register/ExampleClient-6303",
+  "client_id_issued_at": 1649407196
 }
 ```
 
@@ -232,16 +241,16 @@ echo "plaintext:\n$plaintext";
 
 ## Requests
 
-```
+```js
 GET
-https://kb-openbanking-oauth2.azurewebsites.net/?response_type=code&client_id=Mekkezbozi-6533&redirect_uri=http://localhost:8888/&scope=adaa&state=xyz
+https://api.kb.cz/open/api/sandbox/oauth2-authorization-ui/v2/?response_type=code&client_id=ExampleClient-6303&redirect_uri=http://localhost:8888/&scope=adaa%20card_data%20bpisp&state=xyz
 ```
 
 ## Response
 
 ```
 HTTP 302 Found
-http://localhost:8888/?code=eyJ1c2VySWQiOiJLbGllbnQgMSIsInNjb3BlcyI6WyJhZGFhIl19&state=xyz
+https://localhost:8888/?code=eyJ1c2VySWQiOiJLbGllbnQgMSIsInNjb3BlcyI6WyJhZGFhIl19&state=xyz
 ```
 
 # Refresh token
@@ -251,16 +260,16 @@ http://localhost:8888/?code=eyJ1c2VySWQiOiJLbGllbnQgMSIsInNjb3BlcyI6WyJhZGFhIl19
 
 ## Request
 
-```json
-curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v1/access_token' \
---header 'x-correlation-id: 75f2af05-17ce-467a-96b1-fdb86c07533c' \
---header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
+```js
+curl --location 'https://api.kb.cz/open/api/sandbox/oauth2/v2/access_token' \
+--header 'x-correlation-id: e84358a9-0796-4d91-b440-8fbcb7719a68' \
+--header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=authorization_code' \
---data-urlencode 'redirect_uri=www.kb.cz' \
---data-urlencode 'code=eyJ1c2VySWQiOiJLbGllbnQgMSIsInNjb3BlcyI6WyJhZGFhIl19' \
---data-urlencode 'client_id=client1' \
---data-urlencode 'client_secret=password'
+--data-urlencode 'redirect_uri=https://localhost:8888' \
+--data-urlencode 'code=eyJ1c2VySWQiOiJ0ZXN0Iiwic2NvcGVzIjpbImFkYWEiXX0' \
+--data-urlencode 'client_id=ExampleClient-6303' \
+--data-urlencode 'client_secret=bUfDQ1fMmfaSlZBZXlxBOQ'
 ```
 
 ## Response
@@ -289,9 +298,9 @@ HTTP 200
 ## Request
 
 ```json
-curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v1' \
+curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v2' \
 --header 'x-correlation-id: 75f2af05-17ce-467a-96b1-fdb86c07533c' \
---header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
+--header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=authorization_code' \
 --data-urlencode 'redirect_uri=www.kb.cz' \
@@ -318,7 +327,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v1' \
 ```
 curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/' \
 --header 'x-correlation-id: 3d9d62ff-17cb-4107-bf5a-f9ce8d0dff9a' \
---header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
+--header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLQklEPXRlc3QiLCJhdWRpdFRyYWNraW5nSWQiOiJkNzQxMmZlNS1mZTczLTQ5NDUtYjc5Yy0wYmFmMDEyNzEyNWQiLCJpc3MiOiJodHRwczovL2xvZ2luLmtiLmN6L29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiI2YWNjNzYxZS1hODZlLTRkYjUtODU4YS1kZTBmZmIzNDIzNDEiLCJhdWQiOiIxMjM1NDYiLCJuYmYiOjE2Njg0Mjg0OTksInNjb3BlIjpbImFkYWEiXSwicmVhbG0iOiIvIiwiZXhwIjoxNjY4NDMyMDk5LCJpYXQiOjE2Njg0Mjg0OTksImV4cGlyZXNfaW4iOjM2MDAwMDAsImp0aSI6IjE2NGNmZWE4LTQ2MGYtNDBjYS1hMTRjLWJlNTZjNmY1YjBjNiJ9.-MYDD540bx4rCgFPVVd9FruDHuCrwkDmv5OqbDW7vjQ' \
 --data-raw ''
@@ -594,7 +603,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/sandbox/adaa/v1/accou
 ```js
 curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw/transactions/event-subscriptions/6edba5aa-f3aa-431b-90e0-ed3e0ff1d3c6' \
 --header 'x-correlation-id: 15218ba0-20c2-4574-b1a7-f5d63d7a31b3' \
---header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNTcxODkwMTkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzMwMzIsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MzIxMiwiaWF0IjoxNjU1OTczMDMyLCJleHBpcmVzX2luIjoxODAsImp0aSI6Imd1bG43WDc2LW9qYkQwUXUwLUZCOGtsSk11QSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.YzGEJfML17F2zA9TWh1pHelLmTRYDAHxLdMcF5MD-IXSNM-zHuR_S32LVTu6o68Tubo5-Erk3OkzWvr_z70MAJ8taPdNW4aj9qGluF1tgqoD9nCBaVNJDToKEkVDsv2BZmkNFDe_qwqP2cXedYhFdgoRRuydQ3mzlUytwysQJwT8j83uCf_EVLJJA7wteSEUViloOM5fbEwEvsB4LZLPG2VTpqC3dXzfhOVFw2Y4f6o7G3RiGSBmYtt9_3WBb47vh0EM6jV3TjG5XUFfOXPGcV1_F6LqytsnGKa2QzmCcrnKkMhCH-grhZcy3XJ7AncaC2bKuLPJnP83ZfyazRVeQg'
 ```
 
@@ -617,7 +626,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accoun
 ```js
 curl --location --request DELETE 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/transactions/event-subscriptions/622f2380-abd7-43aa-9a20-1a32a80b726d' \
 --header 'x-correlation-id: 7640f544-7121-4805-96c6-a4879593cdc7' \
---header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiIxYTAwMDU3ZS02YzJjLTRmZmYtODRlZS04ZDU1MzE5OTgzYTAtNTgxNDczNTYiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzMzNzAsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MzU1MCwiaWF0IjoxNjU1OTczMzcwLCJleHBpcmVzX2luIjoxODAsImp0aSI6IjR6dmhxQzRheWVkakw0WWxCc05aUm90MF9hRSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.nG4gliOMVWbadIAWChglg2yQcqNocgF5-z0ehNIE4Y--C63Wr4sonLpCPJPwvlm1Tb3z10HxN1TUwmvDUHvZwKiomAaa9MRzmr4-oJwc8cr_K1b3dB6FeN6r01WH6RHTLK0I-WAEONZR7kmaZP4jNPB_jVNR4Lx_6vVqNsoo2PApXzMx1DAFZQsNy5JIryGuN2GA6B9LF3XqpN6o-BpKnNn9Dsj8T0QiVK716ChSU1BM3l7MpCulfzRhEzhJB3as5GKE0z8RguBibKMw88oU8WT3jBeaHEQnRaGaKc0MrMnSoT2BlG42vekXqDEhu-42Of_Y7VKgsFbk8HolOztwHQ'
 ```
 
@@ -639,7 +648,7 @@ HTTP 204
 ```js
 curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/statements?dateFrom=2021-03-30T15:42:30.000Z' \
 --header 'x-correlation-id: 6491e392-e4ef-46a3-bd68-6b0696ab6cf3' \
---header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNTcwMjgyNDkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzE2NjksImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MTg0OSwiaWF0IjoxNjU1OTcxNjY5LCJleHBpcmVzX2luIjoxODAsImp0aSI6IlhDOWdKcVJBVVBOdDVSbFZqUjVZME1UdlQyWSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.cLirxtAxy7bOao5sdXUBR118cHvasHoe_YMlWs51iR7Y-T4bwX6XbKWVlqeIqe62J4r17ZCsDvagScLjabGDji8zwkJvX8are9d3RouepVaza54whBtg6QS7ItE7IGiqlQCfod4Pz39Fa_0dmdI_nfrU_VST4l99jL4chFD5v0JOZ5tFBYiRcXl6Rc_msYX5DvGb40_PNPQVQgUlMm1j97qiSXfs_NTsk7o8uGw_bE6V1OlnpDDu3JjTgi2wbaOp6KPPYWIc9o2rdmUr4nMzaaU5JVEZkn4gD8Dojbcr9PhLyUaH7ACWWKguolK3WjFQj6ROI2nJ0tEF-hphnS8reA'
 ```
 
@@ -671,7 +680,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accoun
 ```js
 curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/statements/325723851' \
 --header 'x-correlation-id: becb6607-dcf1-4209-b125-0f12e9a68bd6' \
---header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNDI1MzExODkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU3MjIzNjAsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTcyMjU0MCwiaWF0IjoxNjU1NzIyMzYwLCJleHBpcmVzX2luIjoxODAsImp0aSI6Ijl3emVDSUgwRXJ0TmF4UHJJdDVXSjdUTW51WSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.oeRegYbg656c_95OVNm9oUBjx9xIQV5Xuo9QJ4nQUaDNy4Zczr9rHjfsPx0Hevn1rITOcsCaPyQHBzkV3WGLzqJ_Pna3eqxF5Wga36BNQlYDGzgVF5X0tg5-7swUcH2WsOSuPR-qDtyGNODe3ZDk2WBrmZBmXJwaivvxlM14yNzP2KFi4Jp5zi2CrgfYUGUc-p2qvegNJFLEvqPP9RR0W_5lGdRJ9LoVpYDEHfOB7oZ4GPwBPoQuXxplmvVNoWP6khitGAKLCj8Rx-ikeiaJHZjhXV42rjE6UCMxkh1qRHBeRv9x6zPKo5WYrKlr542a0Itr0OYPc2LeOnr7F274Rg'
 ```
 
