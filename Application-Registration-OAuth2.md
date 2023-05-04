@@ -119,6 +119,52 @@ echo "plaintext:\n$plaintext";
 
 </details>
 
+<details><summary>example Python using pycryptodome library</summary>
+
+```python
+from Crypto.Cipher import AES
+import base64
+
+# JSON property encryptionKey of registrationRequest, base64 encoded
+KEY = ENCRYPTION_KEY = "MnM1djh5L0I/RShIK01iUWVUaFdtWnEzdDZ3OXokQyY="
+# GET parameter salt, base64url encoded
+INITIALIZATION_VECTOR = SALT = "u1W5ABqw9YEcTLgq"
+# GET parameter encryptedData, base64url encoded
+CIPHERTEXT = ENCRYPTED_DATA = "h_tAxLwOi41acN4aYy5DOCRnO5bEgENYW_KtwhLPQqZekRbRUoy7jpOShel03we4vovUtfUBCA3VgKyO1lNUFD68844JmGwIEJAp_M2hGhg1qdKbrvuM3CBObxb64ohqcCdyeNuUNRhCnIk5STEI3sju05WoOzImtucH6ftIbf3uVxKoyCQEbadFbEulyGLEqe4sCXkYBMHVShGRWkKBKKuVrc0RWTVcUZqszOOdz1ozBBxHaBrER_eOuJa3uDkvBhGSnpJWf_GD0G9qUH46zjXEo6ZbQUVgrA3OZLAlaOjazpRsKkDPMqIU3JTyB8sVb6pT1gryLo6SbvG9cQhten70X_v3cY75s8-6KBMwi7e9Y28-rC264DQyNKUh30zh2nqs-SzQUL9-QWIttXx4mRNNydhnDOCEb8Hij0fWZogLK_CcmOVx6jtoSuac9LCqN_Wr5rA1uKfDrhDB60AvWY7bFIbKOA3n6jYefsPkSFCXJ2teP3UyODAofWrlWZMMDY1X7qQ3QtJ5qeCRxR4WFIdhW8RdWLE6scY9AUVAmh8zCKb7xrstX7WcgBXW1_xSQkOpWdvl3wLoi9-bMMj4sWp04iP_pET4Md6n-rTGxEJ3WN4z6Y4ebDc0C7CZqq2YbPXmJeKJg5C2xbIcIOgTCqtkYXXQltl0XdX-HpUujjrf5WLEguOenARWCqBqNPWKK37f-vnic8qxMbMWOXdGnClEtv5wpHd_UzVmQ3ynNsyHUz1mldN3WiwZycZRjEGgpq7TvmKWEmTuNBmubPeGR2QyF0nmKzSuIXtC5ID4EFGDQCfYtMPUvVaekUlKvi_X7anSaQgkXr13EDJ2XxpDRdeZ79KuNil0ySo2icIvkADpgGhdileyOhXbV9g553HnUWFm0hQ5IUlYMKwn05WuO-4wFyl63iQ76nO1w2kWJTEIxh0EiTPF6dugCtZq7ct_OHhpAug2GJzlAHqShVuvgUIDyj2H-Igh1d87EqSOVlP1--z30ikGgiueAIAkjAb3"
+
+
+def decrypt_aes256gcm(ciphertext_bytes, initialization_vector_bytes, key_bytes, tag_length=16):
+    """Decrypts ciphertext encrypted with standard java.base.javax.crypto.Cipher transformation AES/GCM/NoPadding into plaintext.
+
+    Assumes that authentication tag is appended to the ciphertext as documented in the link below.
+    https://docs.oracle.com/en/java/javase/11/docs/api/java.base/javax/crypto/Cipher.html
+
+    Parameters:
+      ciphertext_bytes (bytes): The ciphertext as binary data.
+      initialization_vector_bytes (bytes): The initialization vector as binary data.
+      key_bytes (bytes): The key as binary data.
+      tag_length (int): The length of authentication tag. (default 16)
+    Returns:
+      plaintext (bytes): Binary data of the decrypted ciphertext.
+    """
+    # separate data from authentication tag
+    data_bytes = ciphertext_bytes[:-tag_length]
+    # separate authentication tag from data
+    tag_bytes = ciphertext_bytes[-tag_length:]
+
+    cipher = AES.new(key_bytes, AES.MODE_GCM, initialization_vector_bytes)
+    return cipher.decrypt_and_verify(data_bytes, tag_bytes)
+
+
+plaintext_bytes = decrypt_aes256gcm(base64.urlsafe_b64decode(CIPHERTEXT), 
+                                    base64.urlsafe_b64decode(INITIALIZATION_VECTOR),
+                                    base64.b64decode(KEY))
+print("plaintext:\n" + plaintext_bytes.decode("utf-8"))
+
+```
+
+</details>
+
 ### Decrypted data
 
 ```json
