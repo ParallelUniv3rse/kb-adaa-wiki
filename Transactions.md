@@ -1,5 +1,8 @@
 # Transaction history
 
+- returns data normally for up to 2 years
+- if you don't fill in the fromDate and toDate parameters, the transaction history is returned only for 90 days from today.
+
 > **Limits**
 >
 > - time limit to start download next page is 10 sec
