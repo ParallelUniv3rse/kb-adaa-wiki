@@ -325,7 +325,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v2' \
 ## Request
 
 ```
-curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/' \
+curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts' \
 --header 'x-correlation-id: 3d9d62ff-17cb-4107-bf5a-f9ce8d0dff9a' \
 --header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Content-Type: application/json' \
