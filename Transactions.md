@@ -2,6 +2,8 @@
 
 - returns data normally for up to 2 years
 - if you don't fill in the fromDate and toDate parameters, the transaction history is returned only for 90 days from today.
+- use the accountServicer attribute as a unique payment identifier. This will provide you with a connection in the payment lifecycle
+
 
 > **Limits**
 >
