@@ -1,5 +1,7 @@
 # Subscribe notification
 
+If you want to receive information about payments made on your account using this API.
+
 ## Request
 
 ```js
