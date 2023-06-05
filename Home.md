@@ -24,6 +24,8 @@ more details is on website [Direct Account Access API](https://www.kb.cz/en/kb-a
 
 ## How to start
 
+![Process flow](./img/flow.min.png)
+
 ### Register your application
 
 1. [Software Statement](./Software-Statements)
