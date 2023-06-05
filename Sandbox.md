@@ -1,6 +1,6 @@
 # How does it work?
 
-![Process flow](./img/flow.min.png.png)
+![Process flow](./img/flow.min.png)
 
 # Software Statements
 
