@@ -1,3 +1,7 @@
+# How does it work?
+
+![Process flow](./img/flow.png)
+
 # Software Statements
 
 > **JWT tokens validity**
@@ -56,7 +60,7 @@ HTTP 201
 
 >
 
-```
+```text
 eyJhbGciOiJIUzI1NiJ9.eyJ2ZW5kb3JOYW1lIjoiQ29tcGFueSBhLnMuIiwic29mdHdhcmVOYW1lIjoiTmVqbGVwxaHDrSBwcm9kdWt0Iiwic29mdHdhcmVOYW1lRW4iOiJCZXN0IHByb2R1Y3QiLCJzb2Z0d2FyZUlkIjoiZjY0YmYyZTQ0N2U1NDUyMjhjNzhlMDdiMDgxYTgyZWUiLCJzb2Z0d2FyZVZlcnNpb24iOiIxLjAiLCJzb2Z0d2FyZVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnIiwicmVkaXJlY3RVcmlzIjpbImh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL2NhbGxiYWNrIiwiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2stYmFja3VwIl0sInRva2VuRW5kcG9pbnRBdXRoTWV0aG9kIjoiY2xpZW50X3NlY3JldF9wb3N0IiwiZ3JhbnRUeXBlcyI6WyJhdXRob3JpemF0aW9uX2NvZGUiXSwicmVzcG9uc2VUeXBlcyI6WyJjb2RlIl0sInJlZ2lzdHJhdGlvbkJhY2tVcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9iYWNrdXJpIiwiY29udGFjdHMiOlsiZW1haWw6IGV4YW1wbGVAZ29vZHNvZnQuY29tIl0sImxvZ29VcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9sb2dvLnBuZyIsInRvc1VyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3RvcyIsInBvbGljeVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3BvbGljeSJ9.Fw11ePNty7aimkm3yBYMoK5L-8Blpec4CafNJ-giC4g
 ```
 
@@ -132,7 +136,7 @@ tT3ciCn0=&state=client123
 
 ## Response
 
-```
+```text
 HTTP 302 Found
 https://client.example.org/callback?salt=rrU94Nc3Z6gPBQV3&encryptedData=WR-euAw6XHge5iEPKjE66YTOOSuHir57kkI3Fb6FCE3OVIPBz9Kdcck5li6xaAUJQdy7Ih90v_LuHn7nHiGhHvgsh3Dj8wYKsmFS2PG4x73UD7843SIc5apwUhHEE_uR9iS9EB3CvwPty4y4YyniTTlJ5WSlyYg2DqXVbo3fi3lXArQG-pptuaMdbFj3uftXTdvdpWJZ5JJBNXizGg48YQYgUerajl9gx717Aki1ZsvNGw_IYC8oEMEFEfk-Rn2UToJ5pmuPgpdwGcCaF5z7_kxyknDVsr2p6ue4ypTqJheGdMIcXKQ-Vs2iq55AWR61k8TttvruPq4LfTbPk60xZX0xuveJG9kHvLu7k5WKDXcS-VX_SwFXYHrxFaa0DDOONT8rSmozQso_gB5rtR4Jlb2dbhvUg7pUG2nZMs8BSmOX_ry2dug7t8XYxxE9pdfTZb4KWzLzOh-MeDB-NcWRSg8fG4AXZV41sDLXlGVbGms5nwxOky5phvr8i2Ks-vx75OCBC6MCpL0d1sHI-8CSX-PEd7NzMiIbLuAWU0hAf461HlIqGJNdr9oFovpq7EZxy1bJyLXFhYTVP8rWjQZYixckEHhY7ElSiziJjLd3to8EqiAvWuzv2qEdzn_cmKYXWIWVT4L2AAswhmtHw_2G0tGvW-YXv5K_-ZMl8WGSECaw4v6CbyA8VerEiL0GOAaZSfdxzNez3mvsljs0rmH0KBU-pQWbY6MnNdxfXOuK_PeLQ01taU-1UVyr3t41aRNmBPk6pAlqFXGu3Z_rlvJjwGs6OT1OHQTi6OAeMVUQN5oPhCPHNZdkQ3LsxnMzaQ7WXqxNY2riC150ad0Wy1od1gKZuVToMLPAY6hu0fDxseZvKn64bGbRZ2ZUrd-cZ_ihDKm6pADwfg0Nv69O5SctWMYBeakihAIvIWb8083aySxhRlJ8tdPsgy3RB3PvpULA--JWmBiXtIBtHmg80TdMYYwxPOa319xblONIqAOSGnMW7QMlwfbmROsCNP9mSfgINkZKzRUWVyaJnPOJmAMMHya3AxGsK9ZD5zjZFaFcMThyWlTGCnOY5c5FtgBiuYbbiIBp0O9JDBIlI3NS4Q71e3uv3Wc6ipUZSzkaeGBXMt-yOS_56Gd3yrz7_Vgf5yHyVgGAKAyWnD7cIFvShts_bbT3oZzoS_ZxWSSucreTfjpQ0TXM7kXn
 ```
@@ -324,7 +328,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v2' \
 
 ## Request
 
-```
+```bash
 curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts' \
 --header 'x-correlation-id: 3d9d62ff-17cb-4107-bf5a-f9ce8d0dff9a' \
 --header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
@@ -371,7 +375,7 @@ HTTP 200
 
 ## Request
 
-```
+```bash
 curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw/transactions?fromDate=2019-01-10&toDate=2019-10-10&page=0&size=20' \
 --header 'x-correlation-id: 1201cf3f-2fef-4515-b54c-bd2776253535' \
 --header 'x-api-key: Bearer 87e1330f-cee2-35fb-b290-dcfc2c21bb14' \
@@ -677,7 +681,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accoun
 
 ## Request
 
-```js
+```bash
 curl --location --request GET 'https://api.kb.cz/open/api/sandbox/adaa/v1/accounts/Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSwQ/statements/325723851' \
 --header 'x-correlation-id: becb6607-dcf1-4209-b125-0f12e9a68bd6' \
 --header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
