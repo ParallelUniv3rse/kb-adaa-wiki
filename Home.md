@@ -6,7 +6,7 @@ The Account Direct Access API (ADAA) service provides secure access to informati
 - Bank account balance
 - Information about transaction history is provided in connection with current accounts of a client of Komerční banka.
 
-more details is on website [Direct Account Access API](https://www.kb.cz/en/kb-api/kb-api-services/account-direct-access)
+more details is on website [Direct Account Access API](https://microsite.kb.cz/en/kb-api/kb-api-services/account-direct-access)
 
 ## Enviroments
 
