@@ -302,7 +302,7 @@ HTTP 200
 ## Request
 
 ```json
-curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v2' \
+curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v2/access_token' \
 --header 'x-correlation-id: 75f2af05-17ce-467a-96b1-fdb86c07533c' \
 --header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
