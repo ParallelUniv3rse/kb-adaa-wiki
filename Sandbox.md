@@ -306,9 +306,9 @@ curl --location --request POST 'https://api.kb.cz/open/api/sandbox/oauth2/v2/acc
 --header 'x-correlation-id: 75f2af05-17ce-467a-96b1-fdb86c07533c' \
 --header 'x-api-key: Bearer b0bde4c0-0a13-329e-a1e8-95beff0a7905' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=authorization_code' \
+--data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'redirect_uri=www.kb.cz' \
---data-urlencode 'code=eyJ1c2VySWQiOiJ0ZXN0Iiwic2NvcGVzIjpbImFkYWEiXX0' \
+--data-urlencode 'refresh_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLQklEPXRlc3QiLCJhdWRpdFRyYWNraW5nSWQiOiJkNzQxMmZlNS1mZTczLTQ5NDUtYjc5Yy0wYmFmMDEyNzEyNWQiLCJpc3MiOiJodHRwczovL2xvZ2luLmtiLmN6L29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJyZWZyZXNoX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiNmFjYzc2MWUtYTg2ZS00ZGI1LTg1OGEtZGUwZmZiMzQyMzQxIiwiYXVkIjoiMTIzNTQ2IiwibmJmIjoxNjcyMzE5OTU4LCJzY29wZSI6WyJhZGFhIl0sInJlYWxtIjoiLyIsImV4cCI6MTY3MjMyMzU1OCwiaWF0IjoxNjcyMzE5OTU4LCJleHBpcmVzX2luIjozNjAwMDAwLCJqdGkiOiIxNjRjZmVhOC00NjBmLTQwY2EtYTE0Yy1iZTU2YzZmNWIwYzYifQ.t6wSrCs7uL7GW1JGe_9cgBz-iDhJCi3CADHsFZDnuDM' \
 --data-urlencode 'client_id=client1' \
 --data-urlencode 'client_secret=password'
 ```
