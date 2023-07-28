@@ -53,8 +53,7 @@ curl --location 'https://api.kb.cz/open/api/sandbox/client-registration/v2/softw
 
 ## Response
 
-> **Check information in JWT token**
-> You can check content JWT token on [jwt.io](https://jwt.io)
+> **Inspect the content of the JWT body (you can do it by using [jwt.io](https://jwt.io)**
 
 HTTP 201
 
