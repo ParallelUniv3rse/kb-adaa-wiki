@@ -37,14 +37,19 @@ more details is on website [Direct Account Access API](https://microsite.kb.cz/e
 - Developer - Developer who create app
 - KB - Komercni banka
 
-### 1. Developer register on [production API portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
+### 1. Developer registers on [production API portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
 
-- create app
+- create application
 - subcribe to API (Client Registration, OAuth2, Adaa API)
 - create API key (x-api-key)
+
+<details><summary>how create API key (x-api-key)</summary>
+
 ![api portal - api key](./img/api-key.min.png)
 
-### 2. Develoeper registers your application in KB
+</details>
+
+### 2. Developer registers your application in KB
 
 - [Software Statement](./Software-Statements)
 
@@ -59,7 +64,6 @@ more details is on website [Direct Account Access API](https://microsite.kb.cz/e
 - Client KB [choose accounts](https://api.kb.cz/adaa-flow/vyber-uctu.html) to API
 - Bank transfer control back to app
 
-![accounts selection](./img/accounts-select.min.png)
 
 ### 5. Developer processes the application registration information
 
