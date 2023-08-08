@@ -24,20 +24,65 @@ more details is on website [Direct Account Access API](https://microsite.kb.cz/e
 
 ## How to start
 
+- [swagger](https://github.com/komercka/adaa-client/blob/master/api/src/main/resources/openapi/adaa-api-v1.json)
+- [demo app](https://api.kb.cz/adaa-flow/)
+
+### Process
+
 ![Process flow](./img/flow.min.png)
 
-### Register your application
+### Actors
 
-1. [Software Statement](./Software-Statements)
+- User - Client KB - User who give access to his account via API in Komercni banka
+- Developer - Developer who create app
+- KB - Komercni banka
 
-### Client registration your application in bank
+### 1. Developer register on [production API portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
 
-2. [Application Registration OAuth2](./Application-Registration-OAuth2)
-3. [Tokens](./Tokens)
+- create app
+- subcribe to API (Client Registration, OAuth2, Adaa API)
+- create API key (x-api-key)
+![api portal - api key](./img/api-key.min.png)
 
-### Account and transaction history - [Swagger](https://github.com/komercka/adaa-client/blob/master/api/src/main/resources/openapi/adaa-api-v1.json)
+### 2. Develoeper registers your application in KB
 
-4. [Accounts](./Accounts)
+- [Software Statement](./Software-Statements)
+
+### 3. Developer calls [Application Registration OAuth2](./Application-Registration-OAuth2#request) in browser
+
+- browser shows this [page](https://api.kb.cz/adaa-flow/disclaimer.html) and gives control to KB
+
+### 4. Client KB works in Bank - Register app
+
+- Client KB continue to [login](https://api.kb.cz/adaa-flow/login.html) to bank
+- [Authorize app](https://api.kb.cz/adaa-flow/klic-aplikace.html)
+- Client KB [choose accounts](https://api.kb.cz/adaa-flow/vyber-uctu.html) to API
+- Bank transfer control back to app
+
+![accounts selection](./img/accounts-select.min.png)
+
+### 5. Developer processes the application registration information
+
+- [decrypt](./Application-Registration-OAuth2#decrypt-response)  on redirect_uri, you registered in [Software Statement](./Software-Statements#request), we give you link to decrypt client_id, client_secret, [application registration](./Application-Registration-OAuth2)
+
+### 6. Developer calls - Authorization code [Tokens](./Tokens#authorization-code)
+
+### 7. Client KB works in Bank - Confirm apps scopes
+
+- Client KB continue to [login](https://api.kb.cz/adaa-flow/login2.html) to bank
+- Client KB [confirms scopes](https://api.kb.cz/adaa-flow/klic-ucty.html)
+- Bank transfer control back to app
+
+### 8. Developer processes authorization code
+
+- [change authorization code](./Tokens#response-authorization-code) to refresh token and access token
+
+### 9. Developer get - Accounts
+
+- [Accounts](./Accounts) for  account id to next step
+
+### Transaction history -
+
 5. [Account Balances](./Balances)
 6. [Transactions](./Transactions)
 7. [Notification of changes to your account (webhook)](./Notification)
