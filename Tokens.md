@@ -1,30 +1,32 @@
-# Authorization code
+# Tokens
+
+## Authorization code
 
 > Token validity
 > Code has validity only 2 minutes
 
-## Requests
+### Requests Authorization code
 
 ```
 GET
 https://login.kb.cz/autfe/ssologin?response_type=code&client_id=Nejlepsiprodukt-4176&redirect_uri=https://client.example.org/callback&scope=adaa%20card_data
 ```
 
-## Response
+### Response Authorization code
 
 ```
 302 Found
 https://client.example.org/callback?code=-_N2RrJRCMgd__JGqUlB_KaFNpo&iss=https%3A%2F%2Fcaas.kb.cz%2Fopenam%2Foauth2&client_id=Nejlepsiprodukt-4176
 ```
 
-# Refresh token
+## Refresh token
 
 > Token validity
 > refresh_token validity 12 months
 
-## Request
+### Request Refresh token
 
-```
+```bash
 curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_token' \
 --header 'x-correlation-id: 9f1670dd-db08-4cbb-aa31-ac0454b42657' \
 --header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
@@ -36,7 +38,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_toke
 --data-urlencode 'grant_type=authorization_code'
 ```
 
-## Response
+### Response Refresh token
 
 ```json
 {
@@ -45,7 +47,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_toke
 }
 ```
 
-# Access token
+## Access token
 
 > Token validity
 >
@@ -53,7 +55,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_toke
 > - access token is intended to be reused until the time of it's expiration
 > - excessive requests to obtain a new access token may result in a status response `429 Too Many Requests`
 
-## Request
+### Request Access token
 
 ```
 curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_token' \
@@ -67,7 +69,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_toke
 --data-urlencode 'grant_type=refresh_token'
 ```
 
-## Response
+### Response Access token
 
 ```json
 {

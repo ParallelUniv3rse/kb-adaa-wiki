@@ -32,9 +32,9 @@
 
 ### 5. Developer processes the application registration information
 
-- decrypt  on redirect_uri, you registered in [Software Statement](./Software-Statements#request), we give you link to decrypt client_id, client_secret, [application registration](./Application-Registration-OAuth2)
+- [decrypt](./Application-Registration-OAuth2#decrypt-response)  on redirect_uri, you registered in [Software Statement](./Software-Statements#request), we give you link to decrypt client_id, client_secret, [application registration](./Application-Registration-OAuth2)
 
-### 6. Developer calls - Authorization code[Tokens](./Tokens#authorization-code)
+### 6. Developer calls - Authorization code [Tokens](./Tokens#authorization-code)
 
 ### 7. Client KB works in Bank - Confirm apps scopes
 
@@ -44,7 +44,7 @@
 
 ### 8. Developer processes authorization code
 
-- change authorization code to refresh token and access token
+- [change authorization code](./Tokens#response-authorization-code) to refresh token and access token
 
 ### 9. Developer calls - Accounts
 

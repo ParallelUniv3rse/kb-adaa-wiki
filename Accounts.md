@@ -1,8 +1,8 @@
 # Accounts
 
-## Request
+## Request Accounts
 
-```
+```bash
 curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts' \
 --header 'x-correlation-id: 9f1670dd-db08-4cbb-aa31-ac0454b42657' \
 --header 'x-api-key: Bearer 3b8f771a-8cc1-364f-be2b-9ea361f53816' \
@@ -10,7 +10,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJjODA1OTU2Ni1mZmIwLTQ1MGItOTA5Ny1iMTRhMjVhNWFiMWMtMjU3MDUwNjIiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IkFRNzBZcFduekpKTmFnc1h4S3BucmoxVWd3NCIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTUzMDE3MjUsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2MjM3NTczOTIsInJlYWxtIjoiLyIsImV4cCI6MTY1NTMwMTkwNSwiaWF0IjoxNjU1MzAxNzI1LCJleHBpcmVzX2luIjoxODAsImp0aSI6Ik5JRVMydVpsTk1teWNQSXNjRHVCQVAtRElHQSJ9.wEMoI5IMETzyBkJl6DMkqLCbsJgaLaKMeN1WuHvNwfZUs53aCgkWh9133PWCi36GrrySoNRWVO-lXhb-rgnwr984tXj9I6HgnoQWwvtGkPyh5sVe7pTVdomhpIue9aqAO-r0HlRRex_deDBEMwGXRhGuBmBpJNM3NI4kPCNL44OS4-120Qguhjoxv3XftYI8M8v94fqUqvj_tIew0Ms1FZzMfnzdiUStE87j8-jt5hrXMqP6w5riEagpzpUsCPmc4uedsn3uaL7GHoOe3hi1YNV7wOaQprA8xRhj751dG9xE5HCqjbB9wsjZO2Q17NOmIrnDyBKtwMlKnfEv-TLvfg' \](<curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts' \
 ```
 
-## Response
+### Response Accounts
 
 ```json
 [

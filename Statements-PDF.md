@@ -1,6 +1,8 @@
-# Statements - List of statements
+# PDF Statements
 
-## Request
+## Statements - List of statements
+
+### Request List of statements
 
 ```js
 curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/eXBCcDBLUEFCT0Y0MUFSS2x6b0RNZUJHZzJHdk5wSlhFWWdKeWEySFlabkU4OEZJQTcxU05kLzc1SnFKa0dlZmF2RzRQbHgrVDY1QXZvZHhNWXZ1Vnc9PQ/statements?dateFrom=2021-03-30T15:42:30.000Z' \
@@ -9,7 +11,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/eXBCc
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNTcwMjgyNDkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzE2NjksImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MTg0OSwiaWF0IjoxNjU1OTcxNjY5LCJleHBpcmVzX2luIjoxODAsImp0aSI6IlhDOWdKcVJBVVBOdDVSbFZqUjVZME1UdlQyWSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.cLirxtAxy7bOao5sdXUBR118cHvasHoe_YMlWs51iR7Y-T4bwX6XbKWVlqeIqe62J4r17ZCsDvagScLjabGDji8zwkJvX8are9d3RouepVaza54whBtg6QS7ItE7IGiqlQCfod4Pz39Fa_0dmdI_nfrU_VST4l99jL4chFD5v0JOZ5tFBYiRcXl6Rc_msYX5DvGb40_PNPQVQgUlMm1j97qiSXfs_NTsk7o8uGw_bE6V1OlnpDDu3JjTgi2wbaOp6KPPYWIc9o2rdmUr4nMzaaU5JVEZkn4gD8Dojbcr9PhLyUaH7ACWWKguolK3WjFQj6ROI2nJ0tEF-hphnS8reA'
 ```
 
-## Response
+### Response List of statements
 
 ```js
 [
@@ -30,9 +32,9 @@ curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/eXBCc
 ];
 ```
 
-# Statements - Download file
+## Statements - Download file
 
-## Request
+### Request Statements - Download file
 
 ```js
 curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/eXBCcDBLUEFCT0Y0MUFSS2x6b0RNZUJHZzJHdk5wSlhFWWdKeWEySFlabkU4OEZJQTcxU05kLzc1SnFKa0dlZmF2RzRQbHgrVDY1QXZvZHhNWXZ1Vnc9PQ/statements/325723851' \
@@ -41,7 +43,7 @@ curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/eXBCc
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNDI1MzExODkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU3MjIzNjAsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTcyMjU0MCwiaWF0IjoxNjU1NzIyMzYwLCJleHBpcmVzX2luIjoxODAsImp0aSI6Ijl3emVDSUgwRXJ0TmF4UHJJdDVXSjdUTW51WSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.oeRegYbg656c_95OVNm9oUBjx9xIQV5Xuo9QJ4nQUaDNy4Zczr9rHjfsPx0Hevn1rITOcsCaPyQHBzkV3WGLzqJ_Pna3eqxF5Wga36BNQlYDGzgVF5X0tg5-7swUcH2WsOSuPR-qDtyGNODe3ZDk2WBrmZBmXJwaivvxlM14yNzP2KFi4Jp5zi2CrgfYUGUc-p2qvegNJFLEvqPP9RR0W_5lGdRJ9LoVpYDEHfOB7oZ4GPwBPoQuXxplmvVNoWP6khitGAKLCj8Rx-ikeiaJHZjhXV42rjE6UCMxkh1qRHBeRv9x6zPKo5WYrKlr542a0Itr0OYPc2LeOnr7F274Rg'
 ```
 
-## Response
+### Response Statements - Download file
 
 ```js
 PDF FILE
