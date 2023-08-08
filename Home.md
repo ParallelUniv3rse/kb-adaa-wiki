@@ -85,9 +85,15 @@ more details is on website [Direct Account Access API](https://microsite.kb.cz/e
 
 - [Accounts](./Accounts) for  account id to next step
 
-### Transaction history -
+### Next endpoints
 
 5. [Account Balances](./Balances)
 6. [Transactions](./Transactions)
 7. [Notification of changes to your account (webhook)](./Notification)
 8. [Account Statements - PDF](./Statements-PDF)
+
+## Recommendations for the user interface
+
+- support for flow registration of the application by the user (each user needs only 1 application)
+- support for token acquisition and renewal (once every 12 months or sooner)
+- our [demo app](https://api.kb.cz/adaa-flow/)
