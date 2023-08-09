@@ -51,7 +51,7 @@ more details is on website [Direct Account Access API](https://microsite.kb.cz/e
 
 ### 2. Developer registers your application in KB
 
-- [Software Statement](./Software-Statements)
+- [Software Statement](./Software-Statements) with qualified certificate issued by a trusted certification authority (I.CA, PostSignum)
 
 ### 3. Developer calls [Application Registration OAuth2](./Application-Registration-OAuth2#request) in browser
 
