@@ -2,6 +2,13 @@
 
 ![Process flow](./img/flow.min.png)
 
+
+# Developer registers on [API portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
+
+- create application
+- subcribe to API (Client Registration sandbox, OAuth2 sandbox, Adaa sandbox API)
+- create API key (x-api-key)
+
 # Software Statements
 
 > **JWT tokens validity**
