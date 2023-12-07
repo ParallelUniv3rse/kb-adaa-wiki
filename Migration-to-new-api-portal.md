@@ -21,7 +21,7 @@
   - Account direct access v1
 - each API must have its own API key (we have cancelled the applications)
 
-## 2. New Client registartion v2
+## 2. New Client registration v2
 
 - Mandatory
   - Rename the header apiKey to apiKey
