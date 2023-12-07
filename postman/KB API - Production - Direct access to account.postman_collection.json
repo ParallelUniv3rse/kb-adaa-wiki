@@ -38,7 +38,7 @@
               "raw": "{\n    \"softwareName\": \"kb-kc-tst\",\n    \"softwareNameEn\": \"kb-kc-tst\",\n    \"softwareId\": \"f64bf2e447e545228c78e07b091a82ee\",\n    \"softwareVersion\": \"1.0\",\n    \"softwareUri\": \"https://kb.cz\",\n    \"redirectUris\": [\n        \"https://client.example.org/callback\",\n        \"https://client.example.org/callback-backup\"\n    ],\n    \"tokenEndpointAuthMethod\": \"client_secret_post\",\n    \"grantTypes\": [\n        \"authorization_code\",\n        \"refresh_token\"\n    ],\n    \"responseTypes\": [\n        \"code\"\n    ],\n    \"registrationBackUri\": \"https://client.example.org/backuri\",\n    \"contacts\": [\n        \"email: hello@example.cz\"\n    ],\n    \"logoUri\": \"https://client.example.org/icon.png\",\n    \"tosUri\": \"https://client.example.org/tos\",\n    \"policyUri\": \"https://client.example.org/policy\"\n}"
             },
             "url": {
-              "raw": "https://api.kb.cz/open/api/client-registration/v1/software-statements",
+              "raw": "https://api-gateway.kb.cz/client-registration/v2/software-statements",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": [
@@ -233,7 +233,7 @@
               ]
             },
             "url": {
-              "raw": "https://api.kb.cz/open/api/oauth2/v1/access_token",
+              "raw": "https://api-gateway.kb.cz/oauth2/v2/access_token",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": ["open", "api", "oauth2", "v1", "access_token"]
@@ -436,7 +436,7 @@
               ]
             },
             "url": {
-              "raw": "https://api.kb.cz/open/api/oauth2/v1/access_token",
+              "raw": "https://api-gateway.kb.cz/oauth2/v2/access_token",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": ["open", "api", "oauth2", "v1", "access_token"]
@@ -625,7 +625,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "https://api.kb.cz/open/api/adaa/v1/accounts",
+              "raw": "https://api-gateway.kb.cz/adaa/v1/accounts",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": ["open", "api", "adaa", "v1", "accounts"]
@@ -788,7 +788,7 @@
               }
             ],
             "url": {
-              "raw": "https://api.kb.cz/open/api/adaa/v1/accounts/:accountId/transactions?fromDate=2022-02-15&toDate=2022-03-05&size=20&page=0",
+              "raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/transactions?fromDate=2022-02-15&toDate=2022-03-05&size=20&page=0",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": [
@@ -1001,7 +1001,7 @@
               }
             ],
             "url": {
-              "raw": "https://api.kb.cz/open/api/adaa/v1/accounts/:accountIds/balances",
+              "raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountIds/balances",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": [
@@ -1140,7 +1140,7 @@
               }
             ],
             "url": {
-              "raw": "https://api.kb.cz/open/api/adaa/v1/accounts/:accountId/statements?dateFrom=2021-03-30T15:42:30.000Z",
+              "raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/statements?dateFrom=2021-03-30T15:42:30.000Z",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": [
@@ -1210,7 +1210,7 @@
               }
             ],
             "url": {
-              "raw": "https://api.kb.cz/open/api/adaa/v1/accounts/:accountId/statements/287526103",
+              "raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/statements/287526103",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": [
@@ -1275,7 +1275,7 @@
               "raw": "{\n    \"eventApiUrl\": \"https://example.cz/api\",\n    \"eventApiKey\": \"aabbcc\"\n}"
             },
             "url": {
-              "raw": "https://api.kb.cz/open/api/adaa/v1/accounts/:accountId/transactions/event-subscriptions",
+              "raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/transactions/event-subscriptions",
               "protocol": "https",
               "host": ["api", "kb", "cz"],
               "path": [
@@ -1513,7 +1513,7 @@
                   }
                 ],
                 "url": {
-                  "raw": "https://api.kb.cz/open/api/adaa/v1/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+                  "raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
                   "protocol": "https",
                   "host": ["api", "kb", "cz"],
                   "path": [
@@ -1710,7 +1710,7 @@
                   "raw": "{\n  \"eventApiUrl\": \"https://company.org/event-api/v1\",\n  \"eventApiKey\": \"Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw\"\n}"
                 },
                 "url": {
-                  "raw": "https://api.kb.cz/open/api/adaa/v1/accounts/:accountId/transactions/event-subscriptions",
+                  "raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/transactions/event-subscriptions",
                   "protocol": "https",
                   "host": ["api", "kb", "cz"],
                   "path": [

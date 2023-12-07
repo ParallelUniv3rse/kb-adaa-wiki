@@ -32,13 +32,17 @@
 - New url: <https://client-registration.api-gateway.kb.cz/v2>
 - v1 will be operational until 31.1.2024
 
-### 3. New OAuth2 v2
+### 3. Registration OAuth2 client
+
+- New url: <<https://api-gateway.kb.cz/client-registration-ui/v1/saml/>
+
+### 4. New OAuth2 v2
 
 - Mandatory and rename the header apiKey to apiKey
 - New url: <https://api-gateway.kb.cz/oauth2/v2>
 - v1 will be operational until 31.1.2024
 
-### 4. Account direct access v1
+### 5. Account direct access v1
 
 - Rename the header apiKey to apiKey
 - New url: <https://api-gateway.kb.cz/adaa/v1>
