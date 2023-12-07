@@ -27,9 +27,9 @@ https://client.example.org/callback?code=-_N2RrJRCMgd__JGqUlB_KaFNpo&iss=https%3
 ### Request Refresh token
 
 ```bash
-curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_token' \
+curl --location --request POST 'https://api-gateway.kb.cz/oauth2/v2/access_token' \
 --header 'x-correlation-id: 9f1670dd-db08-4cbb-aa31-ac0454b42657' \
---header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'apiKey: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'redirect_uri=https://app.kifli.cz/callback' \
 --data-urlencode 'code=6W6hsrmHBqN8J6nEW3iPfbB97X8' \
@@ -60,7 +60,7 @@ curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_toke
 ```
 curl --location --request POST 'https://api.kb.cz/open/api/oauth2/v1/access_token' \
 --header 'x-correlation-id: 9f1670dd-db08-4cbb-aa31-ac0454b42657' \
---header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'apiKey: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'redirect_uri=https://app.kifli.cz/callback' \
 --data-urlencode 'client_id=Kifli-1635' \

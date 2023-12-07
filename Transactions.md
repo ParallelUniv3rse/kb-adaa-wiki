@@ -4,7 +4,6 @@
 - if you don't fill in the fromDate and toDate parameters, the transaction history is returned only for 90 days from today.
 - use the accountServicer attribute as a unique payment identifier. This will provide you with a connection in the payment lifecycle
 
-
 > **Limits**
 >
 > - time limit to start download next page is 10 sec
@@ -15,7 +14,7 @@
 ```json
 curl --location --request GET 'https://api.kb.cz/open/api/adaa/v1/accounts/Zm9PTlRTeFppV3N3eERxOUVueEE2Y2xYUU5NbGg3NSthUktwUzhzcGE5MW42USs1cmlUbWZGNkM2aXp1MDROaE1sV2p5UDVlbEdxYWxFejRtdkNqQ1E9PQ/transactions?fromDate=2022-01-15&toDate=2022-03-05&size=20&page=0' \
 --header 'x-correlation-id: 6d745f4e-eb52-441a-a1e3-86f82619ab83' \
---header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'apiKey: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiIwN2UyZjk4NC0zNTJjLTQ1ZmItYTk5MC0yOGEzZTI3NDA2MmUtMzE4OTk5MTUiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU3MzA3MzAsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTczMDkxMCwiaWF0IjoxNjU1NzMwNzMwLCJleHBpcmVzX2luIjoxODAsImp0aSI6InJWZERFQktFR2dMbjVCQk9RTjRIY3F5Y1k4YyIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.r26PDIs4uuVGrmECIkQqM16lDL2a-XEWvfJOqMJVA8zHfFEDmLQ3VRj4nOiXjfp4uwQQUVTSzYaMkNw4BGsCtxRRvk54pFgCcl8GtSlfhL44cMA3mtZuEx39tqsdndymvPE6U9-wP5nzzeFJdZsOeAbzAGgIwWTNcUSH6YlbQLkuH-Z4qVnVCVwwspzEupJsgnRGYuDVzhk0BP4eDzF12fdRx7Zq2cCGY0H89XwWrf7GBpZQubzZgACle8r1oOR86_65Wwd88oNo5HUfC_kKGyYL-lhMIGbcbMGf5SX1Te7PPBAy9q2BQnRhcpIunvGKSv_aAiFOW9DMLWgUT6vPhA'
 ```
 

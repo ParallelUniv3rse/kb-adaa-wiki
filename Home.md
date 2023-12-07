@@ -41,9 +41,9 @@ more details is on website [Direct Account Access API](https://microsite.kb.cz/e
 
 - create application
 - subcribe to API (Client Registration, OAuth2, Adaa API)
-- create API key (x-api-key)
+- create API key (apiKey)
 
-<details><summary>how create API key (x-api-key)</summary>
+<details><summary>how create API key (apiKey)</summary>
 
 ![api portal - api key](./img/api-key.min.png)
 
@@ -63,7 +63,6 @@ more details is on website [Direct Account Access API](https://microsite.kb.cz/e
 - [Authorize app](https://api.kb.cz/adaa-flow/klic-aplikace.html)
 - Client KB [choose accounts](https://api.kb.cz/adaa-flow/vyber-uctu.html) to API
 - Bank transfer control back to app
-
 
 ### 5. Developer processes the application registration information
 

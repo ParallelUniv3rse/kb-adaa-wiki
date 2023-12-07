@@ -24,7 +24,7 @@
                 "description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               },
@@ -195,7 +195,7 @@
                 "description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               },
@@ -393,7 +393,7 @@
                 "description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               },
@@ -611,7 +611,7 @@
                 "description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               },
@@ -776,7 +776,7 @@
                 "description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               },
@@ -995,7 +995,7 @@
                 "description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               }
@@ -1134,7 +1134,7 @@
                 "type": "text"
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               }
@@ -1204,7 +1204,7 @@
                 "type": "text"
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               }
@@ -1265,7 +1265,7 @@
                 "value": "application/json"
               },
               {
-                "key": "x-api-key",
+                "key": "apiKey",
                 "value": "Bearer {{apiKey}}",
                 "type": "text"
               }
@@ -1507,7 +1507,7 @@
                     "value": "{{v4uuid}}"
                   },
                   {
-                    "key": "x-api-key",
+                    "key": "apiKey",
                     "value": "Bearer {{apiKey}}",
                     "type": "text"
                   }
@@ -1695,7 +1695,7 @@
                     "value": "{{v4uuid}}"
                   },
                   {
-                    "key": "x-api-key",
+                    "key": "apiKey",
                     "value": "Bearer {{apiKey}}",
                     "type": "text"
                   },

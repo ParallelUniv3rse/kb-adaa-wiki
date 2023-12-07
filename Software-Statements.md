@@ -21,9 +21,9 @@
 <details id="curl-example"><summary>Client TLS Authentication Example - Curl</summary>
 
 ```js
-curl -v --cert-type P12 --cert cert.p12:password --location --request POST 'https://api.kb.cz/open/api/client-registration/v1/software-statements' \
+curl -v --cert-type P12 --cert cert.p12:password --location --request POST 'https://api-gateway.kb.cz/client-registration/v1/software-statements' \
 --header 'x-correlation-id: 42c0e667-0f5e-4900-9f5e-fd707e35ba75' \
---header 'x-api-key: Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'apiKey Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 "softwareName": "example app",
@@ -56,7 +56,7 @@ curl -v --cert-type P12 --cert cert.p12:password --location --request POST 'http
 or
 
 ```js
-curl --cert  client.crt --key client.key --cacert ca.crt https://api.kb.cz/open/api/client-registration/v1/software-statements
+curl --cert  client.crt --key client.key --cacert ca.crt https://api-gateway.kb.cz/client-registration/v1/software-statements
 ```
 
 </details>
@@ -88,7 +88,7 @@ namespace SoftwareStatementRegistrationExample
         // header name of correlation ID
         private const string CorrelationIdHeaderName = "x-correlation-id";
         // header name of API key
-        private const string ApiKeyHeaderName = "x-api-key";
+        private const string ApiKeyHeaderName = "apiKey";
         // mock value of API key header
         private const string ApiKey = "Bearer api-key-mock";
 
