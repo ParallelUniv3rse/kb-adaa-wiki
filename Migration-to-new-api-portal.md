@@ -11,17 +11,20 @@
   - (for example, <https://api.kb.cz/open/api/adaa/v1> to <https://api-gateway.kb.cz/adaa/v1>
   - The old ones will be functional until 31.1.2024, after which they will be turned off
 - Rename the header apiKey to apiKey.
+- Each API must have its own apiKey (we have cancelled the applications)
 
-## 1. Login in the new API portal
+## Instructions for API business suite
 
-- login to portal <https://developers.kb.cz>
-- subscribe to the API you need to use ADAA
+### 1. Login in the new API portal
+
+- Login to portal <https://developers.kb.cz>
+- Subscribe to the API you need to use ADAA
   - Client Registration v2
   - Oauth2 v2
   - Account direct access v1
-- each API must have its own API key (we have cancelled the applications)
+- Each API must have its own apiKey (we have cancelled the applications)
 
-## 2. New Client registration v2
+### 2. New Client registration v2
 
 - Mandatory
   - Rename the header apiKey to apiKey
@@ -29,13 +32,13 @@
 - New url: <https://client-registration.api-gateway.kb.cz/v2>
 - v1 will be operational until 31.1.2024
 
-## 3. New OAuth2 v2
+### 3. New OAuth2 v2
 
 - Mandatory and rename the header apiKey to apiKey
 - New url: <https://api-gateway.kb.cz/oauth2/v2>
 - v1 will be operational until 31.1.2024
 
-## 4. Account direct access v1
+### 4. Account direct access v1
 
 - Rename the header apiKey to apiKey
 - New url: <https://api-gateway.kb.cz/adaa/v1>
