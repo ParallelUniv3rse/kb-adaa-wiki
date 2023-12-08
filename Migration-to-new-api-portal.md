@@ -28,7 +28,7 @@
 
 - Mandatory
   - Rename the header x-api-key to apiKey
-  - secton contacts.email
+  - section contacts.email
 - New url: <https://client-registration.api-gateway.kb.cz/v2>
 - v1 will be operational until 31.1.2024
 
