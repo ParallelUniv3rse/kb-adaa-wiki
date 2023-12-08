@@ -10,7 +10,7 @@
 - We recommend updating the URL from <https://api.kb.cz/open/api/service/v1> to <https://api-gateway.kb.cz/service/v1>
   - (for example, <https://api.kb.cz/open/api/adaa/v1> to <https://api-gateway.kb.cz/adaa/v1>
   - The old ones will be functional until 31.1.2024, after which they will be turned off
-- Rename the header apiKey to apiKey.
+- Rename the header x-api-key to apiKey.
 - Each API must have its own apiKey (we have cancelled the applications)
 
 ## Instructions for API business suite
@@ -27,7 +27,7 @@
 ### 2. New Client registration v2
 
 - Mandatory
-  - Rename the header apiKey to apiKey
+  - Rename the header x-api-key to apiKey
   - secton contacts.email
 - New url: <https://client-registration.api-gateway.kb.cz/v2>
 - v1 will be operational until 31.1.2024
@@ -38,13 +38,13 @@
 
 ### 4. New OAuth2 v2
 
-- Mandatory and rename the header apiKey to apiKey
+- Mandatory and rename the header x-api-key to apiKey
 - New url: <https://api-gateway.kb.cz/oauth2/v2>
 - v1 will be operational until 31.1.2024
 
 ### 5. Account direct access v1
 
-- Rename the header apiKey to apiKey
+- Rename the header x-api-key to apiKey
 - New url: <https://api-gateway.kb.cz/adaa/v1>
 - Terminate the endpoint /account-ids → replaced by /accounts
   - the endpoint /account-ids will be operational until 31.1.2024
