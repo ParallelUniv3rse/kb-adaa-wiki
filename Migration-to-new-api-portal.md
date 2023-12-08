@@ -2,18 +2,13 @@
 
 ## 1. Login in the new API portal
 
-- Login to portal <https://developers.kb.cz>
-- Subscribe to the API you need to use ADAA
-  - Client Registration v2
-  - Oauth2 v2
-  - Account direct access v1
+- Login to portal <https://developers.kb.cz> - You can use username and password from the old API Portal
 
-## 2. New Client registration (Software v2
+## 2. New Client registration (Software statements) v2
 
-- Mandatory
-  - Rename the header x-api-key to apiKey
-  - Generate new apiKey and put your app
-  - section contacts.email
+- Rename the header x-api-key to apiKey
+- Generate new apiKey and put your app
+- Mandatory section contacts.email
 - New url: <https://client-registration.api-gateway.kb.cz/v2>
 - v1 will be operational until 31.1.2024
 
