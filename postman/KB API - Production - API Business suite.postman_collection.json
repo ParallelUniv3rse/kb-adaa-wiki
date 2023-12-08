@@ -1,0 +1,2514 @@
+{
+	"info": {
+		"_postman_id": "9cefda65-54b0-41b5-a00d-7912f1e82cdf",
+		"name": "KB API - Production - API Business suite",
+		"description": "More info about service [API Business suite | Komerční banka (kb.cz)](https://www.kb.cz/cs/kbapi/sluzby-kb-api/api-business-suite)\n\nGeneral info [www.kb.cz/api](http://www.kb.cz/api)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5672540"
+	},
+	"item": [
+		{
+			"name": "software statements",
+			"item": [
+				{
+					"name": "API to register new software v2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
+							},
+							{
+								"key": "apiKey",
+								"value": "{{apiKeyClientIdentity}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"softwareName\": \"Moje aplikace\",\n    \"softwareNameEn\": \"My app\",\n    \"softwareId\": \"f64bf2e447e545228c78e07b091a82ee\",\n    \"softwareVersion\": \"1.0\",\n    \"softwareUri\": \"https://kb.cz\",\n    \"redirectUris\": [\n        \"https://client.example.org/callback\",\n        \"https://client.example.org/callback-backup\"\n    ],\n    \"tokenEndpointAuthMethod\": \"client_secret_post\",\n    \"grantTypes\": [\n        \"authorization_code\",\n        \"refresh_token\"\n    ],\n    \"responseTypes\": [\n        \"code\"\n    ],\n    \"registrationBackUri\": \"https://client.example.org/backuri\",\n    \"contacts\": [\n        \"email: email@domain.com\"\n    ],\n    \"logoUri\": \"https://example.org/logo.png\",\n    \"tosUri\": \"https://client.example.org/tos\",\n    \"policyUri\": \"https://client.example.org/policy\"\n}"
+						},
+						"url": {
+							"raw": "https://client-registration.api-gateway.kb.cz/v2/software-statements",
+							"protocol": "https",
+							"host": [
+								"client-registration",
+								"api-gateway",
+								"kb",
+								"cz"
+							],
+							"path": [
+								"v2",
+								"software-statements"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SoftwareStatement in form of JWT created.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"description": "Qualified certificate for digital signature. This header is automatically filled from TLS handshake.",
+										"key": "x-client-cert",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"redirectUris\": [\n        \"<uri>\",\n        \"<uri>\"\n    ],\n    \"registrationBackUri\": \"<uri>\",\n    \"softwareId\": \"<string>\",\n    \"softwareName\": \"<string>\",\n    \"softwareVersion\": \"<string>\",\n    \"softwareNameEn\": \"<string>\",\n    \"softwareUri\": \"<uri>\",\n    \"tokenEndpointAuthMethod\": \"<string>\",\n    \"grantTypes\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"responseTypes\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"contacts\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"logoUri\": \"<uri>\",\n    \"tosUri\": \"<uri>\",\n    \"policyUri\": \"<uri>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/software-statements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"software-statements"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "<string>"
+						},
+						{
+							"name": "The request could not be understood by the server due to malformed syntax.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"description": "Qualified certificate for digital signature. This header is automatically filled from TLS handshake.",
+										"key": "x-client-cert",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"redirectUris\": [\n        \"<uri>\",\n        \"<uri>\"\n    ],\n    \"registrationBackUri\": \"<uri>\",\n    \"softwareId\": \"<string>\",\n    \"softwareName\": \"<string>\",\n    \"softwareVersion\": \"<string>\",\n    \"softwareNameEn\": \"<string>\",\n    \"softwareUri\": \"<uri>\",\n    \"tokenEndpointAuthMethod\": \"<string>\",\n    \"grantTypes\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"responseTypes\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"contacts\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"logoUri\": \"<uri>\",\n    \"tosUri\": \"<uri>\",\n    \"policyUri\": \"<uri>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/software-statements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"software-statements"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"errorCode\": \"<string>\",\n   \"scope\": \"<string>\",\n   \"description\": \"<string>\"\n  },\n  {\n   \"errorCode\": \"<string>\",\n   \"scope\": \"<string>\",\n   \"description\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Syntax of the request is correct but the input is invalid. Please check input parameters.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"description": "Qualified certificate for digital signature. This header is automatically filled from TLS handshake.",
+										"key": "x-client-cert",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"redirectUris\": [\n        \"<uri>\",\n        \"<uri>\"\n    ],\n    \"registrationBackUri\": \"<uri>\",\n    \"softwareId\": \"<string>\",\n    \"softwareName\": \"<string>\",\n    \"softwareVersion\": \"<string>\",\n    \"softwareNameEn\": \"<string>\",\n    \"softwareUri\": \"<uri>\",\n    \"tokenEndpointAuthMethod\": \"<string>\",\n    \"grantTypes\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"responseTypes\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"contacts\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"logoUri\": \"<uri>\",\n    \"tosUri\": \"<uri>\",\n    \"policyUri\": \"<uri>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/software-statements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"software-statements"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"errorCode\": \"<string>\",\n   \"scope\": \"<string>\",\n   \"description\": \"<string>\"\n  },\n  {\n   \"errorCode\": \"<string>\",\n   \"scope\": \"<string>\",\n   \"description\": \"<string>\"\n  }\n ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "oauth2",
+			"item": [
+				{
+					"name": "Get refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.collectionVariables.set(\"accessToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
+							},
+							{
+								"key": "apiKey",
+								"value": "{{apiKeyOAuth2}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "redirect_uri",
+									"value": ""
+								},
+								{
+									"key": "code",
+									"value": "6W6hsrmHBqN8J6nEW3iPfbB97X8"
+								},
+								{
+									"key": "client_id",
+									"value": ""
+								},
+								{
+									"key": "client_secret",
+									"value": ""
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/oauth2/v2/access_token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"oauth2",
+								"v2",
+								"access_token"
+							]
+						},
+						"description": "Access token can be obtained either by using grand type of *authorization_code* and providing authorization *code*, *client_id* and *client_secret* or by providing *refresh_token* for grant type of *refresh_token*."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/applications involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "<string>"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "<string>"
+										},
+										{
+											"key": "code",
+											"value": "<string>"
+										},
+										{
+											"key": "refresh_token",
+											"value": "<string>"
+										},
+										{
+											"key": "client_id",
+											"value": "<string>"
+										},
+										{
+											"key": "client_secret",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/access_token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"access_token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"access_token\": \"<string>\",\n \"token_type\": \"<string>\",\n \"expires_in\": \"<long>\",\n \"refresh_token\": \"<string>\",\n \"acr\": \"<long>\"\n}"
+						},
+						{
+							"name": "Invalid request parameter (missing parameter or wrong parameter value). For more details about possible error types, see 'https://tools.ietf.org/html/rfc6749#section-5.2'",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/applications involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "<string>"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "<string>"
+										},
+										{
+											"key": "code",
+											"value": "<string>"
+										},
+										{
+											"key": "refresh_token",
+											"value": "<string>"
+										},
+										{
+											"key": "client_id",
+											"value": "<string>"
+										},
+										{
+											"key": "client_secret",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/access_token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"access_token"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"error\": \"<string>\",\n \"error_description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get access token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.collectionVariables.set(\"accessToken\", jsonData.access_token);",
+									"",
+									"",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response has the required fields\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.access_token).to.exist;",
+									"    pm.expect(responseData.scope).to.exist;",
+									"    pm.expect(responseData.token_type).to.exist;",
+									"    pm.expect(responseData.expires_in).to.exist;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Access token is a non-empty string\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData.access_token).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Token type is a string\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData.token_type).to.be.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"expires_in is a positive integer\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData.expires_in).to.be.a('number');",
+									"    pm.expect(responseData.expires_in).to.be.above(0);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
+							},
+							{
+								"key": "apiKey",
+								"value": "{{apiKeyOAuth2}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "redirect_uri",
+									"value": "https://client.example.org/callback",
+									"disabled": true
+								},
+								{
+									"key": "client_id",
+									"value": ""
+								},
+								{
+									"key": "client_secret",
+									"value": ""
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{refreshToken}}",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/oauth2/v2/access_token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"oauth2",
+								"v2",
+								"access_token"
+							]
+						},
+						"description": "Access token can be obtained either by using grand type of *authorization_code* and providing authorization *code*, *client_id* and *client_secret* or by providing *refresh_token* for grant type of *refresh_token*."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/applications involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "<string>"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "<string>"
+										},
+										{
+											"key": "code",
+											"value": "<string>"
+										},
+										{
+											"key": "refresh_token",
+											"value": "<string>"
+										},
+										{
+											"key": "client_id",
+											"value": "<string>"
+										},
+										{
+											"key": "client_secret",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/access_token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"access_token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"access_token\": \"<string>\",\n \"token_type\": \"<string>\",\n \"expires_in\": \"<long>\",\n \"refresh_token\": \"<string>\",\n \"acr\": \"<long>\"\n}"
+						},
+						{
+							"name": "Invalid request parameter (missing parameter or wrong parameter value). For more details about possible error types, see 'https://tools.ietf.org/html/rfc6749#section-5.2'",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/applications involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "<string>"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "<string>"
+										},
+										{
+											"key": "code",
+											"value": "<string>"
+										},
+										{
+											"key": "refresh_token",
+											"value": "<string>"
+										},
+										{
+											"key": "client_id",
+											"value": "<string>"
+										},
+										{
+											"key": "client_secret",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/access_token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"access_token"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"error\": \"<string>\",\n \"error_description\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "Account identification number",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.collectionVariables.set(\"accountId\", jsonData[0].accountId);",
+									"",
+									"",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response is an array with at least one element\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Each element in the response array has the required fields\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData).to.be.an('array').that.is.not.empty;",
+									"",
+									"    responseData.forEach(function (element) {",
+									"        pm.expect(element).to.have.property('accountId').that.is.a('string');",
+									"        pm.expect(element).to.have.property('iban').that.is.a('string');",
+									"        pm.expect(element).to.have.property('currency').that.is.a('string');",
+									"    });",
+									"});",
+									"",
+									"",
+									"pm.test(\"accountId is a non-empty string\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData).to.be.an('array');",
+									"    pm.expect(responseData).to.have.lengthOf.at.least(1, \"Array should not be empty\");",
+									"",
+									"    responseData.forEach(function (item) {",
+									"        pm.expect(item.accountId).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+									"    });",
+									"});",
+									"",
+									"",
+									"pm.test(\"IBAN should be a non-empty string\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData).to.be.an('array');",
+									"",
+									"    responseData.forEach(function (account) {",
+									"        pm.expect(account).to.be.an('object');",
+									"        pm.expect(account.iban).to.be.a('string').and.to.have.lengthOf.at.least(1);",
+									"    });",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
+							},
+							{
+								"key": "apiKey",
+								"value": "{{apiKeyAdaa}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/adaa/v1/accounts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"adaa",
+								"v1",
+								"accounts"
+							]
+						},
+						"description": "Returns unique ID for IBAN, which will be used as a parameter called `accountId`.\n"
+					},
+					"response": [
+						{
+							"name": "Invalid request header/parameter (missing header/parameter or wrong header/parameter value).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"iban\": \"<string>\",\n    \"currency\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accounts/account-ids",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"account-ids"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  },\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  }\n ]\n}"
+						},
+						{
+							"name": "Invalid request body.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"iban\": \"<string>\",\n    \"currency\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accounts/account-ids",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"account-ids"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  },\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  }\n ]\n}"
+						},
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"iban\": \"<string>\",\n    \"currency\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accounts/account-ids",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"account-ids"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"accountId\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Actual balance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
+							},
+							{
+								"key": "apiKey",
+								"value": "{{apiKeyAdaa}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/adaa/v1/accounts/:accountId/balances",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"adaa",
+								"v1",
+								"accounts",
+								":accountId",
+								"balances"
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "{{accountId}}"
+								}
+							]
+						},
+						"description": "Returns the current account balance of the client’s account."
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/balances",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"balances"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"type\": \"<string>\",\n  \"creditDebitIndicator\": \"<string>\",\n  \"amount\": {\n   \"value\": \"<double>\",\n   \"currency\": \"<string>\"\n  },\n  \"validAt\": \"<dateTime>\",\n  \"creditLine\": {\n   \"value\": \"<double>\",\n   \"currency\": \"<string>\"\n  }\n },\n {\n  \"type\": \"<string>\",\n  \"creditDebitIndicator\": \"<string>\",\n  \"amount\": {\n   \"value\": \"<double>\",\n   \"currency\": \"<string>\"\n  },\n  \"validAt\": \"<dateTime>\",\n  \"creditLine\": {\n   \"value\": \"<double>\",\n   \"currency\": \"<string>\"\n  }\n }\n]"
+						},
+						{
+							"name": "Client has no access to account or account is in blacklist.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/balances",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"balances"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  },\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  }\n ]\n}"
+						},
+						{
+							"name": "Invalid request header/parameter (missing header/parameter or wrong header/parameter value).",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/balances",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"balances"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  },\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Transaction history",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
+							},
+							{
+								"key": "apiKey",
+								"value": "{{apiKeyAdaa}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/adaa/v1/accounts/:accountId/transactions?fromDate=2023-01-30&toDate=2023-04-14&size=20&page=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"adaa",
+								"v1",
+								"accounts",
+								":accountId",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2023-01-30",
+									"description": "Start date of returned transaction history (YYYY-MM-DD)."
+								},
+								{
+									"key": "toDate",
+									"value": "2023-04-14",
+									"description": "End date of returned transaction history (YYYY-MM-DD)."
+								},
+								{
+									"key": "size",
+									"value": "20",
+									"description": "Number of transactions per page. Default value is 10 transactions per page."
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "{{accountId}}"
+								}
+							]
+						},
+						"description": "Returns transaction history based on input parameters. Sorting is based on transaction date, from older to newer transactions."
+					},
+					"response": [
+						{
+							"name": "OK.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/transactions?fromDate=<date>&toDate=<date>&page=<integer>&size=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "<date>"
+										},
+										{
+											"key": "toDate",
+											"value": "<date>"
+										},
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"content\": [\n  {\n   \"lastUpdated\": \"<dateTime>\",\n   \"accountType\": \"<string>\",\n   \"iban\": \"<string>\",\n   \"amount\": {\n    \"value\": \"<double>\",\n    \"currency\": \"<string>\"\n   },\n   \"creditDebitIndicator\": \"<string>\",\n   \"transactionType\": \"<string>\",\n   \"bookingDate\": \"<date>\",\n   \"valueDate\": \"<date>\",\n   \"entryReference\": \"<string>\",\n   \"instructed\": {\n    \"value\": \"<double>\",\n    \"currency\": \"<string>\"\n   },\n   \"reversalIndicator\": \"<boolean>\",\n   \"status\": \"<string>\",\n   \"counterParty\": {\n    \"iban\": \"<string>\",\n    \"name\": \"<string>\",\n    \"accountNo\": \"<string>\",\n    \"bankBic\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n   },\n   \"references\": {\n    \"variable\": \"<string>\",\n    \"constant\": \"<string>\",\n    \"specific\": \"<string>\",\n    \"receiver\": \"<string>\"\n   },\n   \"additionalTransactionInformation\": \"<string>\"\n  },\n  {\n   \"lastUpdated\": \"<dateTime>\",\n   \"accountType\": \"<string>\",\n   \"iban\": \"<string>\",\n   \"amount\": {\n    \"value\": \"<double>\",\n    \"currency\": \"<string>\"\n   },\n   \"creditDebitIndicator\": \"<string>\",\n   \"transactionType\": \"<string>\",\n   \"bookingDate\": \"<date>\",\n   \"valueDate\": \"<date>\",\n   \"entryReference\": \"<string>\",\n   \"instructed\": {\n    \"value\": \"<double>\",\n    \"currency\": \"<string>\"\n   },\n   \"reversalIndicator\": \"<boolean>\",\n   \"status\": \"<string>\",\n   \"counterParty\": {\n    \"iban\": \"<string>\",\n    \"name\": \"<string>\",\n    \"accountNo\": \"<string>\",\n    \"bankBic\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n   },\n   \"references\": {\n    \"variable\": \"<string>\",\n    \"constant\": \"<string>\",\n    \"specific\": \"<string>\",\n    \"receiver\": \"<string>\"\n   },\n   \"additionalTransactionInformation\": \"<string>\"\n  }\n ],\n \"totalPages\": \"<integer>\",\n \"pageNumber\": \"<integer>\",\n \"pageSize\": \"<integer>\",\n \"numberOfElements\": \"<integer>\",\n \"first\": \"<boolean>\",\n \"last\": \"<boolean>\",\n \"empty\": \"<boolean>\"\n}"
+						},
+						{
+							"name": "Invalid request header/parameter (missing header/parameter or wrong header/parameter value).",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/transactions?fromDate=<date>&toDate=<date>&page=<integer>&size=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "<date>"
+										},
+										{
+											"key": "toDate",
+											"value": "<date>"
+										},
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  },\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  }\n ]\n}"
+						},
+						{
+							"name": "Client has no access to account or account is in blacklist.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/transactions?fromDate=<date>&toDate=<date>&page=<integer>&size=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "<date>"
+										},
+										{
+											"key": "toDate",
+											"value": "<date>"
+										},
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  },\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  }\n ]\n}"
+						},
+						{
+							"name": "Transaction history",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-correlation-id",
+										"value": "{{v4uuid}}",
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
+									},
+									{
+										"key": "x-api-key",
+										"value": "Bearer {{apiKey}}",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://api.kb.cz/open/api/adaa/v1/accounts/:accountId/transactions?fromDate=2023-04-10&toDate=2023-05-14&size=20&page=0",
+									"protocol": "https",
+									"host": [
+										"api",
+										"kb",
+										"cz"
+									],
+									"path": [
+										"open",
+										"api",
+										"adaa",
+										"v1",
+										"accounts",
+										":accountId",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "2023-04-10",
+											"description": "Start date of returned transaction history (YYYY-MM-DD)."
+										},
+										{
+											"key": "toDate",
+											"value": "2023-05-14",
+											"description": "End date of returned transaction history (YYYY-MM-DD)."
+										},
+										{
+											"key": "size",
+											"value": "20",
+											"description": "Number of transactions per page. Default value is 10 transactions per page."
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{accountId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 08 Jun 2023 07:30:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=16070400; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlation-id",
+									"value": "4f5ee0a7ae6d4eea94e33aadf744d49c"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction,x-api-key,x-correlation-id,x-api-key"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60, max=9999"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"lastUpdated\": \"2023-06-08T07:30:27.21247Z\",\n            \"accountType\": \"KB\",\n            \"entryReference\": \"001-14042023 1602 602022 517181\",\n            \"iban\": \"CZ5401000001154933990227\",\n            \"creditDebitIndicator\": \"DEBIT\",\n            \"transactionType\": \"DOMESTIC\",\n            \"bankTransactionCode\": {\n                \"code\": \"10000101003\",\n                \"issuer\": \"CBA\"\n            },\n            \"amount\": {\n                \"value\": 500,\n                \"currency\": \"CZK\"\n            },\n            \"bookingDate\": \"2023-04-14\",\n            \"valueDate\": \"2023-04-14\",\n            \"instructed\": {\n                \"value\": 500,\n                \"currency\": \"CZK\"\n            },\n            \"status\": \"BOOK\",\n            \"counterParty\": {\n                \"iban\": \"CZ0301000001158830140287\",\n                \"name\": \"SONTÁK MILOŠ\",\n                \"accountNo\": \"0001158830140287\",\n                \"bankBic\": \"KOMBCZPPXXX\",\n                \"bankCode\": \"0100\"\n            },\n            \"references\": {\n                \"accountServicer\": \"OI0002F3A76\"\n            },\n            \"additionalTransactionInformation\": \"Force pay debit, OI0002F3A76 01\"\n        },\n        {\n            \"lastUpdated\": \"2023-06-08T07:30:27.212505Z\",\n            \"accountType\": \"KB\",\n            \"entryReference\": \"298-26042023 160200016XZJM\",\n            \"iban\": \"CZ5401000001154933990227\",\n            \"creditDebitIndicator\": \"DEBIT\",\n            \"transactionType\": \"FEE\",\n            \"bankTransactionCode\": {\n                \"code\": \"40000605000\",\n                \"issuer\": \"CBA\"\n            },\n            \"amount\": {\n                \"value\": 3,\n                \"currency\": \"CZK\"\n            },\n            \"bookingDate\": \"2023-04-26\",\n            \"valueDate\": \"2023-04-26\",\n            \"instructed\": {\n                \"value\": 3,\n                \"currency\": \"CZK\"\n            },\n            \"status\": \"BOOK\",\n            \"references\": {\n                \"accountServicer\": \"F000016XZJM\",\n                \"constant\": \"898\"\n            },\n            \"additionalTransactionInformation\": \"POPLATEK OZNAMENI SMS:  1, F000016XZJMNOT_SMS\"\n        },\n        {\n            \"lastUpdated\": \"2023-06-08T07:30:27.21251Z\",\n            \"accountType\": \"KB\",\n            \"entryReference\": \"120-20230426 CST0175685320\",\n            \"iban\": \"CZ5401000001154933990227\",\n            \"creditDebitIndicator\": \"CREDIT\",\n            \"transactionType\": \"DOMESTIC\",\n            \"bankTransactionCode\": {\n                \"code\": \"10000107000\",\n                \"issuer\": \"CBA\"\n            },\n            \"amount\": {\n                \"value\": 100,\n                \"currency\": \"CZK\"\n            },\n            \"bookingDate\": \"2023-04-26\",\n            \"valueDate\": \"2023-04-26\",\n            \"instructed\": {\n                \"value\": 100,\n                \"currency\": \"CZK\"\n            },\n            \"status\": \"BOOK\",\n            \"counterParty\": {\n                \"iban\": \"CZ0208000000002795161113\",\n                \"name\": \"Ing.Sonták Miloš\",\n                \"accountNo\": \"0000002795161113\",\n                \"bankBic\": \"GIBACZPXXXX\",\n                \"bankCode\": \"0800\"\n            },\n            \"references\": {\n                \"accountServicer\": \"120-20230426 CST0175685320\"\n            },\n            \"additionalTransactionInformation\": \"Ach deposit\"\n        },\n        {\n            \"lastUpdated\": \"2023-06-08T07:30:27.212527Z\",\n            \"accountType\": \"KB\",\n            \"entryReference\": \"000-30042023-060-060-001796071\",\n            \"iban\": \"CZ5401000001154933990227\",\n            \"creditDebitIndicator\": \"DEBIT\",\n            \"transactionType\": \"FEE\",\n            \"bankTransactionCode\": {\n                \"code\": \"40000605000\",\n                \"issuer\": \"CBA\"\n            },\n            \"amount\": {\n                \"value\": 6,\n                \"currency\": \"CZK\"\n            },\n            \"bookingDate\": \"2023-04-30\",\n            \"valueDate\": \"2023-04-30\",\n            \"instructed\": {\n                \"value\": 6,\n                \"currency\": \"CZK\"\n            },\n            \"status\": \"BOOK\",\n            \"references\": {\n                \"accountServicer\": \"000-30042023-060-060-001796071\"\n            },\n            \"additionalTransactionInformation\": \"POPLATEK ZA POLOŽKY\"\n        },\n        {\n            \"lastUpdated\": \"2023-06-08T07:30:27.212535Z\",\n            \"accountType\": \"KB\",\n            \"entryReference\": \"311-02052023 1005 483311 003099\",\n            \"iban\": \"CZ5401000001154933990227\",\n            \"creditDebitIndicator\": \"CREDIT\",\n            \"transactionType\": \"DOMESTIC\",\n            \"bankTransactionCode\": {\n                \"code\": \"10000107000\",\n                \"issuer\": \"CBA\"\n            },\n            \"amount\": {\n                \"value\": 26.57,\n                \"currency\": \"CZK\"\n            },\n            \"bookingDate\": \"2023-05-02\",\n            \"valueDate\": \"2023-05-02\",\n            \"instructed\": {\n                \"value\": 26.57,\n                \"currency\": \"CZK\"\n            },\n            \"status\": \"BOOK\",\n            \"counterParty\": {\n                \"iban\": \"CZ7901000001232334800277\",\n                \"name\": \"SONTÁK MILOŠ\",\n                \"accountNo\": \"0001232334800277\",\n                \"bankBic\": \"KOMBCZPPXXX\",\n                \"bankCode\": \"0100\"\n            },\n            \"references\": {\n                \"accountServicer\": \"311-02052023 1005 483311 003099\",\n                \"variable\": \"9\",\n                \"constant\": \"558\"\n            },\n            \"additionalTransactionInformation\": \"Transfer credit\"\n        }\n    ],\n    \"totalPages\": 1,\n    \"pageNumber\": 0,\n    \"pageSize\": 20,\n    \"numberOfElements\": 5,\n    \"first\": true,\n    \"last\": true,\n    \"empty\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "event-subscriptions",
+			"item": [
+				{
+					"name": "{subscription Id}",
+					"item": [
+						{
+							"name": "Get subscription information",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "{{v4uuid}}"
+									},
+									{
+										"key": "apiKey",
+										"value": "{{apiKeyAdaa}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+									"protocol": "https",
+									"host": [
+										"api-gateway",
+										"kb",
+										"cz"
+									],
+									"path": [
+										"adaa",
+										"v1",
+										"accounts",
+										":accountId",
+										"transactions",
+										"event-subscriptions",
+										":subscriptionId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{accountId}}",
+											"description": "(Required) IBAN represented as unique ID, which is returned from resource account-ids."
+										},
+										{
+											"key": "subscriptionId",
+											"value": "11ba81e1-412e-4699-886a-d2268a7cb3f6",
+											"description": "(Required) Subscription ID. Format: GUID 128-bit: 8-4-4-4-12"
+										}
+									]
+								},
+								"description": "Get subscription information"
+							},
+							"response": [
+								{
+									"name": "Invalid request header/parameter (missing header/parameter or wrong header/parameter value).",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errors\": [\n  {\n   \"message\": \"labore\",\n   \"code\": \"ullamco Excepteur sit\",\n   \"additionalInfo\": {\n    \"parameterName\": \"elit magna occaecat\",\n    \"rejectedValue\": \"sunt officia in\"\n   }\n  },\n  {\n   \"message\": \"sed sunt voluptate Lorem\",\n   \"code\": \"laboris sit magna\",\n   \"additionalInfo\": {\n    \"parameterName\": \"nisi aute\",\n    \"rejectedValue\": \"tempor in aliquip Excepteur\"\n   }\n  }\n ]\n}"
+								},
+								{
+									"name": "Subscription information",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"subscriptionId\": \"71f415f4-412d-4c55-af05-15d1e0389f8f\",\n \"eventApiUrl\": \"https://company.org/event-api/v1\",\n \"eventApiVersion\": \"1.0\",\n \"status\": \"ACTIVE\",\n \"statusNarrative\": \"Connection Timeout: https://company.org/event-api/v1/subscriptions/71f415f4-412d-4c55-af05-15d1e0389f8f/events\"\n}"
+								},
+								{
+									"name": "Subscription/account not found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errors\": [\n  {\n   \"message\": \"labore\",\n   \"code\": \"ullamco Excepteur sit\",\n   \"additionalInfo\": {\n    \"parameterName\": \"elit magna occaecat\",\n    \"rejectedValue\": \"sunt officia in\"\n   }\n  },\n  {\n   \"message\": \"sed sunt voluptate Lorem\",\n   \"code\": \"laboris sit magna\",\n   \"additionalInfo\": {\n    \"parameterName\": \"nisi aute\",\n    \"rejectedValue\": \"tempor in aliquip Excepteur\"\n   }\n  }\n ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Register subscription information",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "{{v4uuid}}"
+									},
+									{
+										"key": "apiKey",
+										"value": "{{apiKeyAdaa}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"eventApiUrl\": \"https://company.org/event-api/v1\",\n  \"eventApiKey\": \"Q1oxMzAxMDAwOTAxMTQ3NzcxODAwMjI3OkNaSw\"\n}"
+								},
+								"url": {
+									"raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/transactions/event-subscriptions",
+									"protocol": "https",
+									"host": [
+										"api-gateway",
+										"kb",
+										"cz"
+									],
+									"path": [
+										"adaa",
+										"v1",
+										"accounts",
+										":accountId",
+										"transactions",
+										"event-subscriptions"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "{{accountId}}",
+											"description": "(Required) IBAN represented as unique ID, which is returned from resource account-ids."
+										}
+									]
+								},
+								"description": "Get subscription information"
+							},
+							"response": [
+								{
+									"name": "Subscription/account not found.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errors\": [\n  {\n   \"message\": \"labore\",\n   \"code\": \"ullamco Excepteur sit\",\n   \"additionalInfo\": {\n    \"parameterName\": \"elit magna occaecat\",\n    \"rejectedValue\": \"sunt officia in\"\n   }\n  },\n  {\n   \"message\": \"sed sunt voluptate Lorem\",\n   \"code\": \"laboris sit magna\",\n   \"additionalInfo\": {\n    \"parameterName\": \"nisi aute\",\n    \"rejectedValue\": \"tempor in aliquip Excepteur\"\n   }\n  }\n ]\n}"
+								},
+								{
+									"name": "Invalid request header/parameter (missing header/parameter or wrong header/parameter value).",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errors\": [\n  {\n   \"message\": \"labore\",\n   \"code\": \"ullamco Excepteur sit\",\n   \"additionalInfo\": {\n    \"parameterName\": \"elit magna occaecat\",\n    \"rejectedValue\": \"sunt officia in\"\n   }\n  },\n  {\n   \"message\": \"sed sunt voluptate Lorem\",\n   \"code\": \"laboris sit magna\",\n   \"additionalInfo\": {\n    \"parameterName\": \"nisi aute\",\n    \"rejectedValue\": \"tempor in aliquip Excepteur\"\n   }\n  }\n ]\n}"
+								},
+								{
+									"name": "Subscription information",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"subscriptionId\": \"71f415f4-412d-4c55-af05-15d1e0389f8f\",\n \"eventApiUrl\": \"https://company.org/event-api/v1\",\n \"eventApiVersion\": \"1.0\",\n \"status\": \"ACTIVE\",\n \"statusNarrative\": \"Connection Timeout: https://company.org/event-api/v1/subscriptions/71f415f4-412d-4c55-af05-15d1e0389f8f/events\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Unsubscribe from receiving asynchronous events",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									},
+									{
+										"key": "apiKey",
+										"value": "{{apiKeyAdaa}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api-gateway.kb.cz/adaa/v1/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+									"protocol": "https",
+									"host": [
+										"api-gateway",
+										"kb",
+										"cz"
+									],
+									"path": [
+										"adaa",
+										"v1",
+										"accounts",
+										":accountId",
+										"transactions",
+										"event-subscriptions",
+										":subscriptionId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": ""
+										},
+										{
+											"key": "subscriptionId",
+											"value": "{2Df1Ff30-D320-DEda-1fe0-fb51F0AF3Af6}",
+											"description": "(Required) Subscription ID. Format: GUID 128-bit: 8-4-4-4-12"
+										}
+									]
+								},
+								"description": "Unsubscribe from receiving asynchronous events"
+							},
+							"response": [
+								{
+									"name": "Invalid request header/parameter (missing header/parameter or wrong header/parameter value).",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errors\": [\n  {\n   \"message\": \"labore\",\n   \"code\": \"ullamco Excepteur sit\",\n   \"additionalInfo\": {\n    \"parameterName\": \"elit magna occaecat\",\n    \"rejectedValue\": \"sunt officia in\"\n   }\n  },\n  {\n   \"message\": \"sed sunt voluptate Lorem\",\n   \"code\": \"laboris sit magna\",\n   \"additionalInfo\": {\n    \"parameterName\": \"nisi aute\",\n    \"rejectedValue\": \"tempor in aliquip Excepteur\"\n   }\n  }\n ]\n}"
+								},
+								{
+									"name": "Subscription/account not found.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"errors\": [\n  {\n   \"message\": \"labore\",\n   \"code\": \"ullamco Excepteur sit\",\n   \"additionalInfo\": {\n    \"parameterName\": \"elit magna occaecat\",\n    \"rejectedValue\": \"sunt officia in\"\n   }\n  },\n  {\n   \"message\": \"sed sunt voluptate Lorem\",\n   \"code\": \"laboris sit magna\",\n   \"additionalInfo\": {\n    \"parameterName\": \"nisi aute\",\n    \"rejectedValue\": \"tempor in aliquip Excepteur\"\n   }\n  }\n ]\n}"
+								},
+								{
+									"name": "Subscription deleted successfully.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "(Required) Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+												"key": "x-correlation-id",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:accountId/transactions/event-subscriptions/:subscriptionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":accountId",
+												"transactions",
+												"event-subscriptions",
+												":subscriptionId"
+											],
+											"variable": [
+												{
+													"key": "accountId"
+												},
+												{
+													"key": "subscriptionId"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "statements",
+			"item": [
+				{
+					"name": "Statements",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.collectionVariables.set(\"statementId\", jsonData[0].statementId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "{{apiKeyAdaa}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/adaa/v1/accounts/:accountId/statements?dateFrom=2023-01-30T15:42:30.000Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"adaa",
+								"v1",
+								"accounts",
+								":accountId",
+								"statements"
+							],
+							"query": [
+								{
+									"key": "toDate",
+									"value": "2021-05-31",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "dateFrom",
+									"value": "2023-01-30T15:42:30.000Z"
+								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "{{accountId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download statements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"type": "text"
+							},
+							{
+								"key": "apiKey",
+								"value": "{{apiKeyAdaa}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/adaa/v1/accounts/:accountId/statements/:idStatements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"adaa",
+								"v1",
+								"accounts",
+								":accountId",
+								"statements",
+								":idStatements"
+							],
+							"query": [
+								{
+									"key": "dateFrom",
+									"value": "2021-03-30T15:42:30.000Z",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "{{accountId}}"
+								},
+								{
+									"key": "idStatements",
+									"value": "{{statementId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card details",
+			"item": [
+				{
+					"name": "Cards",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-correlation-id",
+								"value": "{{v4uuid}}",
+								"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.\n\nThis value is automatically generated for every request. To use user-defined correlation ID, replace variable {{v4uuid}} with actual value."
+							},
+							{
+								"key": "x-api-key",
+								"value": "Bearer {{apiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "{{accountId}}",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://api.kb.cz/directapi/cardda/v1/cards/:accountId",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kb",
+								"cz"
+							],
+							"path": [
+								"directapi",
+								"cardda",
+								"v1",
+								"cards",
+								":accountId"
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "{{accountId}}"
+								}
+							]
+						},
+						"description": "Returns transaction history based on input parameters. Sorting is based on transaction date, from older to newer transactions."
+					},
+					"response": [
+						{
+							"name": "OK.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/transactions?fromDate=<date>&toDate=<date>&page=<integer>&size=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "<date>"
+										},
+										{
+											"key": "toDate",
+											"value": "<date>"
+										},
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"content\": [\n  {\n   \"lastUpdated\": \"<dateTime>\",\n   \"accountType\": \"<string>\",\n   \"iban\": \"<string>\",\n   \"amount\": {\n    \"value\": \"<double>\",\n    \"currency\": \"<string>\"\n   },\n   \"creditDebitIndicator\": \"<string>\",\n   \"transactionType\": \"<string>\",\n   \"bookingDate\": \"<date>\",\n   \"valueDate\": \"<date>\",\n   \"entryReference\": \"<string>\",\n   \"instructed\": {\n    \"value\": \"<double>\",\n    \"currency\": \"<string>\"\n   },\n   \"reversalIndicator\": \"<boolean>\",\n   \"status\": \"<string>\",\n   \"counterParty\": {\n    \"iban\": \"<string>\",\n    \"name\": \"<string>\",\n    \"accountNo\": \"<string>\",\n    \"bankBic\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n   },\n   \"references\": {\n    \"variable\": \"<string>\",\n    \"constant\": \"<string>\",\n    \"specific\": \"<string>\",\n    \"receiver\": \"<string>\"\n   },\n   \"additionalTransactionInformation\": \"<string>\"\n  },\n  {\n   \"lastUpdated\": \"<dateTime>\",\n   \"accountType\": \"<string>\",\n   \"iban\": \"<string>\",\n   \"amount\": {\n    \"value\": \"<double>\",\n    \"currency\": \"<string>\"\n   },\n   \"creditDebitIndicator\": \"<string>\",\n   \"transactionType\": \"<string>\",\n   \"bookingDate\": \"<date>\",\n   \"valueDate\": \"<date>\",\n   \"entryReference\": \"<string>\",\n   \"instructed\": {\n    \"value\": \"<double>\",\n    \"currency\": \"<string>\"\n   },\n   \"reversalIndicator\": \"<boolean>\",\n   \"status\": \"<string>\",\n   \"counterParty\": {\n    \"iban\": \"<string>\",\n    \"name\": \"<string>\",\n    \"accountNo\": \"<string>\",\n    \"bankBic\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n   },\n   \"references\": {\n    \"variable\": \"<string>\",\n    \"constant\": \"<string>\",\n    \"specific\": \"<string>\",\n    \"receiver\": \"<string>\"\n   },\n   \"additionalTransactionInformation\": \"<string>\"\n  }\n ],\n \"totalPages\": \"<integer>\",\n \"pageNumber\": \"<integer>\",\n \"pageSize\": \"<integer>\",\n \"numberOfElements\": \"<integer>\",\n \"first\": \"<boolean>\",\n \"last\": \"<boolean>\",\n \"empty\": \"<boolean>\"\n}"
+						},
+						{
+							"name": "Invalid request header/parameter (missing header/parameter or wrong header/parameter value).",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/transactions?fromDate=<date>&toDate=<date>&page=<integer>&size=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "<date>"
+										},
+										{
+											"key": "toDate",
+											"value": "<date>"
+										},
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  },\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  }\n ]\n}"
+						},
+						{
+							"name": "Client has no access to account or account is in blacklist.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Correlation ID (GUID 128-bit: 8-4-4-4-12) is the generated unique identifier of the initial request, which stays the same through all the systems/application involved.",
+										"key": "x-correlation-id",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/<string>/transactions?fromDate=<date>&toDate=<date>&page=<integer>&size=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										"<string>",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "<date>"
+										},
+										{
+											"key": "toDate",
+											"value": "<date>"
+										},
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"errors\": [\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  },\n  {\n   \"message\": \"<string>\",\n   \"code\": \"<string>\",\n   \"additionalInfo\": {\n    \"parameterName\": \"<string>\",\n    \"rejectedValue\": \"<string>\"\n   }\n  }\n ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var uuid = require('uuid');",
+					"pm.collectionVariables.set(\"v4uuid\", uuid.v4());"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api-gateway.kb.cz"
+		},
+		{
+			"key": "v4uuid",
+			"value": ""
+		},
+		{
+			"key": "accessToken",
+			"value": ""
+		},
+		{
+			"key": "accountId",
+			"value": ""
+		},
+		{
+			"key": "refreshToken",
+			"value": ""
+		},
+		{
+			"key": "statementId",
+			"value": ""
+		},
+		{
+			"key": "apiKeyClientIdentity",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "apiKeyOAuth2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "apiKeyAdaa",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
