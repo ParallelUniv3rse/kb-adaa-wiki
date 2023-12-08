@@ -34,7 +34,7 @@
 
 ### 3. Registration OAuth2 client
 
-- New url: <<https://api-gateway.kb.cz/client-registration-ui/v1/saml/>
+- New url: <https://client-registration.api-gateway.kb.cz/v2>
 
 ### 4. New OAuth2 v2
 
