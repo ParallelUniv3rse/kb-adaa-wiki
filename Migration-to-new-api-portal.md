@@ -35,7 +35,7 @@
 
 </details>
 
-<details><summary> Instructions for others API (Exchange rates, Touchpoint)</summary>
+<details><summary> Instructions for others API (Exchange rates, Touchpoint, Contact request, etc)</summary>
 
 ### 1. Login in the new API portal
 
@@ -46,7 +46,6 @@
 - Rename the header x-api-key to apiKey
 - Generate new apiKey and put your app
 - Copy new url
-- v1 will be operational until 31.1.2024
 
 ![atm](./img/atm-detail.min.png)
 </details>
