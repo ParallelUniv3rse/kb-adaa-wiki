@@ -1,19 +1,4 @@
-# How to move to the new KB API portal
-
-- We migrate to the new API portal. The new portal is available at <https://developers.kb.cz>.
-- Users and password are migrated to new portal
-- Old portal <https://api.kb.cz> wil be available until 31.01.2024.
-- Sandboxes are now on the same portal as production services
-
-## Change for all services
-
-- We recommend updating the URL from <https://api.kb.cz/open/api/service/v1> to <https://api-gateway.kb.cz/service/v1>
-  - for example, <https://api.kb.cz/open/api/adaa/v1> to <https://api-gateway.kb.cz/adaa/v1>
-  - The old ones will be functional until 31.1.2024, after which they will be turned off
-- Rename the header x-api-key to apiKey.
-- Each API must have its own apiKey (we have cancelled the applications)
-
-## Instructions for API business suite
+# What you **need to do**  - Instructions for API business suite
 
 ### 1. Login in the new API portal
 
