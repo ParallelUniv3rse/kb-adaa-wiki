@@ -8,7 +8,7 @@
 ## Change for all services
 
 - We recommend updating the URL from <https://api.kb.cz/open/api/service/v1> to <https://api-gateway.kb.cz/service/v1>
-  - (for example, <https://api.kb.cz/open/api/adaa/v1> to <https://api-gateway.kb.cz/adaa/v1>
+  - for example, <https://api.kb.cz/open/api/adaa/v1> to <https://api-gateway.kb.cz/adaa/v1>
   - The old ones will be functional until 31.1.2024, after which they will be turned off
 - Rename the header x-api-key to apiKey.
 - Each API must have its own apiKey (we have cancelled the applications)
