@@ -1,6 +1,6 @@
 # What you need to do
 
-<details><summary> ## Instructions for API business suite (ADAA - Account direct Access API)</summary>
+<details><summary> Instructions for API business suite (ADAA - Account direct Access API)</summary>
 
 ## 1. Login in the new API portal
 
@@ -35,7 +35,7 @@
 
 </details>
 
-<details><summary>##  Instructions for other APIs (Exchange Rates, Branches and ATMs, Contact Requests, etc.)</summary>
+## <details><summary>Instructions for other APIs (Exchange Rates, Branches and ATMs, Contact Requests, etc.)</summary>
 
 ## 1. Login in the new API portal
 
