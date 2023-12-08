@@ -35,7 +35,7 @@
 
 </details>
 
-<details><summary> Instructions for others API (Exchange rates, Touchpoint, Contact request, etc)</summary>
+<details><summary> Instruction for others APIs (Exchange Rates, Branches and ATMs, Contact Requests, etc.)</summary>
 
 ### 1. Login in the new API portal
 
