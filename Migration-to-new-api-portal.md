@@ -1,6 +1,6 @@
 # What you need to do
 
-<details><summary> Instructions for API business suite (ADAA - Account direct Access API)</summary>
+## <details><summary> Instructions for API business suite (ADAA - Account direct Access API)</summary>
 
 ## 1. Login in the new API portal
 
