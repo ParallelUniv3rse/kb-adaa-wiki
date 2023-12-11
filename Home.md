@@ -14,13 +14,13 @@ more details is on website [Direct Account Access API](https://www.kb.cz/cs/kbap
 
 ### Sandbox
 
-- Postman [Sandbox](./postman/KB%20API%20-%20Sandbox%20-%20Direct%20access%20to%20account%20.postman_collection.json) collection
-- Register on [Sandbox API Portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
+- Postman [Sandbox](./postman/KB-API-Sandbox-API-Business-suite.postman_collection.json) collection
+- Register on [Sandbox API Portal](https://developers.kb.cz)
 
 ### Production
 
-- Postman [Production](./postman/KB API - Production - API Business suite.postman_collection.json) collection
-- Register on [production API portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
+- Postman [Production](./postman/KB-API-Production-API-Business-suite.postman_collection.json) collection
+- Register on [production API portal](https://developers.kb.cz)
 
 ## How to start
 
@@ -37,15 +37,11 @@ more details is on website [Direct Account Access API](https://www.kb.cz/cs/kbap
 - Developer - Developer who create app
 - KB - Komercni banka
 
-### 1. Developer registers on [production API portal](https://api.kb.cz/open/apim/store/site/pages/login.jag?requestedPage=/store/)
+### 1. Developer registers on [production API portal](https://developers.kb.cz)
 
 - create application
-- subcribe to API (Client Registration, OAuth2, Adaa API)
-- create API key (apiKey)
-
-<details><summary>how create API key (apiKey)</summary>
-
-![api portal - api key](./img/api-key.min.png)
+- subcribe to API (Client Registration, OAuth2, Account direct access API)
+- create API key (apiKey) - [How create API key (apiKey)](https://developers.kb.cz/manual#apikey)
 
 </details>
 

@@ -21,9 +21,9 @@
 <details id="curl-example"><summary>Client TLS Authentication Example - Curl</summary>
 
 ```js
-curl -v --cert-type P12 --cert cert.p12:password --location --request POST 'https://api-gateway.kb.cz/client-registration/v1/software-statements' \
+curl -v --cert-type P12 --cert cert.p12:password --location --request POST 'https://api-gateway.kb.cz/client-registration/v2/software-statements' \
 --header 'x-correlation-id: 42c0e667-0f5e-4900-9f5e-fd707e35ba75' \
---header 'apiKey Bearer 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
+--header 'apiKey 3a7f779a-8cc1-364f-be2b-9ea161f63817' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 "softwareName": "example app",
