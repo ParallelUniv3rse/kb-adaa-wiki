@@ -39,7 +39,6 @@ more details is on website [Direct Account Access API](https://www.kb.cz/cs/kbap
 
 ### 1. Developer registers on [production API portal](https://developers.kb.cz)
 
-- create application
 - subcribe to API (Client Registration, OAuth2, Account direct access API)
 - create API key (apiKey) - [How create API key (apiKey)](https://developers.kb.cz/manual#apikey)
 
