@@ -8,9 +8,9 @@
 
 ## 2. New Client registration (Software statements) v2
 
-- Rename the header x-api-key to apiKey.
+- Api key header is mandatory and renamed from `x-api-key` to `apiKey`.
 - Generate new apiKey and put your app.
-- Mandatory section contacts.email.
+- The section contacts.email in the "body" part of the request is mandatory
 - New url: <https://client-registration.api-gateway.kb.cz/v2>.
 - v1 will be operational until 31.1.2024.
 
@@ -18,16 +18,16 @@
 
 - New url: <https://api-gateway.kb.cz/client-registration-ui/v1/saml/>
 
-## 4. New OAuth2 v2
+## 4. Authenticate your requests via the new Oauth2 v2 API
 
-- Mandatory and rename the header x-api-key to apiKey.
+- Api key header is mandatory and renamed from `x-api-key` to `apiKey`.
 - Generate new apiKey and put your app.
 - New url: <https://api-gateway.kb.cz/oauth2/v2>.
 - v1 will be operational until 31.1.2024.
 
 ## 5. Account direct access v1
 
-- Rename the header x-api-key to apiKey.
+- Api key header renamed from `x-api-key` to `apiKey`
 - Generate new apiKey and put your app.
 - New url: <https://api-gateway.kb.cz/adaa/v1>.
 - Terminate the endpoint /account-ids → replaced by /accounts,
