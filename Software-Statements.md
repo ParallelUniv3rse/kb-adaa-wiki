@@ -56,7 +56,7 @@ curl -v --cert-type P12 --cert cert.p12:password --location --request POST 'http
 or
 
 ```js
-curl --cert  client.crt --key client.key --cacert ca.crt https://api-gateway.kb.cz/client-registration/v1/software-statements
+curl --cert  client.crt --key client.key --cacert ca.crt https://api-gateway.kb.cz/client-registration/v2/software-statements
 ```
 
 </details>
@@ -84,13 +84,13 @@ namespace SoftwareStatementRegistrationExample
         // JSON software metadata encoded as Base64 see https://datatracker.ietf.org/doc/html/rfc4648#section-4
         private const string SoftwareStatementBodyBase64 = "ew0KICAic29mdHdhcmVOYW1lIjogIkV4YW1wbGVDbGllbnQiLA0KICAic29mdHdhcmVOYW1lRW4iOiAiRXhhbXBsZUNsaWVudCIsDQogICJzb2Z0d2FyZUlkIjogIjkzZDQ5MmI5ZDQ2ODQwZTM4MDlhNzQ1MzFkMTQ0OTEyIiwNCiAgInNvZnR3YXJlVmVyc2lvbiI6ICIxLjAiLA0KICAic29mdHdhcmVVcmkiOiAiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmciLA0KICAicmVkaXJlY3RVcmlzIjogWw0KICAgICJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9jYWxsYmFjayIsDQogICAgImh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL2NhbGxiYWNrLWJhY2t1cCINCiAgXSwNCiAgInRva2VuRW5kcG9pbnRBdXRoTWV0aG9kIjogImNsaWVudF9zZWNyZXRfYmFzaWMiLA0KICAiZ3JhbnRUeXBlcyI6IFsNCiAgICAiYXV0aG9yaXphdGlvbl9jb2RlIiwNCiAgICAicmVmcmVzaF90b2tlbiINCiAgXSwNCiAgInJlc3BvbnNlVHlwZXMiOiBbDQogICAgImNvZGUiDQogIF0sDQogICJyZWdpc3RyYXRpb25CYWNrVXJpIjogImh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL2JhY2t1cmkiLA0KICAiY29udGFjdHMiOiBbDQogICAgImVtYWlsOiBleGFtcGxlQGV4YW1wbGUuY29tIg0KICBdLA0KICAibG9nb1VyaSI6ICJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9sb2dvLnBuZyIsDQogICJ0b3NVcmkiOiAiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvdG9zIiwNCiAgInBvbGljeVVyaSI6ICJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9wb2xpY3kiDQp9";
         // URL of Client Registration API, software-statements endpoint
-        private const string SoftwareStatementUrl = "https://api.kb.cz/open/api/client-registration/v1/software-statements";
+        private const string SoftwareStatementUrl = "https://api-gateway.kb.cz/client-registration/v2/software-statements";
         // header name of correlation ID
         private const string CorrelationIdHeaderName = "x-correlation-id";
         // header name of API key
         private const string ApiKeyHeaderName = "apiKey";
         // mock value of API key header
-        private const string ApiKey = "Bearer api-key-mock";
+        private const string ApiKey = "api-key-mock";
 
         /// <summary>
         /// Main entrypoint for the Software Statement Registration Example.
