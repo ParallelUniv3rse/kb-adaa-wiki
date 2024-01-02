@@ -10,7 +10,7 @@
 
 - Api key header is mandatory and renamed from `x-api-key` to `apiKey`.
 - Now each api has its own apiKey. It cannot be used for other API.
-- Generate new apiKey and put your app.
+- Generate new apiKey and put your app. Fill header (apiKey) without "Bearer" prefix.
 - The section contacts.email in the "body" part of the request is mandatory
 - New url: <https://client-registration.api-gateway.kb.cz/v2>.
 - v1 will be operational until 31.1.2024.
@@ -23,7 +23,7 @@
 
 - Api key header is mandatory and renamed from `x-api-key` to `apiKey`.
 - Now each api has its own apiKey. It cannot be used for other API.
-- Generate new apiKey and put your app.
+- Generate new apiKey and put your app. Fill header (apiKey) without "Bearer" prefix.
 - New url: <https://api-gateway.kb.cz/oauth2/v2>.
 - v1 will be operational until 31.1.2024.
 
@@ -31,7 +31,7 @@
 
 - Api key header renamed from `x-api-key` to `apiKey`
 - Now each api has its own apiKey. It cannot be used for other API.
-- Generate new apiKey and put your app.
+- Generate new apiKey and put your app. Fill header (apiKey) without "Bearer" prefix.
 - New url: <https://api-gateway.kb.cz/adaa/v1>.
 - Terminate the endpoint /account-ids → replaced by /accounts,
   - the endpoint /account-ids will be operational until 31.1.2024.
