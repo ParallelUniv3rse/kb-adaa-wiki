@@ -55,13 +55,13 @@ Each API needs its own API key. You can create multiple API keys for each API. Y
 
 Create a Software statement for your application and register it via the Client Registration API. You will need to use the API key you created in the previous step.
 
-- [Software Statement](./Software-Statements) with qualified certificate issued by a trusted certification authority (I.CA, PostSignum)
+- [Software Statement](./02-Software-Statements) with qualified certificate issued by a trusted certification authority (I.CA, PostSignum)
 
 You will get a JWT token with details about your application. You will need to use this token in the next step.
 
 ### 4. Construct a URL to the Application Registration endpoint and visit it in the _Client_'s browser.
 
-- Construct a URL as described in the [Application Registration OAuth2](./Application-Registration-OAuth2#request).
+- Construct a URL as described in the [Application Registration OAuth2](03-Application-Registration-OAuth2#request).
 - Visit the constructed URL in the _Client_'s browser.
 - Browser redirects to _KB_ for an authorization of a _Client of KB_. ([example page](https://api.kb.cz/adaa-flow/disclaimer.html))
 
@@ -76,16 +76,16 @@ You will get a JWT token with details about your application. You will need to u
 
 You, the _Developer_, needs to process the information included in the callback URL. 
 
-- [Decrypt](./Application-Registration-OAuth2#decrypt-response) the parameters on the redirect_uri
-- obtain the `client_id`, `client_secret`, and other [application registration](./Application-Registration-OAuth2) information from the decrypted data.
+- [Decrypt](./03-Application-Registration-OAuth2#decrypt-response) the parameters on the redirect_uri
+- obtain the `client_id`, `client_secret`, and other [application registration](./03-Application-Registration-OAuth2) information from the decrypted data.
 
 You will need the `client_id`, `client_secret` in the next steps.
 
-### 7. Construct a URL to get the [Authorization code Token](./Tokens#authorization-code) and visit it in the _Client_'s browser.
+### 7. Construct a URL to get the [Authorization code Token](./04-Tokens#authorization-code) and visit it in the _Client_'s browser.
 
 Using the client_id obtained in the previous step, construct a URL to get the authorization code token.
 
-- Construct a URL as described in the [Tokens - Authorization code wiki page](./Tokens#authorization-code).
+- Construct a URL as described in the [Tokens - Authorization code wiki page](./04-Tokens#authorization-code).
 - Visit the constructed URL in the _Client_'s browser.
 - Browser redirects to _KB_ for an authorization of a _Client of KB_. ([example page](https://api.kb.cz/adaa-flow/disclaimer.html))
 
@@ -101,16 +101,16 @@ Using the client_id obtained in the previous step, construct a URL to get the au
 You, the _Developer_, needs to process the information included in the callback URL.
 
 - Get the Authorization code from the callback URL's parameters
-- Use the Authorization code , `client_id` and `client_secret` to get the [Refresh token and Access Token](./Tokens#response-authorization-code)
+- Use the Authorization code , `client_id` and `client_secret` to get the [Refresh token and Access Token](./04-Tokens#response-authorization-code)
 
 ### 10. Call the ADAA API using the Access token provided
 
-- First, you will probably want to get the _Client_'s [Accounts](./Accounts) available. The `accountId` is needed for other endpoints.
+- First, you will probably want to get the _Client_'s [Accounts](./05-Accounts) available. The `accountId` is needed for other endpoints.
 
-[Account Balances](./Balances) \
-[Transactions](./Transactions) \
-[Notification of changes to _Client_'s account (webhook)](./Notification) \
-[Account Statements - PDF](./Statements-PDF)
+[Account Balances](./06-Balances) \
+[Transactions](./07-Transactions) \
+[Notification of changes to _Client_'s account (webhook)](./08-Account-Update-Notifications) \
+[Account Statements - PDF](./09-PDF-Statements)
 
 ## Recommendations for your App's user interface:
 
