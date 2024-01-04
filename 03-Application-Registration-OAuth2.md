@@ -7,8 +7,11 @@ This step creates an App connection in _KB_ between the _Client of KB_ (your use
 
 ## Request
 
-**Sandbox** `https://api-gateway.kb.cz/sandbox/client-registration-ui/v1/saml/register?registrationRequest=<data>` \
-**Production** `https://api-gateway.kb.cz/client-registration-ui/saml/register?registrationRequest=<data>`
+**Sandbox** `https://api-gateway.kb.cz/sandbox/client-registration-ui/v1/saml/register` \
+**Production** `https://api-gateway.kb.cz/client-registration-ui/saml/register`
+
+#### URL parameters
+- `registrationRequest` - base64 encoded json data
 
 To create the request you need the following: 
 - Create your `encryptionKey` - An AES 256-bit key can be expressed as a hexadecimal string with 64 characters. It will require 44 characters encoded in base64.
