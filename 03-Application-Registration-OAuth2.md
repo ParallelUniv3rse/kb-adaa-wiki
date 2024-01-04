@@ -1,7 +1,22 @@
 # Application Registration - OAuth2
 
-- encryptionKey - An AES 256-bit key can be expressed as a hexadecimal string with 64 characters. It will require 44 characters in base64.
+[//]: # (TODO: add links to the Sandbox and Production API docs)
 
+This step creates an App connection in _KB_ between the _Client of KB_ (your user) and your App.
+
+
+## Request
+
+**Sandbox** `https://api-gateway.kb.cz/sandbox/client-registration-ui/v1/saml/register?registrationRequest=<data>` \
+**Production** `https://api-gateway.kb.cz/client-registration-ui/saml/register?registrationRequest=<data>`
+
+To create the request you need the following: 
+- Create your `encryptionKey` - An AES 256-bit key can be expressed as a hexadecimal string with 64 characters. It will require 44 characters encoded in base64.
+- Create the json data to be sent
+- Convert json data to base64
+- Put the base64 encoded json data into the request's `registrationRequest` URL parameter and redirect your user (_Client of KB_) to the URL.
+
+### Example json data:
 ```json
 {
   "clientName": "Nejlepší produkt",
@@ -17,38 +32,30 @@
 }
 ```
 
-## Attributes
+### Attributes
 
-### Scopes
+#### scope
 
-- adaa - account direct access api
-- bpisp - batch payments
-- card_data - information about card
+- `adaa` - account direct access api
+- `bpisp` - batch payments
+- `card_data` - information about credit and debit cards
 
-#### Statements
+#### softwareStatement
 
-- Statement from previous step - [software statement](./Software-Statements)
+- JWT statement from previous step - [Software statements](./02-Software-Statements)
 
-### Convert to BASE64
 
+### Example base64 encoded json data:
 ```bash
 ewrCoCDCoMKgImNsaWVudE5hbWUiOsKgIk5lamxlcMWhw60gcHJvZHVrdCIsCsKgIMKgwqAiY2xpZW50TmFtZUVuIjrCoCJCZXN0IHByb2R1Y3QiLArCoCDCoMKgImFwcGxpY2F0aW9uVHlwZSI6wqAid2ViIiwKwqAgwqDCoCJyZWRpcmVjdFVyaXMiOiBbCsKgIMKgIMKgIMKgwqBbaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2tdKGh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL2NhbGxiYWNrICJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9jYWxsYmFjayIpCsKgIMKgIF0sCsKgIMKgwqAic2NvcGUiOiBbCsKgIMKgIMKgIMKgwqAiYWRhYSIswqAiYnBpc3AiLMKgImNhcmRfZGF0YSIKwqAgwqAgXSwKwqAgwqDCoCJlbmNyeXB0aW9uS2V5IjrCoCJkamg1TDBJL1JTaEhLMHRpVUdWVGFGWnRXWEV6ZERaM09Yb2tReVpHS1VvPSIsCsKgIMKgwqAiZW5jcnlwdGlvbkFsZyI6wqAiQUVTLTI1NiIsIArCoMKgInNvZnR3YXJlU3RhdGVtZW50IjrCoCJleUpoYkdjaU9pSklVekkxTmlKOS5leUoyWlc1a2IzSk9ZVzFsSWpvaVEyOXRjR0Z1ZVNCaExuTXVJaXdpYzI5bWRIZGhjbVZPWVcxbElqb2lUbVZxYkdWd3hhSERyU0J3Y205a2RXdDBJaXdpYzI5bWRIZGhjbVZPWVcxbFJXNGlPaUpDWlhOMElIQnliMlIxWTNRaUxDSnpiMlowZDJGeVpVbGtJam9pWmpZMFltWXlaVFEwTjJVMU5EVXlNamhqTnpobE1EZGlNRGd4WVRneVpXVWlMQ0p6YjJaMGQyRnlaVlpsY25OcGIyNGlPaUl4TGpBaUxDSnpiMlowZDJGeVpWVnlhU0k2SW1oMGRIQnpPaTh2WTJ4cFpXNTBMbVY0WVcxd2JHVXViM0puSWl3aWNtVmthWEpsWTNSVmNtbHpJanBiSW1oMGRIQnpPaTh2WTJ4cFpXNTBMbVY0WVcxd2JHVXViM0puTDJOaGJHeGlZV05ySWl3aWFIUjBjSE02THk5amJHbGxiblF1WlhoaGJYQnNaUzV2Y21jdlkyRnNiR0poWTJzdFltRmphM1Z3SWwwc0luUnZhMlZ1Ulc1a2NHOXBiblJCZFhSb1RXVjBhRzlrSWpvaVkyeHBaVzUwWDNObFkzSmxkRjl3YjNOMElpd2laM0poYm5SVWVYQmxjeUk2V3lKaGRYUm9iM0pwZW1GMGFXOXVYMk52WkdVaVhTd2ljbVZ6Y0c5dWMyVlVlWEJsY3lJNld5SmpiMlJsSWwwc0luSmxaMmx6ZEhKaGRHbHZia0poWTJ0VmNta2lPaUpvZEhSd2N6b3ZMMk5zYVdWdWRDNWxlR0Z0Y0d4bExtOXlaeTlpWVdOcmRYSnBJaXdpWTI5dWRHRmpkSE1pT2xzaVpXMWhhV3c2SUdWNFlXMXdiR1ZBWjI5dlpITnZablF1WTI5dElsMHNJbXh2WjI5VmNta2lPaUpvZEhSd2N6b3ZMMk5zYVdWdWRDNWxlR0Z0Y0d4bExtOXlaeTlzYjJkdkxuQnVaeUlzSW5SdmMxVnlhU0k2SW1oMGRIQnpPaTh2WTJ4cFpXNTBMbVY0WVcxd2JHVXViM0puTDNSdmN5SXNJbkJ2YkdsamVWVnlhU0k2SW1oMGRIQnpPaTh2WTJ4cFpXNTBMbVY0WVcxd2JHVXViM0puTDNCdmJHbGplU0o5LkZ3MTFlUE50eTdhaW1rbTN5QllNb0s1TC04QmxwZWM0Q2FmTkotZ2lDNGciCn0;
 ```
 
-### Request Application Registration - OAuth2
 
-ℹ️ This request put in your browser
-
-```text
-GET
-https://api-gateway.kb.cz/client-registration-ui/v1/saml/register?registrationRequest=ewrCoCDCoMKgImNsaWVudE5hbWUiOsKgIk5lamxlcMWhw60gcHJvZHVrdCIsCsKgIMKgwqAiY2xpZW50TmFtZUVuIjrCoCJCZXN0IHByb2R1Y3QiLArCoCDCoMKgImFwcGxpY2F0aW9uVHlwZSI6wqAid2ViIiwKwqAgwqDCoCJyZWRpcmVjdFVyaXMiOiBbCsKgIMKgIMKgIMKgwqBbaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2tdKGh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL2NhbGxiYWNrICJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9jYWxsYmFjayIpCsKgIMKgIF0sCsKgIMKgwqAic2NvcGUiOiBbCsKgIMKgIMKgIMKgwqAiYWRhYSIswqAiYnBpc3AiLMKgImNhcmRfZGF0YSIKwqAgwqAgXSwKwqAgwqDCoCJlbmNyeXB0aW9uS2V5IjrCoCJkamg1TDBJL1JTaEhLMHRpVUdWVGFGWnRXWEV6ZERaM09Yb2tReVpHS1VvPSIsCsKgIMKgwqAiZW5jcnlwdGlvbkFsZyI6wqAiQUVTLTI1NiIsIArCoMKgInNvZnR3YXJlU3RhdGVtZW50IjrCoCJleUpoYkdjaU9pSklVekkxTmlKOS5leUoyWlc1a2IzSk9ZVzFsSWpvaVEyOXRjR0Z1ZVNCaExuTXVJaXdpYzI5bWRIZGhjbVZPWVcxbElqb2lUbVZxYkdWd3hhSERyU0J3Y205a2RXdDBJaXdpYzI5bWRIZGhjbVZPWVcxbFJXNGlPaUpDWlhOMElIQnliMlIxWTNRaUxDSnpiMlowZDJGeVpVbGtJam9pWmpZMFltWXlaVFEwTjJVMU5EVXlNamhqTnpobE1EZGlNRGd4WVRneVpXVWlMQ0p6YjJaMGQyRnlaVlpsY25OcGIyNGlPaUl4TGpBaUxDSnpiMlowZDJGeVpWVnlhU0k2SW1oMGRIQnpPaTh2WTJ4cFpXNTBMbVY0WVcxd2JHVXViM0puSWl3aWNtVmthWEpsWTNSVmNtbHpJanBiSW1oMGRIQnpPaTh2WTJ4cFpXNTBMbVY0WVcxd2JHVXViM0puTDJOaGJHeGlZV05ySWl3aWFIUjBjSE02THk5amJHbGxiblF1WlhoaGJYQnNaUzV2Y21jdlkyRnNiR0poWTJzdFltRmphM1Z3SWwwc0luUnZhMlZ1Ulc1a2NHOXBiblJCZFhSb1RXVjBhRzlrSWpvaVkyeHBaVzUwWDNObFkzSmxkRjl3YjNOMElpd2laM0poYm5SVWVYQmxjeUk2V3lKaGRYUm9iM0pwZW1GMGFXOXVYMk52WkdVaVhTd2ljbVZ6Y0c5dWMyVlVlWEJsY3lJNld5SmpiMlJsSWwwc0luSmxaMmx6ZEhKaGRHbHZia0poWTJ0VmNta2lPaUpvZEhSd2N6b3ZMMk5zYVdWdWRDNWxlR0Z0Y0d4bExtOXlaeTlpWVdOcmRYSnBJaXdpWTI5dWRHRmpkSE1pT2xzaVpXMWhhV3c2SUdWNFlXMXdiR1ZBWjI5dlpITnZablF1WTI5dElsMHNJbXh2WjI5VmNta2lPaUpvZEhSd2N6b3ZMMk5zYVdWdWRDNWxlR0Z0Y0d4bExtOXlaeTlzYjJkdkxuQnVaeUlzSW5SdmMxVnlhU0k2SW1oMGRIQnpPaTh2WTJ4cFpXNTBMbVY0WVcxd2JHVXViM0puTDNSdmN5SXNJbkJ2YkdsamVWVnlhU0k2SW1oMGRIQnpPaTh2WTJ4cFpXNTBMbVY0WVcxd2JHVXViM0puTDNCdmJHbGplU0o5LkZ3MTFlUE50eTdhaW1rbTN5QllNb0s1TC04QmxwZWM0Q2FmTkotZ2lDNGciCn0=&state=client123
-```
-
-> Identification request
+> Identification of your request on the callback URL
 >
-> Use parameter "state", the parameter state get back with response
+> You can pass a `state` url parameter, which will be returned to you in the callback URL. This is useful if you want to identify your request on the callback URL. The `state` parameter is not encrypted and can be used to pass any data you want. It is recommended to use a random string as a value of the `state` parameter. The `state` parameter is optional.
 
-### Response Application Registration - OAuth2
+## Response
 
 ```text
 302 Found
@@ -165,6 +172,45 @@ print("plaintext:\n" + plaintext_bytes.decode("utf-8"))
 
 </details>
 
+<details><summary>example NodeJS</summary>
+
+```js
+const crypto = require('crypto');
+
+// Demo implementation of using `aes-256-gcm` with node.js's `crypto` lib.
+const aes256gcm = key => {
+  const ALGO = 'aes-256-gcm'
+  // decrypt decodes base64-encoded ciphertext into a utf8-encoded string
+  const decrypt = (enc, iv, authTag) => {
+    const decipher = crypto.createDecipheriv(ALGO, key, iv)
+    decipher.setAuthTag(authTag)
+    let str = decipher.update(enc, 'base64', 'utf8')
+    str += decipher.final('utf8')
+    return str
+  }
+
+  return {
+    decrypt,
+  }
+}
+
+// replaceUrlChars replaces characters that have been replaced by the URL-safe base64 variant.
+const replaceUrlChars = (str: string) => str.replace(/-/g, '+').replace(/_/g, '/')
+
+const salt = 'u1W5ABqw9YEcTLgq' // salt from callback url parameter
+const data = "h_tAxLwOi41acN4aYy5DOCRnO5bEgENYW_KtwhLPQqZekRbRUoy7jpOShel03we4vovUtfUBCA3VgKyO1lNUFD68844JmGwIEJAp_M2hGhg1qdKbrvuM3CBObxb64ohqcCdyeNuUNRhCnIk5STEI3sju05WoOzImtucH6ftIbf3uVxKoyCQEbadFbEulyGLEqe4sCXkYBMHVShGRWkKBKKuVrc0RWTVcUZqszOOdz1ozBBxHaBrER_eOuJa3uDkvBhGSnpJWf_GD0G9qUH46zjXEo6ZbQUVgrA3OZLAlaOjazpRsKkDPMqIU3JTyB8sVb6pT1gryLo6SbvG9cQhten70X_v3cY75s8-6KBMwi7e9Y28-rC264DQyNKUh30zh2nqs-SzQUL9-QWIttXx4mRNNydhnDOCEb8Hij0fWZogLK_CcmOVx6jtoSuac9LCqN_Wr5rA1uKfDrhDB60AvWY7bFIbKOA3n6jYefsPkSFCXJ2teP3UyODAofWrlWZMMDY1X7qQ3QtJ5qeCRxR4WFIdhW8RdWLE6scY9AUVAmh8zCKb7xrstX7WcgBXW1_xSQkOpWdvl3wLoi9-bMMj4sWp04iP_pET4Md6n-rTGxEJ3WN4z6Y4ebDc0C7CZqq2YbPXmJeKJg5C2xbIcIOgTCqtkYXXQltl0XdX-HpUujjrf5WLEguOenARWCqBqNPWKK37f-vnic8qxMbMWOXdGnClEtv5wpHd_UzVmQ3ynNsyHUz1mldN3WiwZycZRjEGgpq7TvmKWEmTuNBmubPeGR2QyF0nmKzSuIXtC5ID4EFGDQCfYtMPUvVaekUlKvi_X7anSaQgkXr13EDJ2XxpDRdeZ79KuNil0ySo2icIvkADpgGhdileyOhXbV9g553HnUWFm0hQ5IUlYMKwn05WuO-4wFyl63iQ76nO1w2kWJTEIxh0EiTPF6dugCtZq7ct_OHhpAug2GJzlAHqShVuvgUIDyj2H-Igh1d87EqSOVlP1--z30ikGgiueAIAkjAb3"; // encryptedData from callback url parameter
+const key = 'MnM1djh5L0I/RShIK01iUWVUaFdtWnEzdDZ3OXokQyY=' // your `encryptionKey` from registrationRequest
+
+const rbData = Buffer.from(replaceUrlChars(data), 'base64')
+const saltData = Buffer.from(replaceUrlChars(salt), 'base64')
+const aesCrypt = aes256gcm(key)
+const decrypted = aesCrypt.decrypt(rbData.slice(0, -16), saltData, rbData.slice(-16))
+console.log(decrypted)
+
+```
+
+</details>
+
 #### Decrypted data
 
 ```json
@@ -189,7 +235,7 @@ print("plaintext:\n" + plaintext_bytes.decode("utf-8"))
   "bin": "29145643",
   "client_id": "Nejlepsiprodukt-6073",
   "client_secret": "aIiAgTXYH6v9C_5ckhiKNA",
-  "state": "client123"
+  "state": "client123",
   "api_key": "NOT_PROVIDED",
   "registration_client_uri": "https://uat2-caas.kb.cz/openam/json/caas/api/oauth2/register/Nejlepsiprodukt-6073",
   "client_id_issued_at": 1632908786
@@ -198,4 +244,5 @@ print("plaintext:\n" + plaintext_bytes.decode("utf-8"))
 
 ---
 
-[Continue to Tokens...](./Tokens)
+## Next step
+[Continue to Tokens...](./04-Tokens)
