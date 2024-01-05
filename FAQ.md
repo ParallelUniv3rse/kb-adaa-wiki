@@ -3,10 +3,10 @@
 ## How do I prolong the tokens?
 
 ### Refresh token
-- After the refresh token expires, the _Client_ needs to be [Authirized](./Tokens#authorization-code) in _KB_'s interface again to get a new Authorization code and then get new Refresh token for the next 12 months.
+- After the refresh token expires, the _Client_ needs to be [Authirized](./04-Tokens#authorization-code) in _KB_'s interface again to get a new Authorization code and then get new Refresh token for the next 12 months.
 
 ### Access token
-- After the access token expires, use the [Refresh token](./Tokens#refresh-token) to get a new Access token for the next 3 minutes.
+- After the access token expires, use the [Refresh token](./04-Tokens#refresh-token) to get a new Access token for the next 3 minutes.
 
 ## Where can my user (_Client_) add or change accounts usable via the API?
 

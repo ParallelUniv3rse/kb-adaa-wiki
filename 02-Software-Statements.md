@@ -182,7 +182,7 @@ const https = require('https')
 const fs = require('fs')
 const path = require('path')
 
-const pfxFile = fs.readFileSync(path.resolve('./ePecet_certificate_22_23.pfx'))
+const pfxFile = fs.readFileSync(path.resolve('./certificate.pfx'))
 
 const sslConfigureAgent = new https.Agent({
   pfx: pfxFile,
