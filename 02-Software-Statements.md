@@ -1,18 +1,23 @@
 # Software Statements
 
+[//]: # (TODO: add links to the Sandbox and Production API docs)
+
 > **JWT tokens validity**
 >
 > - The JWT statement is valid for 12 months
-> - Please fill in email, we will contact you about news or tokens validity
+> - Please fill in the email field, we will contact you about updates or tokens validity
+
+## Prerequisites for getting the Software statement
+
+1) You own a Qualified certificate from one of the following CAs:
+> - I.CA
+> - PostSignum
 
 ## Request
 
-> **Prerequisites for this request**
->
-> Qualified certificate from
->
-> - I.CA
-> - PostSignum
+**Sandbox** `https://api-gateway.kb.cz/sandbox/client-registration/v2/software-statements` \
+**Production** `https://api-gateway.kb.cz/client-registration/v2/software-statements` 
+
 
 > **Certificates in Postman** - [How to add certificate in Postman](https://learning.postman.com/docs/sending-requests/certificates/#adding-client-certificates)
 >
@@ -169,11 +174,50 @@ namespace SoftwareStatementRegistrationExample
 
 </details>
 
+<details id="js-example"><summary>Client TLS Authentication Example - NodeJS</summary>
+
+```js
+const { v4: uuidv4 } = require('uuid')
+const https = require('https')
+const fs = require('fs')
+const path = require('path')
+
+const pfxFile = fs.readFileSync(path.resolve('./certificate.pfx'))
+
+const sslConfigureAgent = new https.Agent({
+  pfx: pfxFile,
+  passphrase: 'your-cert-passphrase',
+})
+
+const myHeaders = new fetch.Headers()
+myHeaders.append('apiKey', 'mock-api-key')
+myHeaders.append('x-correlation-id', uuidv4())
+myHeaders.append('Content-Type', 'application/json')
+
+const requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow',
+  agent: sslConfigureAgent,
+}
+
+const response = await fetch(
+  'https://client-registration.api-gateway.kb.cz/v2/software-statements',
+  requestOptions,
+)
+```
+
+
+</details>
+
 ## Response
+The software statement is returned as a JWT token in the Response body.
 
-> **Check information in JWT token**
-> You can check content JWT token on [jwt.io](https://jwt.io)
+> **Check information in the JWT token** \
+> For debugging, you can check the content of the JWT token on [jwt.io](https://jwt.io)
 
+Example token from a response:
 ```
 eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJLb21lcsSNbsOtIEJhbmthIGEucy4iLCJpYXQiOjE2NTU3MjYzMzMsImV4cCI6MTY4NzI2MjMzMywidmVuZG9yTmFtZSI6IkJsb2szNyBzLnIuby4iLCJ2ZW5kb3JSZWdpc3RyYXRpb25OdW1iZXIiOiIwNTQzNTg3MSIsInNvZnR3YXJlTmFtZSI6ImV4YW1wbGUgYXBwIiwic29mdHdhcmVOYW1lRW4iOiJleGFtcGxlIGFwcCIsInNvZnR3YXJlSWQiOiJmNjRiZjJlNDQ3ZTU0NTIyOGM3OGUwN2IwOTFhODJlZSIsInNvZnR3YXJlVmVyc2lvbiI6IjEuMCIsInNvZnR3YXJlVXJpIjoiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmciLCJyZWRpcmVjdFVyaXMiOlsiaHR0cHM6Ly9jbGllbnQuZXhhbXBsZS5vcmcvY2FsbGJhY2siLCJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9jYWxsYmFjay1iYWNrdXAiXSwidG9rZW5FbmRwb2ludEF1dGhNZXRob2QiOiJjbGllbnRfc2VjcmV0X3Bvc3QiLCJncmFudFR5cGVzIjpbImF1dGhvcml6YXRpb25fY29kZSIsInJlZnJlc2hfdG9rZW4iXSwicmVzcG9uc2VUeXBlcyI6WyJjb2RlIl0sInJlZ2lzdHJhdGlvbkJhY2tVcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9iYWNrdXJpIiwiY29udGFjdHMiOlsiZW1haWw6IGhlbGxvQGV4YW1wbGUub3JnIl0sImxvZ29VcmkiOiJodHRwczovL2NsaWVudC5leGFtcGxlLm9yZy9pY29uLnBuZyIsInRvc1VyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3RvcyIsInBvbGljeVVyaSI6Imh0dHBzOi8vY2xpZW50LmV4YW1wbGUub3JnL3BvbGljeSJ9.hd016urrIl2o7LsqXKqoDXODI8DSY8aYZHzTs7j451i3BQ0lVu64jty4EYMV7Q8gGgrx5IN6lk1QwZmIpIz9dReIMEbQHiHxogAgrjln4mPSGf0x2b_YbsEKLMiCh27ZlhmNTHIBr9jq9mIo9Ab9wWViUAAAc00dmtXQdC84Zm67nIP5KDCiRTExAPLVpJqES8lYZbqlTIVQ6D_EKrGybxB0QP5b5bjOYKwyu7c5ZwehUGAuCf3zOWZUEKQuxUHoi0cVvAUZ0L8EJelcgM_8iO0cE1GVpsnxk_8YPcWtfh6h1OARUGGZHR_t_3W1i9NfrFGguOs5AOgG6i8QA
 ```
@@ -182,7 +226,7 @@ eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJLb21lcsSNbsOtIEJhbmthIGEucy4iLCJpYXQiOjE2NTU3MjY
 >
 > **Missing mutual TLS configuration**
 >
-> In case of error response due to invalid mutual TLS configuration, please [confirm a certificate was sent](https://learning.postman.com/docs/sending-requests/certificates/#confirming-a-certificate-was-sent).
+> In case of error response due to an invalid mutual TLS configuration, please [confirm a certificate was sent](https://learning.postman.com/docs/sending-requests/certificates/#confirming-a-certificate-was-sent).
 
 ```js
 {
@@ -197,4 +241,5 @@ eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJLb21lcsSNbsOtIEJhbmthIGEucy4iLCJpYXQiOjE2NTU3MjY
 
 ---
 
-[Continue to Application Registration - OAuth2...](./Application-Registration-OAuth2)
+## Next step
+[Continue to Application Registration - OAuth2...](./03-Application-Registration-OAuth2)

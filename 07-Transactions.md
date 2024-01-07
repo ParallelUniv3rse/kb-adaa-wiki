@@ -1,13 +1,13 @@
 # Transaction history
 
-- returns data normally for up to 2 years
-- if you don't fill in the fromDate and toDate parameters, the transaction history is returned only for 90 days from today.
-- use the accountServicer attribute as a unique payment identifier. This will provide you with a connection in the payment lifecycle
+- API is able to return data for up to 2 years back
+- If you don't fill in the `fromDate` and `toDate` parameters, the transaction history is returned only the last 90 days.
+- **ONLY** use the `accountServicer` attribute as the unique payment identifier. This will provide you with a stable, non-changing unique identifier throughout the entire payment lifecycle.
 
 > **Limits**
 >
-> - time limit to start download next page is 10 sec
-> - limit for download is one per hour, if you want download more try [Continue to Notification...](./Notification)
+> - Timeout to start downloading the next page is 10s.
+> - Reading transaction history is limited to once per hour. If you want to read history sooner when something changes, try [Account Update Notifications](./08-Account-Update-Notifications)
 
 ## Request
 
@@ -137,4 +137,5 @@ curl --location --request GET 'https://api-gateway.kb.cz/adaa/v1/accounts/Zm9PTl
 
 ---
 
-[Continue to Notification...](./Notification)
+## Next step
+[Continue to Account Update Notifications...](./08-Account-Update-Notifications)

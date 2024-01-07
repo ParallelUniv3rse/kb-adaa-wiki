@@ -44,4 +44,5 @@ curl --location --request GET 'https://api-gateway.kb.cz/adaa/v1/accounts/SU1iL3
 
 ---
 
-[Continue to Transaction...](./Transactions)
+## Next step
+[Continue to Transaction...](./07-Transactions)

@@ -1,8 +1,22 @@
-# Subscribe notification
+# Account Update Notifications 
 
-If you want to receive information about payments made on your account using this API.
+This API is used to subscribe to notifications about changes on the _Client of KB_'s account.
+This allows you to receive information about your ability to read the account transactions again when they have changed.
 
-## Request
+This is a webhook based API. You need to provide your API endpoint to receive notifications.
+
+## Create your webhook endpoints 
+
+You need to create endpoints on your app which will be called by _KB_ when the bank account history has updated.
+
+- [specification](https://github.com/komercka/adaa-eventapi-spring-boot-example/blob/master/rest/src/main/resources/openapi/adaa-event-api.yaml)
+- if you want to limit network traffic, incoming requests from the bank come from IP addresses:
+  - 194.50.202.179
+  - 194.50.226.179
+
+## Create a subscription
+
+### Request
 
 ```bash
 curl --location --request POST 'https://api-gateway.kb.cz/api/adaa/v1/accounts/NUZZUGh1NlpMV2ErbThHRGdCTytHN01SY1ZVVVN3RDdRN3loUGdkK2pKQk5GMFU1WTZvNnJnRWE2em1pK3NOUmdvVEtTd3JDSFJqQi9tYUsvaW9Zd2c9PQ/transactions/event-subscriptions' \
@@ -16,9 +30,9 @@ curl --location --request POST 'https://api-gateway.kb.cz/api/adaa/v1/accounts/N
 }'
 ```
 
-## Response
+### Response
 
-```js
+```json
 {
     "subscriptionId": "6edba5aa-f3aa-431b-90e0-ed3e0ff1d3c6",
     "eventApiUrl": "https://company.org/event-api/v1",
@@ -27,9 +41,9 @@ curl --location --request POST 'https://api-gateway.kb.cz/api/adaa/v1/accounts/N
 }
 ```
 
-# Get subscription information
+## Get subscription information
 
-## Request
+### Request
 
 ```bash
 curl --location --request GET 'https://api-gateway.kb.cz/adaa/v1/accounts/eXBCcDBLUEFCT0Y0MUFSS2x6b0RNZUJHZzJHdk5wSlhFWWdKeWEySFlabkU4OEZJQTcxU05kLzc1SnFKa0dlZmF2RzRQbHgrVDY1QXZvZHhNWXZ1Vnc9PQ/transactions/event-subscriptions/11ba81e1-412e-4699-886a-d2268a7cb3f6' \
@@ -38,9 +52,9 @@ curl --location --request GET 'https://api-gateway.kb.cz/adaa/v1/accounts/eXBCcD
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiJhYmY1ZjE3Yi0wYjEwLTRjYjAtYWJkMi1iN2U4OGFhYTM4ZDgtNTcxODkwMTkiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzMwMzIsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MzIxMiwiaWF0IjoxNjU1OTczMDMyLCJleHBpcmVzX2luIjoxODAsImp0aSI6Imd1bG43WDc2LW9qYkQwUXUwLUZCOGtsSk11QSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.YzGEJfML17F2zA9TWh1pHelLmTRYDAHxLdMcF5MD-IXSNM-zHuR_S32LVTu6o68Tubo5-Erk3OkzWvr_z70MAJ8taPdNW4aj9qGluF1tgqoD9nCBaVNJDToKEkVDsv2BZmkNFDe_qwqP2cXedYhFdgoRRuydQ3mzlUytwysQJwT8j83uCf_EVLJJA7wteSEUViloOM5fbEwEvsB4LZLPG2VTpqC3dXzfhOVFw2Y4f6o7G3RiGSBmYtt9_3WBb47vh0EM6jV3TjG5XUFfOXPGcV1_F6LqytsnGKa2QzmCcrnKkMhCH-grhZcy3XJ7AncaC2bKuLPJnP83ZfyazRVeQg'
 ```
 
-## Response
+### Response
 
-```js
+```json
 {
     "subscriptionId": "6edba5aa-f3aa-431b-90e0-ed3e0ff1d3c6",
     "eventApiUrl": "https://notification-subscriber.herokuapp.com/adaa-notification-subscriber",
@@ -50,9 +64,9 @@ curl --location --request GET 'https://api-gateway.kb.cz/adaa/v1/accounts/eXBCcD
 
 ```
 
-# Unsubscribe notification
+## Unsubscribe notification
 
-## Request
+### Request
 
 ```bash
 curl --location --request DELETE 'https://api-gateway.kb.cz/adaa/v1/accounts/eXBCcDBLUEFCT0Y0MUFSS2x6b0RNZUJHZzJHdk5wSlhFWWdKeWEySFlabkU4OEZJQTcxU05kLzc1SnFKa0dlZmF2RzRQbHgrVDY1QXZvZHhNWXZ1Vnc9PQ/transactions/event-subscriptions/622f2380-abd7-43aa-9a20-1a32a80b726d' \
@@ -61,13 +75,6 @@ curl --location --request DELETE 'https://api-gateway.kb.cz/adaa/v1/accounts/eXB
 --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJraWQiOiJ3RjJTa1I3NWMxamZsZ1VIOWJ6Wno3Tzllemc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJBUElJRD01MmYwNDgyNjM3OTM0ZGZmOWY5MjE1MTBhMjlhMWYwYSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjo2LCJhdWRpdFRyYWNraW5nSWQiOiIxYTAwMDU3ZS02YzJjLTRmZmYtODRlZS04ZDU1MzE5OTgzYTAtNTgxNDczNTYiLCJpc3MiOiJodHRwczovL2NhYXMua2IuY3ovb3BlbmFtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IjF1bzJ1ZHNjS0dLSWQwVjFFT2ZzRW1sUUtQcyIsImF1ZCI6IktpZmxpLTE2MzUiLCJuYmYiOjE2NTU5NzMzNzAsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsiYWRhYSJdLCJhdXRoX3RpbWUiOjE2NTUzNzcyNzMsInJlYWxtIjoiLyIsImV4cCI6MTY1NTk3MzU1MCwiaWF0IjoxNjU1OTczMzcwLCJleHBpcmVzX2luIjoxODAsImp0aSI6IjR6dmhxQzRheWVkakw0WWxCc05aUm90MF9hRSIsImNhYXNPcGVyYXRpb25JZCI6IjUyNzYyMTc3NmRiODQ0MTg5MGJjM2MzM2RkZjYzYmVlIn0.nG4gliOMVWbadIAWChglg2yQcqNocgF5-z0ehNIE4Y--C63Wr4sonLpCPJPwvlm1Tb3z10HxN1TUwmvDUHvZwKiomAaa9MRzmr4-oJwc8cr_K1b3dB6FeN6r01WH6RHTLK0I-WAEONZR7kmaZP4jNPB_jVNR4Lx_6vVqNsoo2PApXzMx1DAFZQsNy5JIryGuN2GA6B9LF3XqpN6o-BpKnNn9Dsj8T0QiVK716ChSU1BM3l7MpCulfzRhEzhJB3as5GKE0z8RguBibKMw88oU8WT3jBeaHEQnRaGaKc0MrMnSoT2BlG42vekXqDEhu-42Of_Y7VKgsFbk8HolOztwHQ'
 ```
 
-## Response
+### Response
 
 HTTP 204
-
-# Your API to receive notification
-
-- [specification](https://github.com/komercka/adaa-eventapi-spring-boot-example/blob/master/rest/src/main/resources/openapi/adaa-event-api.yaml)
-- if you want to limit network traffic, incoming requests from the bank come from IP addresses:
-  - 194.50.202.179
-  - 194.50.226.179

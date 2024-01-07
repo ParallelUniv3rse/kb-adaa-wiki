@@ -1,18 +1,40 @@
 # Tokens
 
+[//]: # (TODO: add links to the Sandbox and Production API docs)
+
+- Obtain the Authorization code
+- Exchange Authorization code for Refresh token and Access token
+- Keep getting Access tokens from the Refresh token
+
 ## Authorization code
 
-> Token validity
-> Code has validity only 2 minutes
+> **Authorization code validity** \
+> Code is valid for only 2 minutes
 
-### Requests Authorization code
+- Construct the URL and redirect your user (_Client of KB_) to the URL.
 
+### Authorization code Request
+
+You need the `client_id` from the [Application Registration](./03-Application-Registration-OAuth2.md)
+
+**Sandbox** `https://api-gateway.kb.cz/sandbox/oauth2-authorization-ui/v2/` \
+**Production** `https://login.kb.cz/autfe/ssologin`
+
+#### URL parameters
+- `response_type` - "code"
+- `client_id` - client_id from previous step
+- `redirect_uri` - your URL to redirect to after success
+- `scope` - scopes you want to request (see [Scopes](./03-Application-Registration-OAuth2#scope))
+
+Constructed URL example:
 ```
 GET
 https://login.kb.cz/autfe/ssologin?response_type=code&client_id=Nejlepsiprodukt-4176&redirect_uri=https://client.example.org/callback&scope=adaa%20card_data
 ```
 
-### Response Authorization code
+### Authorization code Response
+
+- Get the `code` from the URL parameter in the callback URL.
 
 ```
 302 Found
@@ -21,10 +43,13 @@ https://client.example.org/callback?code=-_N2RrJRCMgd__JGqUlB_KaFNpo&iss=https%3
 
 ## Refresh token
 
-> Token validity
-> refresh_token validity 12 months
+> **Token validity** \
+> refresh_token validity is  12 months
 
-### Request Refresh token
+**How to prolong refresh_token?** \
+Read the FAQ [How do I prolong the tokens?](./FAQ.md#how-do-i-prolong-the-tokens)
+
+### Refresh token Request
 
 ```bash
 curl --location --request POST 'https://api-gateway.kb.cz/oauth2/v2/access_token' \
@@ -38,7 +63,7 @@ curl --location --request POST 'https://api-gateway.kb.cz/oauth2/v2/access_token
 --data-urlencode 'grant_type=authorization_code'
 ```
 
-### Response Refresh token
+### Refresh token Response
 
 ```json
 {
@@ -49,13 +74,12 @@ curl --location --request POST 'https://api-gateway.kb.cz/oauth2/v2/access_token
 
 ## Access token
 
-> Token validity
->
-> - access_token validity 3 minutes
-> - access token is intended to be reused until the time of it's expiration
+> **Token validity** 
+> - access_token validity is 3 minutes
+> - access token is intended to be reused until the time of its expiration
 > - excessive requests to obtain a new access token may result in a status response `429 Too Many Requests`
 
-### Request Access token
+### Access token Request
 
 ```bash
 curl --location --request POST 'https://api-gateway.kb.cz/oauth2/v2/access_token' \
@@ -69,7 +93,7 @@ curl --location --request POST 'https://api-gateway.kb.cz/oauth2/v2/access_token
 --data-urlencode 'grant_type=refresh_token'
 ```
 
-### Response Access token
+### Access token Response
 
 ```json
 {
@@ -80,11 +104,7 @@ curl --location --request POST 'https://api-gateway.kb.cz/oauth2/v2/access_token
 }
 ```
 
-## How to prolong refresh_token?
-
-- after expiration refesh token, you can call [authrozation](./Tokens#authorization-code) to get new refresh token for next 12 months
-- tt is not necessary to register a new application if it is the same KB client that registered the application
-
 ---
 
-[Continue to Accounts...](./Accounts)
+## Next step
+[Continue to Accounts...](./05-Accounts)
